@@ -1,0 +1,33 @@
+.Home {
+    width: 100%;
+    display: flex;
+    /* align-items: end; */
+
+    .actions {
+        width: 100%;
+        padding: 16px;
+        .action {
+            width: 100%;
+        }
+    }
+    .services {
+        /* max-width: 600px; */
+        width: 100%;
+        padding: 16px;
+        font-size: 16px;
+
+        display: flex;
+        /* flex-direction: column; */
+        gap: 32px;
+        .service {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            .title {
+                font-size: inherit;
+                font-weight: 600;
+            }
+        }
+    }
+}
