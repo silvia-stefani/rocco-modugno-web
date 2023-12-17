@@ -1,19 +1,18 @@
 import * as React from 'react';
 import MouseModule from '../../components/MouseModule/MouseModule';
-import { useTranslation } from 'react-i18next';
 import { useRef, useState } from 'react';
 
 import styles from './Home.module.scss';
 
 const Home: React.FC = () => {
 
-  const { t } = useTranslation();
+  /* const { t } = useTranslation(); */
 
-  const services = t('services', { returnObjects: true }) as Array<{
+  /* const services = t('services', { returnObjects: true }) as Array<{
     id: number;
     title: string;
     subtitle: string;
-  }>
+  }> */
 
   const elRef = useRef<HTMLDivElement>(null)
 

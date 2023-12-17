@@ -26,8 +26,6 @@ export function simmetrica(string: string){
   
 export function toBase(num: number, n: number,k:number) {
     let numero=num;
-    let nModuli=n;
-    let kClasse=k;
     
     let a=numero.toString(n);
     

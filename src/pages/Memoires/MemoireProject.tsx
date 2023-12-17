@@ -1,13 +1,10 @@
 import * as React from 'react';
 import { useTranslation } from 'react-i18next';
-import { useLocation } from 'react-router-dom';
 import { MemoiresType } from '../../types/MemoiresType';
 import { matrix, toBase } from '../../utils/generativeFunctions';
 
-interface IMemoireProjectProps {
-}
 
-const MemoireProject: React.FunctionComponent<IMemoireProjectProps> = (props) => {
+const MemoireProject: React.FC = () => {
     
     const { t } = useTranslation();
 

@@ -4,8 +4,8 @@ import styles from './Header.module.scss';
 import i18n from '../../i18n';
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { MenuItemsType } from '../../types/meuItemsType';
-import { unstable_HistoryRouter, useLocation } from 'react-router-dom';
+import { MenuItemsType } from '../../types/MeuItemsType';
+import { useLocation } from 'react-router-dom';
 
 const Header: React.FC = () => {
 
