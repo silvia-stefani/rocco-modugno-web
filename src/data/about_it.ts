@@ -28,6 +28,7 @@ export const itPersonalData: PersonalDataType = {
     street: "Via Nome via, 00",
     location: "Bolzano-Bozen, 39100-Italy"
   },
-  presentation: `Ciao! Sono Rocco Modugno, opero come Designer della Comunicazione a Bolzano dal 2021. Ottimizzo e implemento processi editoriali, progetto strategie di comunicazione e compongo pattern. La mia pratica progettuale unisce le metodologie più tradizionali con l’utilizzo e consapevole delle nuove tecnologie digitali.
-  \n\nA seconda del progetto collaboro con un ampio numero di esperti, selezionati in base alle necessità specifiche del progetto. Se sei interessato al mio lavoro, contattami o seguimi su Instagram!`,
+  presentation: `Opero come Designer della Comunicazione a Bolzano dal 2021. Mi occupo di progettazione grafica, implementazione dei processi editoriali, e pattern design. 
+  *enter*
+  Mi piace lavorare a processi ibridi, tenendo insieme le metodologie più tradizionali e le nuove tecnologie, ottimizzando processi già esistenti o progettando nuovi flussi di lavoro. Mi piace confrontarmi con i limiti tecnici della produzione per sperimentare soluzioni inedite, e cercare nuove strade per problemi preesistenti.`,
 }

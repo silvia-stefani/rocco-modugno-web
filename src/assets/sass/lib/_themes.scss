@@ -1,0 +1,15 @@
+$light-bg: #fff;
+$light-text: #333;
+
+$dark-bg: #333;
+$dark-text: #fff;
+
+.light-theme {
+  background-color: $light-bg;
+  color: $light-text;
+}
+
+.dark-theme {
+  background-color: $dark-bg;
+  color: $dark-text;
+}

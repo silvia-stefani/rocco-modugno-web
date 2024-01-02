@@ -1,19 +1,10 @@
-$size: 60px;
-
 .sketch {
-    /* position: absolute;
-    top: 80px;
-    left: 0; */
-    cursor: none;
+    /* cursor: none; */
+    color: var(--text);
     flex-shrink: 0;
-    transform: translate(-50%, 8px);
+    transform-origin: center center;
     position: fixed;
     z-index: 0;
-    font-family: 'QuartinoFloreale';
-    font-size: $size;
-    line-height: $size;
-    color: rgba(#272727, 1);
-    /* cursor: default; */
     -webkit-user-select: none;
     -khtml-user-select: none;
     -moz-user-select: none;
@@ -22,11 +13,4 @@ $size: 60px;
     user-select: none;
     white-space: wrap;
     text-wrap: wrap;
-    /* padding: 60px; */
-    /* .mouse_container {
-
-    width: 100vw;
-    min-height: 400px;
-    } */
-    /* padding: 16px; */
 }

@@ -1,22 +1,27 @@
-@import url('https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:slnt,wght@-10..0,100..900');
+
+@import "../fonts/aktivgrotesk/stylesheet.css";
+@import "./lib/fontface";
+@import "./lib/vars";
+@import "./lib/themes";
 
 * {
     margin: 0;
     box-sizing: border-box;
 }
 
-body {
-    font-family: 'Titillium Web', 'Helvetica', sans-serif;
-    font-size: 16px;
-    line-height: 140%;
-    color: #272727;
+#root {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
-main {
-    width: 100%;
-    min-height: calc(100vh - 48px);
-    display: flex;
-    /* padding: 16px; */
+body {
+    font-family: 'AktivGrotesk', 'Helvetica', sans-serif;
+    font-size: 16px;
+    color: var(--text);
+    background-color: var(--bg);
 }
 
 .home {
@@ -25,10 +30,11 @@ main {
     display: flex;
     padding: 16px;
     gap: 32px;
+
     .services {
         display: flex;
         flex-direction: column;
         flex-shrink: 1;
-
     }
+
 }

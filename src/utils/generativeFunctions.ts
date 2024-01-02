@@ -23,7 +23,6 @@ export function simmetrica(string: string){
   }
   
   
-  
 export function toBase(num: number, n: number,k:number) {
     let numero=num;
     

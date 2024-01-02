@@ -8,6 +8,8 @@ import { enMenu } from './data/menu_en';
 import { itMenu } from './data/menu_it';
 import { enMemoires } from './data/memoires/memoires_en';
 import { itMemoires } from './data/memoires/memoires_it';
+import { enProjects } from './data/projects/projects_en';
+import { itProjects } from './data/projects/projects_it';
 
 i18n
   .use(initReactI18next)
@@ -18,7 +20,8 @@ i18n
           services: enServices,
           menu: enMenu,
           about: enPersonalData,
-          memoires: enMemoires
+          memoires: enMemoires,
+          projects: enProjects
           // ... otras traducciones
         },
       },
@@ -27,7 +30,8 @@ i18n
           services: itServices,
           menu: itMenu,
           about: itPersonalData,
-          memoires: itMemoires
+          memoires: itMemoires,
+          projects: itProjects
           // ... otras traducciones
         },
       },

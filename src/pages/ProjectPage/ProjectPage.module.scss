@@ -1,0 +1,15 @@
+.ProjectPage {
+    width: 100%;
+    .container {
+        width: 100%;
+        display: flex;
+        .images {
+            width: 100%;
+        }
+        .info {
+            width: 100%;
+            padding: 0 16px;
+        }
+    }
+}
+

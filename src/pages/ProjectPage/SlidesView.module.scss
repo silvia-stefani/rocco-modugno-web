@@ -1,0 +1,11 @@
+.SlidesView {
+
+    .image {
+        width: 100%;
+        img, video {
+            width: 100%;
+            object-fit: cover;
+        }
+    }
+
+}
