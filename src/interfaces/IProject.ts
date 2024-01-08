@@ -1,15 +1,17 @@
-import { ColabType, ProjectsCatsType } from "../types/ProjectsTypes"
-
 export type IProject = {
     id: string,
-    cat: string,
+    cat: string[],
     date: string,
+    place: string,
+    client?: string,
     title: string,
     subtitle: string,
-    description: string,
+    description?: string,
     images: {
         cover: string,
         gallery: string[]
     },
-    collab?: ColabType[]
+    link?: string,
+    photo?: string | string[],
+    collab?: string[]
 }

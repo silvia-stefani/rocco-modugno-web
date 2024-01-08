@@ -1,0 +1,25 @@
+.ImagesCarousel {
+
+    overflow: hidden;
+    position: relative;
+
+    .image {
+        width: 100%;
+        img, video {
+            width: 100%;
+            object-fit: cover;
+        }
+    }
+
+    .nav_item {
+        pointer-events: none;
+        position: absolute;
+        font-size: 12px;
+        text-transform: uppercase;
+        color: var(--bg);
+        background-color: var(--primary);
+        padding: 2px 4px;
+        display: flex;
+    }
+
+}

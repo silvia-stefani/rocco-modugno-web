@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { useLocation, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { IProject } from '../../interfaces/IProject';
 import { useTranslation } from 'react-i18next';
 
@@ -7,7 +7,9 @@ import styles from './ProjectPage.module.scss'
 import { ViewType } from '../../types/ViewType';
 import ViewContainer from '../../components/ViewContainer/ViewContainer';
 import GridView from './GridView';
-import SlidesView from './SlidesView';
+import { TagGroup } from '../../components/Tag/Tag';
+import Paragraph from '../../components/Paragraph/Paragraph';
+import ImagesCarousel from './ImagesCarousel';
 
 const ProjectPage = () => {
 
@@ -28,7 +30,7 @@ const ProjectPage = () => {
     {
       id: "slides",
       label: "Slides",
-      element: <SlidesView project={project} />
+      element: <ImagesCarousel path={`/${project.id}/`} gallery={project.images.gallery} />
     }
   ]
 
@@ -45,11 +47,19 @@ const ProjectPage = () => {
         {currentElement}
       </div>
       <div className={styles.info}>
+        <h3 className={styles.title}>{project.title}</h3>
         <div>
-          <div>{project.cat}</div>
-          <div>{project.date}</div>
+          <TagGroup tags={project.cat} />
+          <div>{project.place}, {project.date}</div>
         </div>
-        <h6>{project.title}</h6>
+        <div>
+          <p>{project.subtitle}</p>
+          {project.description && <><br></br>{<Paragraph text={project.description} />}</> }
+        </div>
+        {project.collab && <div>
+          <h6>Collaborazioni</h6>
+          {project.collab.map((collab, i) => <div key={i}>{collab}</div>)}
+        </div>}
       </div>
     </div>
   </div>;

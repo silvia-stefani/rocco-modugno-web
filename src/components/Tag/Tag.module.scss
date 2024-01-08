@@ -1,0 +1,13 @@
+.Tag {
+    width: fit-content;
+    font-size: 14px;
+    display: flex;
+    padding: 4px 6px;
+    border: 1px solid currentColor;
+}
+
+.TagGroup {
+    width: fit-content;
+    display: flex;
+    gap: 8px;
+}

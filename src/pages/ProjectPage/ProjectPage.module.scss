@@ -9,6 +9,13 @@
         .info {
             width: 100%;
             padding: 0 16px;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            h3.title {
+                color: var(--primary);
+                font-size: 32px;
+            }
         }
     }
 }

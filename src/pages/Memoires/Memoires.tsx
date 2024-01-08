@@ -1,12 +1,12 @@
 import * as React from 'react';
 import { useTranslation } from 'react-i18next';
-import { MemoiresType } from '../../types/MemoiresTypes';
+import { IMemoires } from '../../interfaces/IMemoires';
 
 const Memoires: React.FC = () => {
 
   const { t } = useTranslation();
 
-  const memoires = t("memoires", { returnObjects: true }) as MemoiresType;
+  const memoires = t("memoires", { returnObjects: true }) as IMemoires;
 
   return (
     <div>

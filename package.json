@@ -1,8 +1,8 @@
 {
   "name": "rocco-modugno",
-  "private": true,
+  "private": false,
   "version": "0.0.0",
-  "homepage": "https://silvia-stefani.github.io/rocco-modugno-web",
+  "homepage": "https://silvia-stefani.github.io/rocco-modugno-web/",
   "type": "module",
   "scripts": {
     "predeploy": "npm run build",

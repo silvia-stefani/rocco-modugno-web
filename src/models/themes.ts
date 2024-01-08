@@ -12,7 +12,7 @@ const colors = {
   white: "#ffffff",
   black: "#373737",
   red: "#cc3232",
-  yellow: "#e4b310",
+  yellow: "#FFDE2F",
   violet: "#c296e4"
 }
 

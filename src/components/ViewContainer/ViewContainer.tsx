@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 import styles from './ViewContainer.module.scss';
-import { ReactElement, useState } from 'react';
+import { useState } from 'react';
 import { ViewType } from '../../types/ViewType';
 
 interface IViewContainerProps {

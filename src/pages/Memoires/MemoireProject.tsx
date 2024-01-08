@@ -1,14 +1,13 @@
 import * as React from 'react';
-import { useTranslation } from 'react-i18next';
-import { matrix, toBase } from '../../utils/generativeFunctions';
-import { IMemoires } from '../../interfaces/IMemoires';
+/* import { useTranslation } from 'react-i18next';
+import { IMemoires } from '../../interfaces/IMemoires'; */
 
 
 const MemoireProject: React.FC = () => {
     
-    const { t } = useTranslation();
+    /* const { t } = useTranslation();
 
-    const memoires = t("memoires", { returnObjects: true }) as IMemoires[];  
+    const memoires = t("memoires", { returnObjects: true }) as IMemoires[];   */
     
 
   /* let a = toBase(1900, memoires[0].gallery.base, memoires[0].gallery.base); */

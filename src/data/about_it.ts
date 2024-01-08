@@ -29,6 +29,5 @@ export const itPersonalData: PersonalDataType = {
     location: "Bolzano-Bozen, 39100-Italy"
   },
   presentation: `Opero come Designer della Comunicazione a Bolzano dal 2021. Mi occupo di progettazione grafica, implementazione dei processi editoriali, e pattern design. 
-  *enter*
-  Mi piace lavorare a processi ibridi, tenendo insieme le metodologie più tradizionali e le nuove tecnologie, ottimizzando processi già esistenti o progettando nuovi flussi di lavoro. Mi piace confrontarmi con i limiti tecnici della produzione per sperimentare soluzioni inedite, e cercare nuove strade per problemi preesistenti.`,
+  *enter*Mi piace lavorare a processi ibridi, tenendo insieme le metodologie più tradizionali e le nuove tecnologie, ottimizzando processi già esistenti o progettando nuovi flussi di lavoro. Mi piace confrontarmi con i limiti tecnici della produzione per sperimentare soluzioni inedite, e cercare nuove strade per problemi preesistenti.`,
 }

@@ -1,4 +1,3 @@
-import { ReactElement } from "react";
 import { matrix, toBase } from "./generativeFunctions";
 
 type getFontNumberT = {
@@ -36,7 +35,7 @@ export const getFontNumber = ({
         number = roundedX;
 
         let a = toBase(number, n, k);
-        const matrice = matrix(a, 2).map((string, i) => string)
+        const matrice = matrix(a, 2).map((string) => string)
         
         return matrice.filter(Boolean);
     }
