@@ -5,7 +5,6 @@ import { useTranslation } from 'react-i18next';
 
 import styles from './ProjectPage.module.scss'
 import { ViewType } from '../../types/ViewType';
-import ViewContainer from '../../components/ViewContainer/ViewContainer';
 import GridView from './GridView';
 import { TagGroup } from '../../components/Tag/Tag';
 import Paragraph from '../../components/Paragraph/Paragraph';
@@ -25,7 +24,7 @@ const ProjectPage = () => {
       id: "grid",
       label: "Griglia",
       element: <GridView project={project} />
-      
+
     },
     {
       id: "slides",
@@ -35,31 +34,47 @@ const ProjectPage = () => {
   ]
 
   const currentElement = viewTypes.find((view) => view.id === currentView)?.element
-  
+
   if (!project) return null;
 
   return <div className={styles.ProjectPage}>
 
-    <ViewContainer options={viewTypes} onSelect={setCurrentView}  />
+    {viewTypes.map((view) => {
+      const activeView = currentView === view.id;
+      return (
+        <div
+          key={view.id}
+          onClick={() => setCurrentView(view.id)}
+          className={`${styles.link} ${activeView ? styles.current : ''}`}
+        >
+          {view.label}
+        </div>
+      );
+    })}
 
     <div className={styles.container}>
       <div className={styles.images}>
         {currentElement}
       </div>
       <div className={styles.info}>
-        <h3 className={styles.title}>{project.title}</h3>
-        <div>
+
+        <div className={styles.head}>
+          <h3 className={styles.title}>{project.title}</h3>
           <TagGroup tags={project.cat} />
-          <div>{project.place}, {project.date}</div>
         </div>
-        <div>
-          <p>{project.subtitle}</p>
-          {project.description && <><br></br>{<Paragraph text={project.description} />}</> }
-        </div>
-        {project.collab && <div>
+
+        <div>{project.place}, {project.date}</div>
+
+        <p>{project.subtitle}</p>
+        {project.description && <Paragraph text={project.description} />}
+
+        {project.collab && <div className={styles.collab}>
           <h6>Collaborazioni</h6>
-          {project.collab.map((collab, i) => <div key={i}>{collab}</div>)}
+          <ul>
+            {project.collab.map((collab, i) => <li key={i}>{collab}</li>)}
+          </ul>
         </div>}
+
       </div>
     </div>
   </div>;

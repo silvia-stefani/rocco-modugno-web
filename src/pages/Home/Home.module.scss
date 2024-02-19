@@ -1,85 +1,32 @@
 @keyframes pulse {
-    0% { opacity: 1;}
-    100% { opacity: 0;}
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
 }
 
 .Home {
     width: 100%;
+    flex: 1;
     position: relative;
-    padding: 16px 0;
-    
-    .numbers {
-        padding: 16px;
-        gap: 16px;
-        display: flex;
-        flex-direction: column;
-        /* justify-content: space-between; */
+    overflow: hidden;
+    /* padding: 16px 0; */
 
-        //font-size: 12px;
+    table {
+        position: absolute;
+        left: 8px;
+        top: 8px;
     }
 
-    .btn {
-        position: fixed;
-        color: var(--bg);
-        background-color: var(--primary);
-        padding: 4px 8px;
-        right: 16px;
-        bottom: 16px;
-        font-size: 14px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        a {
-            text-decoration: none;
-            color: currentColor;
-        }
-    }
-
-    .about {
+    .modules_wrapper {
         width: 100%;
-        max-width: 600px;
-        display: flex;
-        flex-direction: column;
-        gap: 8px;
-        padding: 16px;
-        h3.name {
-            font-size: inherit;
-        }
-        ul.list {
-            padding: 0;
-            list-style: none;
-        }
-    }
-
-    .actions {
-        width: 100%;
-        .action {
-            width: 100%;
-            padding: 16px;
-            border-top: 1px solid var(--text);
-            &:last-child {
-                border-bottom: 1px solid var(--text);
-            }
-        }
-    }
-    .services {
-        /* max-width: 600px; */
-        width: 100%;
-        padding: 16px;
-        font-size: 16px;
-
-        display: flex;
-        /* flex-direction: column; */
-        gap: 32px;
-        .service {
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            gap: 4px;
-            .title {
-                font-size: inherit;
-                font-weight: 600;
-            }
-        }
+        height: 100%;
+        cursor: none;
+        user-select: none;
+        border: 0;
+        outline: none;
     }
 }

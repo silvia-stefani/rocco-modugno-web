@@ -7,42 +7,52 @@
     }
 }
 
+$initialH: 120px;
+$finalH: 250px;
+$p: 16px;
+$t: 200ms;
+
 .ProjectStripe {
     width: 100%;
     overflow: hidden;
     cursor: pointer;
     width: 100%;
     display: flex;
-    padding: 8px 16px 0px;
+    gap: $p;
+    padding: $p $p 0;
     text-decoration: none;
     color: inherit;
-    transition: all 500ms ease-in-out;
+    transition: all $t ease-in-out;
     border-top: 1px solid currentColor;
+    font-size: 14px;
+    font-weight: 600;
     
-    height: 44px;
-    transition: height 500ms ease-in-out;
-    
-    &.shrinked {
-        .image {
-            width: 0;
-            transition: width 500ms ease-in-out;
-        }
-    }
+    height: $initialH;
+    transition: all $t ease-in-out;
 
     &.expanded {
-        height: 316px;
-        transition-delay: 500ms;
-        .image {
-            width: auto;
-            transition: width 500ms ease-in-out;
-        }
+        height: $finalH;
+        transition-delay: $t;
+        /* .image {
+            height: 100%;
+            transition: height 300ms ease-in-out;
+        } */
+        /* 
         .info {
             padding-left: 16px;
-            transition: padding-left 0s normal 500ms;
+            transition: padding-left 0s normal $t;
             .title {
                 color: var(--primary);
-                transition: color 500ms ease-in-out 500ms;
+                transition: color $t ease-in-out $t;
             }
+        } */
+    }
+
+    &.increase {
+        height: 600px;
+        .image {
+            width: 600px;
+            height: 600px - 32px;
         }
     }
 
@@ -50,24 +60,12 @@
         border-bottom: 1px solid currentColor;
     }
 
-    .details {
-        flex-shrink: 0;
-        margin-top: 4px;
-        width: 120px;
-        // opt. 1
-        font-size: 16px;
-        // opt. 2
-        // font-size: 24px;
-        .cat {
-            font-weight: 500;
-        }
-    }
-
     .image {
         flex-shrink: 0;
         overflow: hidden;
-        height: calc(100% - 8px);
-        transition: width 500ms ease-in-out;
+        width: 300px;
+        height: calc($finalH - ($p * 2));
+        transition: all $t ease-in-out;
 
         img, video {
             width: 100%;
@@ -78,24 +76,33 @@
     }
 
     .info {
-        flex-grow: 1;
+        width: 100%;
         display: flex;
         flex-direction: column;
         gap: 8px;
-        padding-right: 16px;
-        padding-left: 8px;
+        font-weight: 500;
 
         .title {
-            font-size: 60px;
-            font-weight: 500;
-            line-height: 100%;
+            font-size: 16px;
+            font-weight: 600;
+            text-transform: uppercase;
         }
     }
 
+    .details {
+        width: 100%;
+    }
+
     .cats {
+        width: 100%;
         display: flex;
-        align-items: start;
-        gap: 8px;
+        flex-direction: column;
+        gap: 4px;
+        .cat {
+            font-size: 14px;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
     }
 
     @media (hover: none) {

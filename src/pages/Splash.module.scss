@@ -1,0 +1,31 @@
+@keyframes dissolve {
+    0% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+.Splash {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+
+    color: white;
+    background-color: #000;
+
+    animation-name: dissolve;
+    animation-duration: 300ms;
+    animation-fill-mode: forwards;
+
+    .module {
+        font-family: 'rolo deco rounded';
+        font-size: 20px;
+        line-height: 20px;
+    }
+
+    .loading_label {
+        font-size: 14px;
+    }
+}

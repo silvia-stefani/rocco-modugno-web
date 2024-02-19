@@ -18,7 +18,7 @@ const Header: React.FC<IHeader> = ({}) => {
   
   const [currentLanguage, setCurrentLanguage,] = useState(i18n.language)
   const changeLanguage = (language: string) => {
-    i18n.changeLanguage(language);
+    i18n.changeLanguage(language)
     setCurrentLanguage(language)
   };
 
@@ -42,15 +42,15 @@ const Header: React.FC<IHeader> = ({}) => {
           })}
         </ul>
       </nav>
-      <div className={styles.theme} onClick={toggleTheme}>
-        <span className={styles.picker} style={{backgroundColor: nextTheme.colors.bg}}></span>
-        {/* {nextTheme.label} */}
-      </div>
       <div className={styles.languages}>
         {languages.map((lan) => {
           const isCurrent = lan.id === currentLanguage ? styles.current : "";
           return <div className={`${styles.language} ${isCurrent}`} key={lan.id} onClick={() => changeLanguage(lan.id)}>{lan.label}</div>
         })}
+      </div>
+      <div className={styles.theme} onClick={toggleTheme}>
+        <span className={styles.picker} style={{backgroundColor: nextTheme.colors.bg}}></span>
+        {/* {nextTheme.label} */}
       </div>
     </div>
   </header>;

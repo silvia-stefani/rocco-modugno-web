@@ -1,0 +1,8 @@
+.Module {
+    position: absolute;
+    transform: translate(-50%, -100%);
+    &.stamp {
+        color: var(--primary);
+        opacity: 0.8;
+    }
+}

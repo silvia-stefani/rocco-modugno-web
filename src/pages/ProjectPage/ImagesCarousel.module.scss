@@ -14,12 +14,14 @@
     .nav_item {
         pointer-events: none;
         position: absolute;
+        z-index: 0;
         font-size: 12px;
         text-transform: uppercase;
         color: var(--bg);
         background-color: var(--primary);
         padding: 2px 4px;
         display: flex;
+        transform: translate(-50%, -50%);
     }
 
 }

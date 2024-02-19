@@ -1,6 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:slnt,wght@-10..0,100..900');
+@import "../fonts/supria-sans/stylesheet.css";
+@import "../fonts/navigo/stylesheet.css";
 
-@import "../fonts/aktivgrotesk/stylesheet.css";
 @import "./lib/fontface";
 @import "./lib/vars";
 @import "./lib/themes";
@@ -24,23 +24,31 @@ main {
 }
 
 body {
-    font-family: 'AktivGrotesk', 'Helvetica', sans-serif;
+    font-family: 'supria-sans', 'Helvetica', sans-serif;
     font-size: 16px;
     color: var(--text);
     background-color: var(--bg);
 }
 
-.home {
-    width: 100%;
-    min-height: 100%;
+h6 {
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: var(--text);
+}
+
+p {
+    line-height: 150%;
+}
+
+ul {
+    padding-left: 16px;
+}
+
+i {
+    font-family: 'navigo';
+    font-style: normal;
     display: flex;
-    padding: 16px;
-    gap: 32px;
-
-    .services {
-        display: flex;
-        flex-direction: column;
-        flex-shrink: 1;
-    }
-
+    align-items: center;
+    justify-content: center;
 }

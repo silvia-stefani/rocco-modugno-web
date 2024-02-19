@@ -1,11 +1,8 @@
 import * as React from 'react';
 
 import styles from './ImagesCarousel.module.scss';
-import { IProject } from '../../interfaces/IProject';
 import { MouseEventHandler, useState } from 'react';
 
-import arrowL from '../../assets/cursors/arrow_left.svg';
-import arrowR from '../../assets/cursors/arrow_right.svg';
 import { Image } from '../../components/Image';
 
 interface IImagesCarouselProps {
@@ -41,8 +38,11 @@ const ImagesCarousel: React.FunctionComponent<IImagesCarouselProps> = ({path, ga
 
   const currentImageSrc = path + gallery[currentImage];
 
+  console.log(controls);
+  
+
   return (
-  <div className={styles.ImagesCarousel} style={{cursor: "none"}}>
+  <div className={styles.ImagesCarousel}>
     <div className={styles.nav_item} style={{left: controls.x, top: controls.y}}>
       {controls.label}
     </div>

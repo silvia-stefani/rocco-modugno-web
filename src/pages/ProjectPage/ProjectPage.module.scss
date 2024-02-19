@@ -1,22 +1,42 @@
 .ProjectPage {
     width: 100%;
+
     .container {
         width: 100%;
         display: flex;
+
         .images {
             width: 100%;
         }
+
         .info {
             width: 100%;
             padding: 0 16px;
             display: flex;
             flex-direction: column;
             gap: 16px;
+
+            .head {
+                display: flex;
+                flex-direction: column;
+                gap: 8px;
+            }
+
             h3.title {
                 color: var(--primary);
                 font-size: 32px;
             }
+
+            .collab {
+                display: flex;
+                flex-direction: column;
+                gap: 16px;
+                padding-top: 16px;
+            }
+
         }
+        
     }
+
 }
 

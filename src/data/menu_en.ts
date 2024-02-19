@@ -6,12 +6,12 @@ export const enMenu: MenuItemsType[] = [
         name: "Projects"
     },
     {
-        id: "coding",
-        name: "Coding"
+        id: "articles",
+        name: "Articles"
     },
     {
-        id: "memoires",
-        name: "Memoires"
+        id: "coding",
+        name: "Coding"
     },
     {
         id: "about",

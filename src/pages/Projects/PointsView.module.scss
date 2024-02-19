@@ -1,0 +1,46 @@
+.DotsView {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+
+@keyframes moveDots {
+    0% {
+      transform: translate(0, 0);
+    }
+    100% {
+      transform: translate(calc(100vw - 20px), calc(100vh - 20px)); /* Adjust translation as needed */
+    }
+  }
+
+.project_flying {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    padding: 8px;
+    gap: 8px;
+    background-color: red;
+    
+    // animation: moveDots 2s linear infinite 0s alternate-reverse;
+
+    .title {
+        white-space: nowrap;
+        font-size: 14px;
+    }
+
+    .dot {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background-color: var(--primary);
+    }
+}
+
+.cover_image {
+    position: fixed;
+    width: 200px;
+    img {
+        width: 100%;
+    }
+}

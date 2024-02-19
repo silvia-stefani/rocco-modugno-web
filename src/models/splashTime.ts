@@ -1,0 +1,1 @@
+export const splashTime: number = 2000;

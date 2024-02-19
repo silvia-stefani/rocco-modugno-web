@@ -6,15 +6,15 @@ export const itMenu: MenuItemsType[] = [
         name: "Progetti"
     },
     {
-        id: "coding",
-        name: "Codice"
+        id: "articles",
+        name: "Articles"
     },
     {
-        id: "memoires",
-        name: "Memoires"
+        id: "coding",
+        name: "Codes"
     },
     {
         id: "about",
-        name: "Su di me"
-    }
+        name: "About"
+    },
 ]
