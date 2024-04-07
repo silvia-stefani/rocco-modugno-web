@@ -3,5 +3,20 @@ export type PersonalDataType = {
         street: string,
         location: string
     }
-    presentation: string
+    presentation: {
+        title: string,
+        text: string
+    },
+    experience: {
+        title: string,
+        text: string
+    },
+    mentions: {
+        title: string,
+        text: string
+    },
+    talks: {
+        title: string,
+        text: string
+    }
 }

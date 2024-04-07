@@ -1,6 +1,8 @@
 .About {
     width: 100%;
     display: flex;
+
+    flex-wrap: wrap;
     padding: 16px;
     gap: 16px;
     font-size: 14px;
@@ -18,12 +20,16 @@
 .presentation {
     width: 100%;
     max-width: 400px;
-    display: flex;
-    flex-direction: column;
-    gap: 32px;
 
-    text-decoration-style: 20px;
-    overflow-y: auto;
+    .text {
+        width: 100%;
+        max-width: 400px;
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+    
+        text-decoration-style: 20px;
+    }
 
     .block {
         display: flex;

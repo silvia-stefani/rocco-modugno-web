@@ -1,9 +1,67 @@
 .Coding {
     width: 100%;
+    display: flex;
     padding: 16px;
+    gap: 16px;
+    .description {
+        font-size: 14px;
+        font-weight: 600;
+        width: 100%;
+        max-width: 150px;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        h4 {
+            font-weight: 800;
+        }
+    }
+    .grid {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        grid-auto-rows: 300px;
+        gap: 16px;
+    }
+
+    @media (max-width:768px) {
+        flex-direction: column;
+        .description {
+            max-width: 100%;
+        }
+    }
 }
 
-.CodeProject {
+.ScriptProject {
     width: 100%;
     display: flex;
+    flex-direction: column;
+    gap: 8px;
+    font-size: 14px;
+    text-decoration: none;
+
+    .image {
+        flex-grow: 1;
+        height: 250px;
+        width: 100%;
+        background-color: gray;
+    }
+    h4.title {
+        font-weight: 800;
+        transition: color 200ms ease;
+        span {
+            font-weight: 600;
+            margin-left: 8px;
+        }
+    }
+    &:visited {
+        h4.title {
+            color: var(--text);
+        }
+    }
+    &:hover {
+        cursor: pointer;
+        h4.title {
+            color: var(--primary);
+        }
+    }
 }

@@ -1,6 +1,5 @@
 .GridView {
     width: 100%;
-    padding: 0 16px;
     display: flex;
     flex-direction: column;
     gap: 16px;
@@ -12,8 +11,8 @@
         gap: 16px;
 
         .item {
-            min-width: 100px;
             width: 100%;
+            min-width: 100px;
             max-width: 300px;
             
             img, video {

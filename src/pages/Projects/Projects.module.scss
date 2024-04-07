@@ -1,3 +1,5 @@
+@import '/src/assets/sass/lib/vars';
+
 .Projects {
     width: 100%;
     display: flex;
@@ -5,10 +7,18 @@
 
     .menu {
         width: 100%;
-        display: flex;
-        justify-content: space-between;
+        display: grid;
+        grid-template-columns: $projectsStripeGrid;
+        gap: 16px;
         padding: 8px 16px;
+        transition: all 200ms ease;
+        border-bottom: 1px solid currentColor;
+        &.increase {
+            grid-template-columns: $projectsStripeGridI;
+        }
         .tab {
+            font-family: inherit;
+            font-size: 14px;
             border: none;
             background: transparent;
             display: flex;
@@ -19,6 +29,11 @@
             transition: all 200ms ease-in;
             &:hover {
                 cursor: pointer;
+                opacity: 0.6;
+            }
+            &:disabled {
+                pointer-events: none;
+                cursor: default;
                 opacity: 0.6;
             }
         }

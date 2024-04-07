@@ -1,44 +1,9 @@
 import { IProject } from "../../interfaces/IProject";
 
-export const itProjects: IProject[] = [  
-    { // ABC_61250_e_altre
-        id: "ABC_61250_e_altre",
-        cat: [ "Scripting", "Consulenza" ],
-        date: "2023",
-        place: "Remoto",
-        title: "ABC 61250 e Altre",
-        subtitle: "Progetto di Aurora Pelaggi e Matteo Mariangioli",
-        description: `Script combinatorio e consulenza per la ricombinazione delle righe degli strilloni di diversi giornali marchigiani.
-        *enter*"Allora cosa succede se una notizia assolutamente popolare, che altro non è che un insieme di righe, viene inserita all'interno di una macchina combinatoria che permette di generare infinite combinazioni?”`,
-        images: {
-            cover: "abc_img_1.jpg",
-            gallery: [
-                "abc_img_1.jpg",
-                "abc_img_2.jpg",
-                "abc_img_3.jpg"
-            ]
-        }
-    },
-    { // archeologia_tradizione_e_arti_applicate
-        id: "archeologia_tradizione_e_arti_applicate",
-        cat: [ "Ricerca", "Pattern" ],
-        date: "2020",
-        place: "ISIA di Urbino",
-        title: "Archeologia Tradizionale e Arti Applicate",
-        subtitle: "Tesi triennale discussa presso l’ISIA di Urbino a Marzo 2020.",
-        description: `Relatore: Marco Ferrari
-        *enter*Correlatore: Mauro Bubbico`,
-        images: {
-            cover: "atap_img_1.jpg",
-            gallery: [
-                "atap_img_1.jpg"
-            ]
-        },
-        photo: "Andrea Righetto"
-    },
+export const itProjects: IProject[] = [ 
     { // 60_tavole_illustrate_di_dominique_douat
         id: "60_tavole_illustrate_di_dominique_douat",
-        cat: ["Ricerca", "Pattern"],
+        cat: ["research", "pattern"],
         date: "2020",
         place: "ISIA di Faenza",
         title: "60 Tavole Illustrate di Dominique Douat",
@@ -59,11 +24,53 @@ export const itProjects: IProject[] = [
                 "60tidd_vid_1.mp4"
             ]
         },
-        photo: "Andrea Righetto"
-    },   
+        details: [
+            "Fotografia di Andrea Righetto"
+        ]
+    },    
+    { // ABC_61250_e_altre
+        id: "ABC_61250_e_altre",
+        cat: [ "scripting", "consult" ],
+        date: "2023",
+        place: "Remoto",
+        title: "ABC 61250 e Altre",
+        subtitle: "Progetto di Aurora Pelaggi e Matteo Mariangioli",
+        description: `Script combinatorio e consulenza per la ricombinazione delle righe degli strilloni di diversi giornali marchigiani.
+        *enter*"Allora cosa succede se una notizia assolutamente popolare, che altro non è che un insieme di righe, viene inserita all'interno di una macchina combinatoria che permette di generare infinite combinazioni?”`,
+        images: {
+            cover: "abc_img_1.jpg",
+            gallery: [
+                "abc_img_1.jpg",
+                "abc_img_2.jpg",
+                "abc_img_3.jpg"
+            ]
+        },
+        details: [
+            ""
+        ]
+    },
+    { // archeologia_tradizione_e_arti_applicate
+        id: "archeologia_tradizione_e_arti_applicate",
+        cat: [ "research", "pattern" ],
+        date: "2020",
+        place: "ISIA di Urbino",
+        title: "Archeologia Tradizionale e Arti Applicate",
+        subtitle: "Tesi triennale discussa presso l’ISIA di Urbino a Marzo 2020.",
+        images: {
+            cover: "atap_img_1.jpg",
+            gallery: [
+                "atap_img_1.jpg"
+            ]
+        },
+        details: [
+            "Relatore: Marco Ferrari",
+            "Correlatore: Mauro Bubbico",
+            "Fotografia di Andrea Righetto"
+        ]
+    },
     { // bandiere_abadir
         id: "bandiere_abadir",
-        cat: [ "Animazione" ],
+        cat: [ "motion" ],
         date: "2023",
         place: "Remoto",
         client: "Mauro Bubbico",
@@ -78,7 +85,7 @@ export const itProjects: IProject[] = [
     },
     { // blauer_schnipsel_book
         id: "blauer_schnipsel_book",
-        cat: [ "Editoriale", "Pattern" ],
+        cat: [ "editorial", "pattern" ],
         date: "2022",
         place: "Bolzano",
         title: "Blauer Schnipsel Book",
@@ -92,11 +99,28 @@ export const itProjects: IProject[] = [
                 "bsb_img_3.jpg"
             ]
         },
-        photo: "Andrea Righetto"
+        details: [
+            "Fotografia di Andrea Righetto"
+        ]
+    }, 
+    { // blake_ordito
+        id: "blake_ordito",
+        cat: [ "type", "textile" ],
+        date: "2023",
+        place: "Remoto",
+        client: "Mauro Bubbico",
+        title: "Blake Ordito (TIGER)",
+        subtitle: "Custom font ottimizzato per la maglia jacquard",
+        description: `Il font è stato disegnato per ottenere una tipografia coerente e omogenea per la maglia jacquard con tecnica di intreccio piqué.
+        *enter*Realizzato per Mauro Bubbico per il suo arazzo per il Lanificio Leo.`,
+        images: {
+            cover: "bo_img_1.jpg",
+            gallery: []
+        }
     }, 
     { // carnevale_di_putignano
         id: "carnevale_di_putignano",
-        cat: [ "Pattern Design" ],
+        cat: [ "pattern" ],
         date: "2020",
         place: "Montescaglioso",
         client: "Mauro Bubbico",
@@ -112,7 +136,7 @@ export const itProjects: IProject[] = [
     }, 
     { // catalogo_matera_2019
         id: "catalogo_matera_2019",
-        cat: [ "Editorial" ],
+        cat: [ "editorial" ],
         date: "2019",
         place: "Montescaglioso",
         client: "Mauro Bubbico",
@@ -127,11 +151,13 @@ export const itProjects: IProject[] = [
                 "cm19_img_4.png"
             ]
         },
-        collab: [ "Giulia B. Francalanci" ]
+        details: [
+            "Collaborazione con Giulia B. Francalanci"
+        ]
     }, 
     { // design_classics
         id: "design_classics",
-        cat: [ "Editoriale" ],
+        cat: [ "editorial" ],
         date: "2021-2023",
         place: "?",
         title: "Design Classics",
@@ -143,11 +169,13 @@ export const itProjects: IProject[] = [
                 "dc_img_2.jpg"
             ]
         },
-        collab: [ "Antonino Benincasa" ]
+        details: [
+            "Collaborazione con Antonino Benincasa"
+        ]
     }, 
     { // l-ove
         id: "l-ove",
-        cat: [ "Poster" ],
+        cat: [ "poster" ],
         date: "?",
         place: "?",
         title: "l-ove",
@@ -161,7 +189,7 @@ export const itProjects: IProject[] = [
     }, 
     { // il_cielo_nella_stalla
         id: "il_cielo_nella_stalla",
-        cat: [ "Pattern", "Research" ],
+        cat: [ "pattern", "research" ],
         date: "2021",
         place: "Noci (BA)",
         title: "Il Cielo nella Stalla",
@@ -182,11 +210,13 @@ export const itProjects: IProject[] = [
                 "icns_img_10.jpg"
             ]
         },
-        collab: [ "Francesco Bianco" ]
+        details: [
+            "Collaborazione con Franceso Bianco"
+        ]
     }, 
     { // storie_d_arte_e_di_critica
         id: "storie_d_arte_e_di_critica",
-        cat: [ "Editorial" ],
+        cat: [ "editorial" ],
         date: "2021",
         place: "Imola",
         title: "Storie d'Arte e di Critica",
@@ -197,11 +227,13 @@ export const itProjects: IProject[] = [
                 "sac_img_1.jpg"
             ]
         },
-        photo: "Andrea Righetto"
+        details: [
+            "Fotografia di Andrea Righetto"
+        ]
     }, 
     { // quadrati_magici
         id: "quadrati_magici",
-        cat: [ "Pattern Design", "Research" ],
+        cat: [ "pattern", "research" ],
         date: "2022",
         place: "Bolzano",
         title: "Quadrati Magici",
@@ -219,11 +251,13 @@ export const itProjects: IProject[] = [
             ]
         },
         link: "https://wikipedia.com/",
-        photo: "Andrea Righetto"
+        details: [
+            "Fotografia di Andrea Righetto"
+        ]
     }, 
     { // calendario_motola
         id: "calendario_motola",
-        cat: [ "Pattern", "Editoriale" ],
+        cat: [ "pattern", "editorial" ],
         date: "2019",
         place: "Montescaglioso",
         title: "Calendario Motola",
@@ -244,12 +278,14 @@ export const itProjects: IProject[] = [
                 "cm_img_11.jpg"
             ]
         },
-        photo: "Andrea Righetto",
-        collab: [ "Mauro Bubbico" ]
+        details: [
+            "Collaborazione con Mauro Bubbico",
+            "Fotografia di Andrea Righetto"
+        ]
     }, 
     { // infinita_disegni
         id: "infinita_disegni",
-        cat: [ "Editoriale" ],
+        cat: [ "editorial" ],
         date: "2019/2020",
         place: "ISIA di Faenza",
         title: "Un’infinità di disegni",
@@ -279,6 +315,8 @@ export const itProjects: IProject[] = [
                 "id_img_14.jpg"
             ]
         },
-        collab: [ "Andrea Badiali" ]
+        details: [
+            "Collabrozaione con Andrea Badiali"
+        ]
     }, 
 ]

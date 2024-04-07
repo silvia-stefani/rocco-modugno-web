@@ -21,6 +21,7 @@ main {
     width: 100%;
     display: flex;
     flex-grow: 1;
+    padding-top: 63px;
 }
 
 body {
@@ -48,7 +49,34 @@ ul {
 i {
     font-family: 'navigo';
     font-style: normal;
+    font-weight: bold;
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+button {
+    appearance: none;
+    padding: 0;
+    color: inherit;
+    font-family: 'supria-sans', 'Helvetica', sans-serif;
+}
+
+.select_options {
+    width: fit-content;
+    position: fixed;
+    background-color: var(--bg);
+    border: 1px solid var(--text);
+    border-radius: 4px;
+    .select_option {
+        padding: 8px;
+        &:not(:last-child) {
+            border-bottom: inherit;
+        }
+        &:hover {
+            cursor: pointer;
+            color: var(--bg);
+            background-color: var(--primary);
+        }
+    }
 }

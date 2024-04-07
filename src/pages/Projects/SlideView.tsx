@@ -2,7 +2,7 @@ import { IProject } from '../../interfaces/IProject';
 import { useEffect, useRef, useState } from 'react';
 
 import styles from './Projects.module.scss';
-import { Image } from '../../components/Image';
+import { Image } from '../../components/Image/Image';
 
 const SlideView = ({ projects }: { projects: IProject[] }) => {
 

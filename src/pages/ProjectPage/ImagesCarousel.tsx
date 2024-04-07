@@ -1,9 +1,10 @@
 import * as React from 'react';
 
 import styles from './ImagesCarousel.module.scss';
-import { MouseEventHandler, useState } from 'react';
+import { MouseEventHandler, useEffect, useRef, useState } from 'react';
 
-import { Image } from '../../components/Image';
+import { Image } from '../../components/Image/Image';
+import Icon from '../../components/Icon/Icon';
 
 interface IImagesCarouselProps {
   path: string;
@@ -12,13 +13,23 @@ interface IImagesCarouselProps {
 
 const ImagesCarousel: React.FunctionComponent<IImagesCarouselProps> = ({path, gallery}) => {
 
+  const [topPosition, setTopPosition] = useState(null);
   const [currentImage, setCurrentImage] = useState(0)
-  const [controls, setControls] = useState({x: 0, y: 0, label: 'Next', cursor: "e-resize"})
+  const [controls, setControls] = useState({direction: 'left', x: 0, y: 0, icon: 'ArrowRight'})
+  const relativeEl = useRef<any>(null)
+  
+  useEffect(() => {
+    if (relativeEl.current) {
+      const rect = relativeEl.current.getBoundingClientRect();
+      setTopPosition(rect.top);
+    }
+  }, [controls]);
+
   
   const handleClick: MouseEventHandler<HTMLDivElement> = () => {
     /* const elW = e.currentTarget.getBoundingClientRect().width;
     const mousePosition = e.clientX; */
-    if(controls.label === "Left") {
+    if(controls.direction === "left") {
       setCurrentImage((prev) => (prev > 0 ? prev - 1 : gallery.length - 1));
     } else {
       setCurrentImage((prev) => (prev < gallery.length - 1 ? prev + 1 : 0));
@@ -29,23 +40,22 @@ const ImagesCarousel: React.FunctionComponent<IImagesCarouselProps> = ({path, ga
     const elW = e.currentTarget.getBoundingClientRect().width;
     const mousePosition = e.clientX;
 
-    if (mousePosition >= elW / 2) {
-      setControls({x: e.clientX, y: e.clientY, label: "Next", cursor: "e-resize"})
-    } else {
-      setControls({x: e.clientX, y: e.clientY, label: "Prev", cursor: "w-resize"})
+    if(topPosition) {
+      if (mousePosition >= elW / 2) {
+        setControls({x: e.clientX, y: e.clientY - topPosition, direction: "right", icon: "ArrowRight"})
+      } else {
+        setControls({x: e.clientX, y: e.clientY - topPosition, direction: "left", icon: "ArrowLeft"})
+      }
     }
   };
 
   const currentImageSrc = path + gallery[currentImage];
 
-  console.log(controls);
-  
-
   return (
-  <div className={styles.ImagesCarousel}>
-    <div className={styles.nav_item} style={{left: controls.x, top: controls.y}}>
-      {controls.label}
-    </div>
+  <div className={styles.ImagesCarousel} ref={relativeEl} style={{cursor: gallery.length > 1 ? 'none' : 'default'}}>
+    {gallery.length > 1 && <div className={styles.nav_item} style={{left: controls.x, top: controls.y}}>
+      <Icon size={48} name={controls.icon} />
+    </div>}
     <div className={styles.image} onClick={handleClick} onMouseMove={handleMouseMove}>
       <Image src={currentImageSrc} />
     </div>

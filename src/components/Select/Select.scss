@@ -1,0 +1,31 @@
+.Select {
+    width: fit-content;
+    font-family: inherit;
+    font-size: 14px;
+    .current_value {
+        cursor: pointer;
+        font-weight: 600;
+    }
+}
+
+.select_options {
+    width: fit-content;
+    position: fixed;
+    background-color: var(--bg);
+    border: 1px solid var(--text);
+    border-radius: 4px;
+    .select_option {
+        padding: 8px;
+        cursor: default;
+        &:not(:last-child) {
+            border-bottom: inherit;
+        }
+        &:hover, &.selected {
+            color: var(--bg);
+            background-color: var(--primary);
+        }
+        &:not(.selected):hover {
+            cursor: pointer;
+        }
+    }
+}

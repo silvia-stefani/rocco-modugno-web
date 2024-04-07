@@ -9,16 +9,16 @@ import GridView from './GridView';
 import { TagGroup } from '../../components/Tag/Tag';
 import Paragraph from '../../components/Paragraph/Paragraph';
 import ImagesCarousel from './ImagesCarousel';
+import { getProjectCats } from '../../utils/getProjectCat';
 
 const ProjectPage = () => {
 
   const { id } = useParams();
-
   const { t } = useTranslation()
   const projects = t("projects", { returnObjects: true }) as IProject[];
   const project = projects.find(item => item.id === id) as IProject;
 
-  const [currentView, setCurrentView] = React.useState("grid")
+  const [currentView, setCurrentView] = React.useState("slides")
   const viewTypes: ViewType[] = [
     {
       id: "grid",
@@ -39,7 +39,7 @@ const ProjectPage = () => {
 
   return <div className={styles.ProjectPage}>
 
-    {viewTypes.map((view) => {
+    {/* <div className={styles.nav}>{viewTypes.map((view) => {
       const activeView = currentView === view.id;
       return (
         <div
@@ -50,7 +50,7 @@ const ProjectPage = () => {
           {view.label}
         </div>
       );
-    })}
+    })}</div> */}
 
     <div className={styles.container}>
       <div className={styles.images}>
@@ -60,18 +60,16 @@ const ProjectPage = () => {
 
         <div className={styles.head}>
           <h3 className={styles.title}>{project.title}</h3>
-          <TagGroup tags={project.cat} />
+          <TagGroup tags={getProjectCats(project.cat)} />
         </div>
-
-        <div>{project.place}, {project.date}</div>
 
         <p>{project.subtitle}</p>
         {project.description && <Paragraph text={project.description} />}
 
-        {project.collab && <div className={styles.collab}>
-          <h6>Collaborazioni</h6>
+        {project.details && <div className={styles.collab}>
           <ul>
-            {project.collab.map((collab, i) => <li key={i}>{collab}</li>)}
+            <li>{project.place} {project.date}</li>
+            {project.details.map((d, i) => <li key={i}>{d}</li>)}
           </ul>
         </div>}
 

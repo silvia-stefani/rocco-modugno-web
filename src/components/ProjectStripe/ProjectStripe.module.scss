@@ -1,3 +1,5 @@
+@import '/src/assets/sass/lib/vars';
+
 @keyframes openImage {
     0% {
         width: 0px;
@@ -17,13 +19,14 @@ $t: 200ms;
     overflow: hidden;
     cursor: pointer;
     width: 100%;
-    display: flex;
+    display: grid;
+    grid-template-columns: $projectsStripeGrid;
     gap: $p;
     padding: $p $p 0;
     text-decoration: none;
     color: inherit;
     transition: all $t ease-in-out;
-    border-top: 1px solid currentColor;
+    border-bottom: 1px solid currentColor;
     font-size: 14px;
     font-weight: 600;
     
@@ -33,37 +36,20 @@ $t: 200ms;
     &.expanded {
         height: $finalH;
         transition-delay: $t;
-        /* .image {
-            height: 100%;
-            transition: height 300ms ease-in-out;
-        } */
-        /* 
-        .info {
-            padding-left: 16px;
-            transition: padding-left 0s normal $t;
-            .title {
-                color: var(--primary);
-                transition: color $t ease-in-out $t;
-            }
-        } */
     }
 
     &.increase {
-        height: 600px;
+        grid-template-columns: $projectsStripeGridI;
+        height: 350px;
         .image {
-            width: 600px;
-            height: 600px - 32px;
+            height: calc(350px - 32px);
         }
-    }
-
-    &:last-child {
-        border-bottom: 1px solid currentColor;
     }
 
     .image {
         flex-shrink: 0;
         overflow: hidden;
-        width: 300px;
+        width: 100%;
         height: calc($finalH - ($p * 2));
         transition: all $t ease-in-out;
 
@@ -91,6 +77,9 @@ $t: 200ms;
 
     .details {
         width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
     }
 
     .cats {

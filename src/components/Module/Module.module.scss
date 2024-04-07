@@ -1,8 +1,16 @@
 .Module {
-    position: absolute;
-    transform: translate(-50%, -100%);
+    position: fixed;
+    /* -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: inherit; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
     &.stamp {
+        /* cursor: none; */
         color: var(--primary);
         opacity: 0.8;
+    }
+    .content {
+        transition: all 200ms ease;
     }
 }

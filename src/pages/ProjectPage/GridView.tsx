@@ -2,7 +2,7 @@ import * as React from 'react';
 
 import styles from './GridView.module.scss';
 import { IProject } from '../../interfaces/IProject';
-import { Image } from '../../components/Image';
+import { Image } from '../../components/Image/Image';
 
 interface IGridViewProps {
     project: IProject

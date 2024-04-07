@@ -3,13 +3,12 @@ import Header from "../components/Header/Header";
 import { ThemeProvider } from "../contexts/ThemeContext";
 import Splash from "../pages/Splash";
 import { useEffect, useState } from "react";
+import { GlobalProvider } from "../contexts/GlobalContext";
 
 export default function Root() {
 
     const runSplash = localStorage.getItem("pageloaded");
     const [trigger, setTrigger] = useState(false)
-
-    console.log(runSplash);
 
     useEffect(() => {
       if(runSplash === "true") {
@@ -17,10 +16,12 @@ export default function Root() {
       }
     }, [runSplash])
     
-    return /* !trigger ? <Splash /> : */ <ThemeProvider>
+    return <GlobalProvider>
+      <ThemeProvider>
         <Header />
         <main>
           <Outlet />
         </main>
       </ThemeProvider>
+      </GlobalProvider>
   }

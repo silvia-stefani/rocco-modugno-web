@@ -1,6 +1,19 @@
+export type ProjectsCatsIds = 
+"all" |
+"editorial" |
+"type" |
+"scripting" |
+"consult" |
+"pattern" |
+"research" |
+"motion" |
+"poster" |
+"textile" 
+;
+
 export type IProject = {
     id: string,
-    cat: string[],
+    cat: ProjectsCatsIds[],
     date: string,
     place: string,
     client?: string,
@@ -12,6 +25,5 @@ export type IProject = {
         gallery: string[]
     },
     link?: string,
-    photo?: string | string[],
-    collab?: string[]
+    details?: string[],
 }
