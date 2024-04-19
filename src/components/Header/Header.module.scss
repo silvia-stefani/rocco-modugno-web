@@ -1,4 +1,24 @@
 @import '/src/assets/sass/lib/vars';
+  
+  /* Animación de escritura */
+  @keyframes typing {
+    from {
+      width: 0;
+    }
+    to {
+      width: 100%;
+    }
+  }
+  
+  /* Animación del cursor de escritura */
+  @keyframes blink-caret {
+    from, to {
+      border-color: transparent;
+    }
+    50% {
+      border-color: var(--text);
+    }
+  }
 
 .Header {
     width: 100%;
@@ -129,7 +149,10 @@
         width: fit-content;
         //color: rgba(var(--text-rgb), 0.8);
         color: var(--primary);
-        animation: slideInOut 3s ease-in-out 0s infinite normal;
+        overflow: hidden; /* Oculta el texto que se sale del contenedor */
+        border-right: .15em solid var(--text);
+        white-space: nowrap;
+        animation: typing 3s steps(10, 100) infinite, blink-caret .75s step-end infinite;
     }
 
     /* Mobile Menu */

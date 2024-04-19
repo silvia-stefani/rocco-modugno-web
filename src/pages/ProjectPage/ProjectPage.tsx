@@ -60,14 +60,13 @@ const ProjectPage = () => {
 
         <div className={styles.head}>
           <h3 className={styles.title}>{project.title}</h3>
-          <TagGroup tags={getProjectCats(project.cat)} />
         </div>
 
         <p>{project.subtitle}</p>
         {project.description && <Paragraph text={project.description} />}
 
         {project.details && <div className={styles.collab}>
-          <ul>
+          <ul className={styles.details}>
             <li>{project.place} {project.date}</li>
             {project.details.map((d, i) => <li key={i}>{d}</li>)}
           </ul>

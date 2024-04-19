@@ -1,5 +1,6 @@
 .ProjectPage {
     width: 100%;
+    padding-top: 16px;
 
     .nav {
         width: 100%;
@@ -39,7 +40,8 @@
             }
 
             h3.title {
-                font-size: 20px;
+                font-size: 14px;
+                text-transform: uppercase;
             }
 
             .collab {
@@ -49,6 +51,13 @@
                 padding-top: 16px;
             }
 
+        }
+
+        .details {
+            font-size: 12px;
+            font-weight: 500;
+            list-style: none;
+            padding: 0;
         }
         
     }

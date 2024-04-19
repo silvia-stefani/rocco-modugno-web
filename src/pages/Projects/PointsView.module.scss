@@ -22,7 +22,7 @@
 
     &.unable {
         pointer-events: none;
-        opacity: 0.6;
+        opacity: 0.2;
         .dot {
             background-color: transparent;
             border: 1px solid var(--text);

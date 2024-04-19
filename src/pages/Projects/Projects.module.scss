@@ -15,7 +15,7 @@
         transition: all 200ms ease;
         border-bottom: 1px solid currentColor;
         &.increase {
-            grid-template-columns: $projectsStripeGridI;
+            //grid-template-columns: $projectsStripeGridI;
         }
         .tab {
             font-family: inherit;
@@ -36,6 +36,13 @@
                 pointer-events: none;
                 cursor: default;
                 opacity: 0.6;
+            }
+            svg {
+                fill: var(--primary);
+                width: 14px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
             }
         }
     }

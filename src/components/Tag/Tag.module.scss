@@ -1,6 +1,8 @@
 .Tag {
     width: fit-content;
-    font-size: 16px;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
     display: flex;
     font-weight: 600;
     /* padding: 4px 6px;
@@ -10,5 +12,6 @@
 .TagGroup {
     width: fit-content;
     display: flex;
-    gap: 8px;
+    flex-direction: column;
+    gap: 2px;
 }

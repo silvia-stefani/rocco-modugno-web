@@ -29,7 +29,7 @@ const Projects: React.FC = () => {
   const finalProjects = filters.category !== "all" ? filteredCatsProjects : projects;
 
   const handleViewToggle = () => {
-    if(currentView === "list") {
+    if (currentView === "list") {
       setCurrentView("points")
     } else {
       setCurrentView("list")
@@ -45,7 +45,7 @@ const Projects: React.FC = () => {
     {
       id: "list",
       label: "Lista",
-      element: finalProjects.map((project: IProject) => <ProjectStripe key={project.id} project={project}/>)
+      element: finalProjects.map((project: IProject) => <ProjectStripe key={project.id} project={project} />)
     }
   ]
 
@@ -111,25 +111,30 @@ const Projects: React.FC = () => {
           <div className={styles.tab_label}>view</div>
         </button>
         {currentView === "points" ? <button className={styles.tab} onClick={handleToggleStyle}>
-          <span>{isCurrentStyleImages ? "／" : "＼" }</span>
+          <span>{isCurrentStyleImages ? "／" : "＼"}</span>
           {isCurrentStyleImages ? "Titles" : "Images"}
         </button> :
-        <button disabled={currentView === "points" } className={styles.tab} onClick={handleExpandedToggle}>
-          <span>{filters.listView.isExpanded ? "↖︎" : "↘︎" }</span>
-        </button> }
-        {currentView === "points" ? 
-          <div className="range">  
-            <input type="range" name="" id="" min={1} max={4} step={1} onChange={handleVelocityChange} />
-          </div>
-        : <button disabled={currentView === "points" } className={styles.tab} onClick={handleChangeOrder}>
-          <span>{alphabeticDescendent ? "↓" : "↑" }</span>
-          {alphabeticDescendent ? "a-z" : "z-a" }
-        </button> }
-        <Select 
+          <button disabled={currentView === "points"} className={styles.tab} onClick={handleExpandedToggle}>
+            <span>{filters.listView.isExpanded ? "↖︎" : "↘︎"}</span>
+          </button>}
+        {currentView === "list" && <button className={styles.tab} onClick={handleChangeOrder}>
+          <span>{alphabeticDescendent ? 
+          <span><svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 100 100">
+          {filters.listView.isExpanded ? <polygon className="cls-1" points="20.85 26.6 63.05 68.9 28.45 69.3 23.75 73.9 28.45 78.4 79.15 78.4 79.15 27.7 74.65 23 70.05 27.7 69.65 62.3 27.35 20.1 20.85 26.6"/>
+          : <polygon className="cls-1" points="44.72 10.2 44.72 71.5 18.62 47 12.12 47 12.12 54.1 49.72 90.4 87.32 54.1 87.32 47 80.82 47 54.72 71.5 54.72 10.2 44.72 10.2"/>
+        }
+        </svg>
+          </span> : "↑"}</span>
+          {alphabeticDescendent ? "a-z" : "z-a"}
+        </button>}
+        <Select
           defaultValue={filters.category}
-          options={projectsCats} 
-          getCurrentValue={handleChangeCat} 
+          options={projectsCats}
+          getCurrentValue={handleChangeCat}
         />
+        {currentView === "points" && <div className="range">
+          <input type="range" name="" id="" min={0.25} max={10} step={0.1} onChange={handleVelocityChange} />
+        </div>}
       </div>
 
       <div className={styles.view}>

@@ -27,13 +27,6 @@ const ProjectStripe: React.FunctionComponent<IProjectStripeProps> = ({project}) 
       to={`/projects/${project.id}`}
       onMouseEnter={() => setHovering(true)}
       onMouseLeave={() => setHovering(false)}>
-      <div className={styles.details}>
-        {project.place && <div>{project.place}</div>}
-        {project.client && <div>{project.client}</div>}
-        {project.details && project.details.map((detail, i) => (
-          <div key={i}>{detail}</div>
-        ))}
-      </div>
       <div className={styles.image}>
           <Image src={cover} />
       </div>
@@ -42,10 +35,17 @@ const ProjectStripe: React.FunctionComponent<IProjectStripeProps> = ({project}) 
         { project.subtitle && <Paragraph text={project.subtitle} /> }
         { project.description && <Paragraph text={project.description} /> }
       </div>
+      <div className={styles.details}>
+        {project.place && <div>{project.place}</div>}
+        {project.client && <div>{project.client}</div>}
+        {project.details && project.details.map((detail, i) => (
+          <div key={i}>{detail}</div>
+        ))}
+      </div>
       <div className={styles.cats}>
         <TagGroup tags={getProjectCats(project.cat)} />
       </div>
-      <div>{project.date}</div>
+      <div className={styles.date}>{project.date}</div>
     </Link>
 };
 
