@@ -13,21 +13,31 @@ const Home: React.FC = () => {
 
   type modules = { nums: number, font: string, x: number; y: number; s: number, r: number };
 
+  const fonts = [
+    "rolo deco a",
+    "rolo deco b",
+    "rolo deco c",
+    "rolo deco d",
+    "rolo deco e",
+    "rolo deco f",
+    "rolo deco g"
+  ]
+
   const modulesRef = useRef<HTMLDivElement>(null)
   const modW = modulesRef.current ? modulesRef.current.clientWidth : 0;
   const modH = modulesRef.current ? modulesRef.current.clientHeight : 0;
   const initialValues = {
-    nums: 129,
-    font: 'rolo deco rounded',
+    nums: 0, /* Min 0 max 63 */
+    font: 'rolo deco a',
     s: 40,
     r: 0,
     x: Math.floor(Math.random() * (modW + 1)),
     y: Math.floor(Math.random() * (modH + 1))
   }
-  
+
   const [printSettings, setPrintSettings] = useState<modules>(initialValues);
   const [position, setPosition] = useState({ x: 200, y: 200 });
-  
+
   const { x: mouseX, y: mouseY } = useMousePosition();
   const { fixedTexts, setFixedTexts } = useGlobalContext();
   useEffect(() => {
@@ -35,8 +45,8 @@ const Home: React.FC = () => {
     const clientY = Math.floor(mouseY / initialValues.s) * initialValues.s;
     setPosition({ x: clientX, y: clientY });
   }, [mouseX, mouseY])
-  
-  function moduleHomeActions (action: string) {
+
+  function moduleHomeActions(action: string) {
     switch (action) {
       case 'ArrowRight':
         setPrintSettings((prev) => ({
@@ -74,18 +84,18 @@ const Home: React.FC = () => {
       case 'b':
         setPrintSettings((prev) => ({
           ...prev,
-          font: prev.font === 'rolo deco' ? 'rolo deco rounded' : 'rolo deco'
+          font: fonts[(fonts.indexOf(prev.font) + 1) % fonts.length]
         }));
         break;
       case 'z':
-        setFixedTexts((prev) => ( prev.slice(0, -1) ));
+        setFixedTexts((prev) => (prev.slice(0, -1)));
         break;
       default:
-      break;
+        break;
     }
-    
-  } 
-        
+
+  }
+
   const handleMouseClick = (e: React.MouseEvent<HTMLDivElement, MouseEvent> | any) => {
     const gridMouseX = Math.floor(e.touches ? e.touches[0] : e.clientX / initialValues.s) * initialValues.s;
     const gridMouseY = Math.floor(e.touches ? e.touches[0] : e.clientY / initialValues.s) * initialValues.s;
@@ -111,19 +121,19 @@ const Home: React.FC = () => {
       document.removeEventListener("keydown", handleKeyDown)
     };
   }, [])
-  
 
-  const handleClick = (action:string) => {
+  const handleClick = (action: string) => {
     moduleHomeActions(action)
   }
 
   // Function to get the module from the numbers
-  const toBase = (num: number, base: number, classe: number, lMatrix: number) => {
+  const toBase = (num: number, classe: number, lMatrix: number) => {
+    const base = 4;
     let converted = num.toString(base);
     while (converted.length < classe) {
       converted = '0' + converted;
     }
-    
+
     /* const resultDivs: JSX.Element[] = [];
     for (let i = 0; i < converted.length; i += lMatrix) {
       resultDivs.push(
@@ -133,7 +143,7 @@ const Home: React.FC = () => {
       );
     } */
     return converted;
-    
+
   };
 
   const [actionsOpen, setActionsOpen] = useState(false);
@@ -142,7 +152,7 @@ const Home: React.FC = () => {
   const headActionsRef = useRef<HTMLDivElement>(null)
   useEffect(() => {
     function calculateH() {
-      if(headActionsRef.current) {
+      if (headActionsRef.current) {
         setHeadH(headActionsRef.current.clientHeight + 69);
       }
     }
@@ -157,43 +167,42 @@ const Home: React.FC = () => {
     setActionsOpen(!actionsOpen)
   }
 
-
   const hasDrawing = fixedTexts.length > 0;
 
   return <div className={styles.Home}>
 
     {fixedTexts.length <= 0 && <div className={styles.cta}>Premi i tasti per disegnare</div>}
 
-    <div className={`${styles.actions} ${actionsOpen ? styles.open : ''}`} style={{transform: `translateY(${actionsOpen ? `calc(100% - ${headH}px)` : `0`})`}}>
+    <div className={`${styles.actions} ${actionsOpen ? styles.open : ''}`} style={{ transform: `translateY(${actionsOpen ? `calc(100% - ${headH}px)` : `0`})` }}>
       <div ref={headActionsRef} className={styles.head} onClick={handleOpenActions}>
         <div className={styles.container}>
           {moduleActions.map((ma) => (
-          <Button 
-            key={ma.id} 
-            label={`${ma.label}: ${ma.icon}`}
-            disabled={ma.id === "change_module_minus" && printSettings.nums === 0}
-            onClick={() => handleClick(ma.key)}
-          />
+            <Button
+              key={ma.id}
+              label={`${ma.label}: ${ma.icon}`}
+              disabled={ma.id === "change_module_minus" && printSettings.nums === 0}
+              onClick={() => handleClick(ma.key)}
+            />
           ))}
         </div>
         <Icon size={24} name={actionsOpen ? 'Plus' : 'Minus'} />
       </div>
       <div className={styles.legend}>
-          <div className={styles.row}>
-            <div className={styles.data_title}>{'Numero'}</div>
-            <div className={styles.data_title}>{'Rotazione'}</div>
-            <div className={styles.data_title}>{'Misura'}</div>
-            <div className={styles.data_title}>{'Posizione X'}</div>
-            <div className={styles.data_title}>{'Posizione Y'}</div>
-          </div>
-          <div className={styles.row}>
-            <div className={styles.data}>{printSettings.nums}</div>
-            <div className={styles.data}>{printSettings.r}</div>
-            <div className={styles.data}>{printSettings.s}</div>
-            <div className={styles.data}>{mouseX}</div>
-            <div className={styles.data}>{mouseY}</div>
-          </div>
-        { hasDrawing && fixedTexts.map((ft, i) => (
+        <div className={styles.row}>
+          <div className={styles.data_title}>{'Numero'}</div>
+          <div className={styles.data_title}>{'Rotazione'}</div>
+          <div className={styles.data_title}>{'Misura'}</div>
+          <div className={styles.data_title}>{'Posizione X'}</div>
+          <div className={styles.data_title}>{'Posizione Y'}</div>
+        </div>
+        <div className={`${styles.row} ${styles.current}`}>
+          <div className={styles.data}>{printSettings.nums}</div>
+          <div className={styles.data}>{printSettings.r}</div>
+          <div className={styles.data}>{printSettings.s}</div>
+          <div className={styles.data}>{mouseX}</div>
+          <div className={styles.data}>{mouseY}</div>
+        </div>
+        {hasDrawing && fixedTexts.map((ft, i) => (
           <div key={i} className={styles.row}>
             <div className={styles.data}>{ft.nums}</div>
             <div className={styles.data}>{ft.r}</div>
@@ -201,7 +210,7 @@ const Home: React.FC = () => {
             <div className={styles.data}>{ft.x}</div>
             <div className={styles.data}>{ft.y}</div>
           </div>
-        )) }
+        ))}
       </div>
     </div>
 
@@ -212,8 +221,8 @@ const Home: React.FC = () => {
       onTouchStart={handleMouseClick}
       tabIndex={0}
     >
-      {fixedTexts.map((ft, index) => ( <Module key={index} x={ft.x} y={ft.y} s={ft.s} r={ft.r} font={ft.font} element={toBase(ft.nums, 6, 4, 2)}  /> ))}
-      <Module stamp x={position.x} y={position.y} s={printSettings.s} r={printSettings.r} font={printSettings.font} element={toBase(printSettings.nums, 6, 4, 2)}  /> 
+      {fixedTexts.map((ft, index) => (<Module key={index} x={ft.x} y={ft.y} s={ft.s} r={ft.r} font={ft.font} element={toBase(ft.nums, 4, 2)} />))}
+      <Module stamp x={position.x} y={position.y} s={printSettings.s} r={printSettings.r} font={printSettings.font} element={toBase(printSettings.nums, 4, 2)} />
 
     </div>
 

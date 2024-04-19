@@ -1,4 +1,4 @@
-import React, { TouchEventHandler, useEffect, useRef, useState } from 'react';
+import React, { useRef } from 'react';
 
 import styles from './Module.module.scss';
 

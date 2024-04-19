@@ -1,10 +1,11 @@
 .Module {
     position: fixed;
-    /* -webkit-text-stroke-width: 2px;
-    -webkit-text-stroke-color: inherit; */
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: inherit;
     display: flex;
     align-items: center;
     justify-content: center;
+    font-family: 'rolo deco' !important;
     &.stamp {
         /* cursor: none; */
         color: var(--primary);
