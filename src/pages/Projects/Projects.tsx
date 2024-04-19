@@ -3,7 +3,7 @@ import * as React from 'react';
 import styles from './Projects.module.scss';
 
 import { ViewType } from '../../types/ViewType';
-import { Fragment, useState } from 'react';
+import { ChangeEventHandler, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { IProject, ProjectsCatsIds } from '../../interfaces/IProject';
 import PointsView from './PointsView';
@@ -20,8 +20,9 @@ const Projects: React.FC = () => {
   const projectsObject = t("projects", { returnObjects: true }) as IProject[];
   const projectsCats = t("projectsCats", { returnObjects: true }) as Option[];
   const [currentView, setCurrentView] = useState("points")
-  const [isExpanded, setIsExpanded] = useState(false)
-  const [alphabeticDescendent, setAlphabeticDescendent] = useState(true);
+
+  const alphabeticDescendent = filters.listView.order === "alph-desc";
+  const isCurrentStyleImages = filters.dynamicView.style === "images";
 
   const projects = orderByAlphabet(projectsObject, "title", alphabeticDescendent);
   const filteredCatsProjects = projects.filter(val => val.cat.includes(filters.category));
@@ -35,10 +36,6 @@ const Projects: React.FC = () => {
     }
   }
 
-  const handleExpandedToggle = () => {
-    setIsExpanded(!isExpanded)
-  }
-
   const viewTypes: ViewType[] = [
     {
       id: "points",
@@ -48,35 +45,90 @@ const Projects: React.FC = () => {
     {
       id: "list",
       label: "Lista",
-      element: finalProjects.map((project: IProject) => <ProjectStripe key={project.id} project={project} increase={isExpanded} />)
+      element: finalProjects.map((project: IProject) => <ProjectStripe key={project.id} project={project}/>)
     }
   ]
 
   const currentElement = viewTypes.find((view) => view.id === currentView)?.element
 
-  function handleChange(option: Option) {
-    setFilters({category: option.value as ProjectsCatsIds})
+  /* Filters tooglers functions */
+  function handleChangeCat(value: string) {
+    setFilters((prevState) => ({
+      ...prevState,
+      category: value as ProjectsCatsIds
+    }))
+  }
+
+  function handleChangeOrder() {
+    const valueChanged = alphabeticDescendent ? "alph-asc" : "alph-desc";
+    setFilters((prevState) => ({
+      ...prevState,
+      listView: {
+        ...prevState.listView,
+        order: valueChanged
+      }
+    }))
+  }
+
+  function handleToggleStyle() {
+    const valueChanged = isCurrentStyleImages ? "titles" : "images";
+    setFilters((prevState) => ({
+      ...prevState,
+      dynamicView: {
+        ...prevState.dynamicView,
+        style: valueChanged
+      }
+    }))
+  }
+
+  const handleVelocityChange: ChangeEventHandler<HTMLInputElement> = (e) => {
+    const rangeVvalue = Number(e.currentTarget.value);
+    setFilters((prevState) => ({
+      ...prevState,
+      dynamicView: {
+        ...prevState.dynamicView,
+        velocity: rangeVvalue
+      }
+    }))
+  }
+
+  const handleExpandedToggle = () => {
+    setFilters((prevState) => ({
+      ...prevState,
+      listView: {
+        ...prevState.listView,
+        isExpanded: !prevState.listView.isExpanded
+      }
+    }))
   }
 
   return (
     <div className={styles.Projects}>
 
-      <div className={`${styles.menu} ${isExpanded ? styles.increase : ''}`}>
+      <div className={`${styles.menu} ${filters.listView.isExpanded ? styles.increase : ''}`}>
         <button className={styles.tab} onClick={handleViewToggle}>
-          <i>↩︎</i>
+          <span>↩︎</span>
           <div className={styles.tab_label}>view</div>
         </button>
+        {currentView === "points" ? <button className={styles.tab} onClick={handleToggleStyle}>
+          <span>{isCurrentStyleImages ? "／" : "＼" }</span>
+          {isCurrentStyleImages ? "Titles" : "Images"}
+        </button> :
         <button disabled={currentView === "points" } className={styles.tab} onClick={handleExpandedToggle}>
-          <i>{isExpanded ? "↖︎" : "↘︎" }</i>
-        </button>
-        <button disabled={currentView === "points" } className={styles.tab} onClick={() => setAlphabeticDescendent(!alphabeticDescendent)}>
-          <i>{alphabeticDescendent ? "↓" : "↑" }</i>
+          <span>{filters.listView.isExpanded ? "↖︎" : "↘︎" }</span>
+        </button> }
+        {currentView === "points" ? 
+          <div className="range">  
+            <input type="range" name="" id="" min={1} max={4} step={1} onChange={handleVelocityChange} />
+          </div>
+        : <button disabled={currentView === "points" } className={styles.tab} onClick={handleChangeOrder}>
+          <span>{alphabeticDescendent ? "↓" : "↑" }</span>
           {alphabeticDescendent ? "a-z" : "z-a" }
-        </button>
+        </button> }
         <Select 
-          defaultValue={projectsCats[0]}
+          defaultValue={filters.category}
           options={projectsCats} 
-          getCurrentValue={handleChange} 
+          getCurrentValue={handleChangeCat} 
         />
       </div>
 

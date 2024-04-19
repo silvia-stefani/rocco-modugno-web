@@ -3,26 +3,31 @@ import { useTranslation } from 'react-i18next';
 
 import styles from './Articles.module.scss';
 import { IArticles } from '../../interfaces/IArticles';
-import { Client } from "@notionhq/client";
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
+import ArticleBlock from '../../components/ArticleBlock/ArticleBlock';
+import Icon from '../../components/Icon/Icon';
+
+import {config} from 'dotenv';
 
 const Articles = () => {
 
+    const parentPageId = process.env.NOTION;    
     const { t } = useTranslation()
     const articles = t("articles", { returnObjects: true }) as IArticles;
   
-    /* const apiKey = "secret_GY8z5TD5czqmaXpXnzJml72ymzga";
-    const pageId = 'a1f0ac2a58c742cc97eff21cb1893b50';
-    
-  (async () => {
-    const notion = new Client({ auth: apiKey });
-    const response = await notion.databases.query({ 
-        database_id: "2edbdd836963479696f1266cdb539b60"
-     });
-    console.log(response);
-  })(); */
+    const [data, setData] = useState<any | {}>({});
 
+    useEffect(() => {
+        fetch('https://notion-api.splitbee.io/v1/page/' + parentPageId)
+        .then((res) => res.json())
+        .then((data) => setData(data));
+    }, []);
+
+    const articlesList = Object.keys(data);
+    console.log(data);
+    
+        
     return <div className={styles.Articles}>
         <div className={styles.container}>
             <h6 className={styles.title}>
@@ -31,10 +36,22 @@ const Articles = () => {
             <div>
                 {articles.subtitle}
             </div>
-
-            {/* Link al Notion */}
-            <a href="" target="_blank" className={styles.link}>{articles.link_notion}</a>
+            {/* <a href="" target="_blank" className={styles.link}>{articles.link_notion}</a> */}
         </div>
+
+        <div className={styles.list}>
+            {articlesList.map((d, i) => {                
+                const el = data[d].value;
+                const content = el.properties?.title;
+                if(el.id === parentPageId) return null;
+                if(!(el.type === "page")) return null;
+                return <a className={styles.article_link} key={i} href={`/article/${el.id}`}>
+                    <span className={styles.title}>{content}</span>
+                    <span className={styles.icon}><Icon size={24} name={"ArrowRight"} /></span>
+                </a>
+            })}
+        </div>
+
     </div>;
 };
 

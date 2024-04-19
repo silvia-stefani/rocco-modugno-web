@@ -17,7 +17,7 @@
     flex-direction: column;
 }
 
-main {
+main:not(.notion) {
     width: 100%;
     display: flex;
     flex-grow: 1;
@@ -44,6 +44,10 @@ p {
 
 ul {
     padding-left: 16px;
+}
+
+ol {
+    padding-left: 20px;
 }
 
 i {
@@ -80,3 +84,83 @@ button {
         }
     }
 }
+
+.notion {
+
+    figure.notion-asset-wrapper {
+        max-width: 100%;
+        img {
+            width: 100%;
+        }
+        > div {
+            padding: 0 !important;
+        }
+    }
+    details div {
+        padding-left: 14px;
+    }
+    summary {
+        font-weight: 500;
+        padding-bottom: 8px;
+        &:hover {
+            cursor: pointer;
+        }
+    }
+}
+
+input[type="range"] {
+    /* removing default appearance */
+    -webkit-appearance: none;
+    appearance: none; 
+    /* creating a custom design */
+    width: 100%;
+    cursor: pointer;
+    outline: none;
+    /*  slider progress trick  */
+    overflow: hidden;
+    border-radius: 16px;
+  }
+  
+  /* Track: webkit browsers */
+  input[type="range"]::-webkit-slider-runnable-track {
+    height: 15px;
+    background: rgba(var(--text-rgb), 0.2);
+    border-radius: 16px;
+  }
+  
+  /* Track: Mozilla Firefox */
+  input[type="range"]::-moz-range-track {
+    height: 15px;
+    background: rgba(var(--text-rgb), 0.2);
+    border-radius: 16px;
+  }
+  
+  /* Thumb: webkit */
+  input[type="range"]::-webkit-slider-thumb {
+    /* removing default appearance */
+    -webkit-appearance: none;
+    appearance: none; 
+    /* creating a custom design */
+    height: 15px;
+    width: 15px;
+    background-color: var(--bg);
+    border-radius: 50%;
+    border: 2px solid var(--text);
+    /*  slider progress trick  */
+    box-shadow: -407px 0 0 400px var(--text);
+  }
+  
+  
+  /* Thumb: Firefox */
+  input[type="range"]::-moz-range-thumb {
+    height: 15px;
+    width: 15px;
+    background-color: var(--bg);
+    border-radius: 50%;
+    border: 1px solid var(--text);
+    /*  slider progress trick  */
+    box-shadow: -407px 0 0 400px var(--text);
+  }
+  
+  
+  

@@ -11,20 +11,17 @@
     "build": "tsc && vite build",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
-    "start": "nodemon server.js"
+    "start": "nodemon --delay 500ms server.js"
   },
   "dependencies": {
-    "@notionhq/client": "^2.2.14",
-    "body-parser": "^1.20.2",
-    "cors": "^2.8.5",
-    "express": "^4.19.2",
+    "dotenv": "^16.4.5",
     "i18n": "^0.15.1",
     "i18next": "^23.7.11",
     "next": "^14.0.4",
-    "nodemon": "^3.1.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-i18next": "^13.5.0",
+    "react-notion": "^0.10.0",
     "react-router-dom": "^6.21.0",
     "uninstall": "^0.0.0"
   },

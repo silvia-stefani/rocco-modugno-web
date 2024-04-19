@@ -2,6 +2,13 @@ import { ICoding, ICodingProjects } from "../../interfaces/ICoding";
 
 export const itScriptsProjects: ICodingProjects[] = [
     {
+        id: "From String to Fabric",
+        title: "From String to Fabric",
+        subtitle: "About...",
+        cover: "",
+        link: "https://editor.p5js.org/roccol.modugno/full/GYGmxjdPX"
+    },
+    {
         id: "broken_tv",
         title: "Broken TV",
         subtitle: "webcam raster 01",

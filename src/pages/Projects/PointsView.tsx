@@ -19,10 +19,12 @@ const PointsView = ({ projects }: { projects: IProject[] }) => {
 
   const { filters } = useGlobalContext()
   const { x, y } = useMousePosition()
+  const velocity = filters.dynamicView.velocity;
+  const style = filters.dynamicView.style;
 
   const refContainer = useRef<HTMLDivElement>(null);
   
-  const initialArrayPos = projects.map(() => { 
+  const initialArrayPos: Position[] = projects.map(() => { 
     let x = Math.floor(Math.random() * (window.innerWidth / 2)); // Valore iniziale x
     let y = Math.floor(Math.random() * (window.innerHeight / 2)); // Valore iniziale y
     const dx = Math.random() * 1 + 0.25; // Valore iniziale delta X
@@ -32,13 +34,22 @@ const PointsView = ({ projects }: { projects: IProject[] }) => {
   const itemRefs = useRef<Array<HTMLAnchorElement | null>>([]);
 
   useEffect(() => {
-    // Inicializa las referencias al tamaño adecuado
     itemRefs.current = itemRefs.current.slice(0, projects.length);
   }, [projects]);
 
-  const [isRunning, setIsRunning] = useState(true)
-
+  const [isRunning, setIsRunning] = useState(true);
+ 
   const [positions, setPositions] = useState<Array<Position>>(initialArrayPos);
+
+  useEffect(() => {
+    setPositions((prevPositions: any) => {
+      return prevPositions.map((pos: Position) => {
+        const valueX = Math.random() * (velocity) + (velocity/2)
+        const valueY = Math.random() * (velocity) + (velocity/2)
+        return { ...pos, dx: valueX, dy: valueY};
+      });
+    });
+  },[velocity])
 
   const [selectedProject, setSelectedProject] = useState<string | null>(null)
 
@@ -76,7 +87,6 @@ const PointsView = ({ projects }: { projects: IProject[] }) => {
               const elementWidth = itemRefs.current[i]?.clientWidth;
               const elementHeight = itemRefs.current[i]?.clientHeight;
   
-              // Utiliza el ancho y alto del elemento para calcular el margen
               const marginX = elementWidth ? containerWidth - elementWidth : 0;
               const marginY = elementHeight ? containerHeight - elementHeight : 0;
 
@@ -106,9 +116,8 @@ const PointsView = ({ projects }: { projects: IProject[] }) => {
 
   const sp = projects.find((p) => p.id === selectedProject);
 
-  return (
-    <div className={styles.DotsView} ref={refContainer} id='container'>
-      {/* Generar puntos random */}
+  return <div className={styles.DotsView} ref={refContainer} id='container'>
+      {/* Genera gli elementi */}
       {refContainer && projects.map((project, i) => {
         const filteredCats = !(project.cat.includes(filters.category));
         const notCat = filters.category === "all" ? false : filteredCats;
@@ -125,18 +134,15 @@ const PointsView = ({ projects }: { projects: IProject[] }) => {
             onMouseEnter={() => stop(project.id)}
             onMouseLeave={resume}
           >
-            {/* Renderiza la imagen del proyecto en hover */}
-            {sp?.id === project.id && <div className={styles.selectedProject} style={{ left: x, top: y }}>
-              <Image src={`/${sp.id}/${sp.images.cover}`} />
+            {/* Render del progetto in hover */}
+            {sp?.id === project.id && <div className={styles.selectedProject} style={{ left: x + 16, top: y }}>
+            {!(style === "images") ? <div className={styles.image}><Image src={`/${project.id}/${project.images.cover}`} /></div> : <h6 className={styles.title}>{project.title}</h6> }
             </div>}
-            {/* <div className={styles.dot}></div> */}
-            {/* <h6 className={styles.title}>{project.title}</h6> */}
-            <Image src={`/${project.id}/${project.images.cover}`} />
+            {style === "images" ? <div className={styles.image}><Image src={`/${project.id}/${project.images.cover}`} /></div> : <h6 className={styles.title}>{project.title}</h6> }
           </Link>
         );
       })}
     </div>
-  )
 }
 
 export default PointsView;

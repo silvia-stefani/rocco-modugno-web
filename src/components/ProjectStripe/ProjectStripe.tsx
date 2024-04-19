@@ -8,15 +8,17 @@ import { Image } from '../Image/Image';
 import Paragraph from '../Paragraph/Paragraph';
 import { TagGroup } from '../Tag/Tag';
 import { getProjectCats } from '../../utils/getProjectCat';
+import { useGlobalContext } from '../../contexts/GlobalContext';
 
 interface IProjectStripeProps {
-    project: IProject,
-    increase: boolean
+    project: IProject
 }
 
-const ProjectStripe: React.FunctionComponent<IProjectStripeProps> = ({project, increase}) => {
+const ProjectStripe: React.FunctionComponent<IProjectStripeProps> = ({project}) => {
 
+    const {filters} = useGlobalContext()
     const cover = `/${project.id}/${project.images.cover}`;
+    const increase = filters.listView.isExpanded;
 
     const [hovering, setHovering] = useState(false);    
 

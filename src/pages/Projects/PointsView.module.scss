@@ -12,21 +12,11 @@
     padding: 8px;
     gap: 8px;
     text-decoration: none;
-    max-width: 200px;
     &:hover {
         cursor: pointer;
-        .title, .dot {
-            opacity: 0.8;
-        }
-        .dot {
+        .title {
+            color: var(--bg);
             background-color: var(--primary);
-        }
-    }
-    &:visited {
-
-        .dot {
-            border: 1px solid var(--primary);
-            background-color: transparent;
         }
     }
 
@@ -42,10 +32,9 @@
     .selectedProject {
         position: fixed;
         z-index: 1;
-        img {
-            width: 200px;
-            height: 100%;
-            object-fit: cover;
+        .title {
+            color: var(--bg);
+            background-color: var(--text);
         }
     }
 
@@ -60,12 +49,11 @@
         border-radius: 50%;
         background-color: var(--text);
     }
+
+    .image {
+        width: 200px;
+        height: 100%;
+    }
+
 }
 
-.cover_image {
-    position: fixed;
-    width: 200px;
-    img {
-        width: 100%;
-    }
-}

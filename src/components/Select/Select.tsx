@@ -10,8 +10,8 @@ export type Option = {
 
 interface ISelectProps {
     options: Option[];
-    defaultValue: Option;
-    getCurrentValue: (option: Option) => void;
+    defaultValue: string;
+    getCurrentValue: (value: string) => void;
 }
 
 interface Position {
@@ -22,7 +22,7 @@ interface Position {
 const Select: React.FunctionComponent<ISelectProps> = ({ options, defaultValue, getCurrentValue }) => {
 
     const [isOpen, setIsOpen] = useState(false);
-    const [selectedOption, setSelectedOption] = useState<Option | null>(defaultValue ? defaultValue : null);
+    const [selectedOption, setSelectedOption] = useState<string>(defaultValue);
     const [selectPosition, setSelectPosition] = useState<Position | null>(null);
     const selectRef = useRef<HTMLDivElement>(null);
     const optionsRef = useRef<HTMLDivElement>(null);
@@ -64,20 +64,22 @@ const Select: React.FunctionComponent<ISelectProps> = ({ options, defaultValue, 
     };
 
     const handleOptionClick = (option: Option) => {
-        setSelectedOption(option);
-        getCurrentValue(option)
+        setSelectedOption(option.value);
+        getCurrentValue(option.value)
         //setIsOpen(false);
     };
 
+    const optionSelected = options.find((o) => o.value === selectedOption);
+
     return <div className={'Select'} ref={selectRef}>
         <div className={'current_value'} onClick={toggleSelect}>
-            {selectedOption ? selectedOption.label : 'Select an option'}
+            {optionSelected ? optionSelected.label : 'Select an option'}
         </div>
         {isOpen && selectPosition && (
             createPortal(
                 <div className={"select_options"} style={{ top: selectPosition.top, left: selectPosition.left }} onMouseLeave={() => setIsOpen(false)}>
                     {options.map(option => {
-                        const isSelected = option.value === selectedOption?.value;
+                        const isSelected = option.value === optionSelected?.value;
                         return (
                             <div
                                 key={option.value}

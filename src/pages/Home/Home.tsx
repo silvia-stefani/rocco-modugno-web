@@ -143,7 +143,7 @@ const Home: React.FC = () => {
   useEffect(() => {
     function calculateH() {
       if(headActionsRef.current) {
-        setHeadH(headActionsRef.current.clientHeight);
+        setHeadH(headActionsRef.current.clientHeight + 69);
       }
     }
     calculateH()
@@ -180,11 +180,11 @@ const Home: React.FC = () => {
       </div>
       <div className={styles.legend}>
           <div className={styles.row}>
-            <div className={styles.data}>{'Numero'}</div>
-            <div className={styles.data}>{'Rotazione'}</div>
-            <div className={styles.data}>{'Misura'}</div>
-            <div className={styles.data}>{'Posizione X'}</div>
-            <div className={styles.data}>{'Posizione Y'}</div>
+            <div className={styles.data_title}>{'Numero'}</div>
+            <div className={styles.data_title}>{'Rotazione'}</div>
+            <div className={styles.data_title}>{'Misura'}</div>
+            <div className={styles.data_title}>{'Posizione X'}</div>
+            <div className={styles.data_title}>{'Posizione Y'}</div>
           </div>
           <div className={styles.row}>
             <div className={styles.data}>{printSettings.nums}</div>

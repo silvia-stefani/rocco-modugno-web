@@ -1,21 +1,41 @@
 import React, { useState, useContext, createContext, ReactNode } from 'react';
-import { ProjectsCatsType } from '../interfaces/IProject';
+import { ProjectsCatsIds } from '../interfaces/IProject';
 
 
 type modules = { nums: number, font: string, x: number; y: number; s: number, r: number };
 
-interface FilterSettings {
-  category: ProjectsCatsType;
+interface FiltersI {
+  category: ProjectsCatsIds;
+  listView: {
+    order: "alph-asc" | "alph-desc",
+    isExpanded: boolean;
+  },
+  dynamicView: {
+    style: "titles" | "images",
+    velocity: number
+  }
+}
+
+const initialFiltersValues: FiltersI = {
+  category: "all",
+  listView: {
+    order: 'alph-asc',
+    isExpanded: false
+  },
+  dynamicView: {
+    style: "images",
+    velocity: 1
+  }
 }
 
 // Create a context for managing filter settings
 const GlobalContext = createContext<{
-  filters: FilterSettings;
-  setFilters: React.Dispatch<React.SetStateAction<FilterSettings>>;
+  filters: FiltersI;
+  setFilters: React.Dispatch<React.SetStateAction<FiltersI>>;
   fixedTexts: modules[] | [];
   setFixedTexts: React.Dispatch<React.SetStateAction<modules[]>>;
 }>({
-  filters: { category: 'all' },
+  filters: initialFiltersValues,
   setFilters: () => {},
   fixedTexts: [],
   setFixedTexts: () => {}
@@ -26,9 +46,7 @@ interface IGlobalProvider {
 }
 // Create a provider component to wrap your application and provide access to the filter context
 export const GlobalProvider: React.FC<IGlobalProvider> = ({ children }) => {
-  const [filters, setFilters] = useState<FilterSettings>({
-    category: 'all'
-  });
+  const [filters, setFilters] = useState<FiltersI>(initialFiltersValues);
   const [fixedTexts, setFixedTexts] = useState<modules[]>([]);
 
   return (
