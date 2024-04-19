@@ -3,42 +3,42 @@ export const moduleActions = [
     id: "change_module_minus",
     key: "ArrowLeft",
     icon: "←",
-    label: "Cambiare modulo"
+    label: "Node" //Nodo
   },
   {
     id: "change_module_plus",
     key: "ArrowRight",
     icon: "→",
-    label: "Cambiare modulo"
+    label: "Node" //Nodo
   },
   {
     id: "enlarge_text",
     key: "ArrowUp",
     icon: "↑",
-    label: "Ingrandire"
+    label: "Size" //Misura
   },
   {
     id: "reduce_text",
     key: "ArrowDown",
     icon: "↓",
-    label: "Diminuire"
+    label: "Size" //Misura
   },
   {
     id: "rotate_text",
     key: "r",
     icon: "R",
-    label: "Rotare"
+    label: "Rotation" //Rotazione
   },
   {
     id: "change_shape",
-    key: "b",
-    icon: "B",
-    label: "Cambiar forma"
+    key: "m",
+    icon: "M",
+    label: "Module" //Modulo
   },
   {
     id: "undo_action",
     key: "z",
     icon: "Z",
-    label: "Disfare"
+    label: "Undo" //Annulla
   }
 ];

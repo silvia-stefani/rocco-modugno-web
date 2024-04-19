@@ -5,7 +5,7 @@ import { MouseEventHandler } from 'react';
 interface IButtonProps {
   label: string;
   onClick: () => void;
-  icon?: React.ReactNode;
+  icon?: React.ReactNode | string;
   disabled?: boolean;
 }
 
@@ -18,8 +18,8 @@ const Button: React.FunctionComponent<IButtonProps> = ({ label, onClick, icon, d
 
   return (
     <button disabled={disabled} className={styles.Button} onClick={handleClick}>
-      {icon && <span>{icon}</span>}
       {label}
+      {icon && <span>{icon}</span>}
     </button>
   );
 };

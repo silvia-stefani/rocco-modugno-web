@@ -81,7 +81,7 @@ const Home: React.FC = () => {
           s: prev.r.toString().endsWith('5') ? prev.s * Math.sqrt(2) : prev.s / Math.sqrt(2)
         }));
         break;
-      case 'b':
+      case 'm':
         setPrintSettings((prev) => ({
           ...prev,
           font: fonts[(fonts.indexOf(prev.font) + 1) % fonts.length]
@@ -179,7 +179,8 @@ const Home: React.FC = () => {
           {moduleActions.map((ma) => (
             <Button
               key={ma.id}
-              label={`${ma.label}: ${ma.icon}`}
+              icon={ma.icon}
+              label={ma.label}
               disabled={ma.id === "change_module_minus" && printSettings.nums === 0}
               onClick={() => handleClick(ma.key)}
             />
@@ -189,26 +190,23 @@ const Home: React.FC = () => {
       </div>
       <div className={styles.legend}>
         <div className={styles.row}>
-          <div className={styles.data_title}>{'Numero'}</div>
-          <div className={styles.data_title}>{'Rotazione'}</div>
-          <div className={styles.data_title}>{'Misura'}</div>
-          <div className={styles.data_title}>{'Posizione X'}</div>
-          <div className={styles.data_title}>{'Posizione Y'}</div>
+          <div className={styles.data_title}>{'Node'}</div>
+          <div className={styles.data_title}>{'Rotation'}</div>
+          <div className={styles.data_title}>{'Size'}</div>
+          <div className={styles.data_title}>{'Posizione'}</div>
         </div>
         <div className={`${styles.row} ${styles.current}`}>
           <div className={styles.data}>{printSettings.nums}</div>
           <div className={styles.data}>{printSettings.r}</div>
           <div className={styles.data}>{printSettings.s}</div>
-          <div className={styles.data}>{mouseX}</div>
-          <div className={styles.data}>{mouseY}</div>
+          <div className={styles.data}>{`${mouseX}, ${mouseY}`}</div>
         </div>
         {hasDrawing && fixedTexts.map((ft, i) => (
           <div key={i} className={styles.row}>
             <div className={styles.data}>{ft.nums}</div>
             <div className={styles.data}>{ft.r}</div>
             <div className={styles.data}>{ft.s}</div>
-            <div className={styles.data}>{ft.x}</div>
-            <div className={styles.data}>{ft.y}</div>
+            <div className={styles.data}>{`${ft.x}, ${ft.y}`}</div>
           </div>
         ))}
       </div>

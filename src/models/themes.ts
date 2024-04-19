@@ -8,12 +8,16 @@ export interface IThemes {
   }
 }
 
+/* Cambia i colori da qui */
 const colors = {
   white: "#ffffff",
-  black: "#373737",
-  red: "#cc3232",
-  yellow: "#FFDE2F",
-  violet: "#c296e4"
+  black: "#000000",
+  red: "#ff2b00",
+  yellow: "#ffec19",
+  gray: "#cccccc",
+  lila: "#ffe6ff",
+  green: "#00ba1f",
+  blue: "#0557fa"
 }
 
 export const themes: IThemes[] = [
@@ -27,15 +31,6 @@ export const themes: IThemes[] = [
   }
 },
 {
-  id: "red",
-  label: "Red Theme",
-  colors: {
-    primary: colors.violet,
-    text: colors.white,
-    bg: colors.red
-  }
-},
-{
   id: "dark",
   label: "Dark Theme",
   colors: {
@@ -45,15 +40,33 @@ export const themes: IThemes[] = [
   }
 },
 {
-  id: "violet",
-  label: "Violet Theme",
+  id: "gray",
+  label: "Gray Theme",
   colors: {
-    primary: colors.black,
-    text: colors.red,
-    bg: colors.violet
+    primary: colors.white,
+    text: colors.black,
+    bg: colors.gray
   }
 },
-// Aggiungi tuttu i theme di colori che vuoi
+{
+  id: "lila",
+  label: "Lilla Theme",
+  colors: {
+    primary: colors.red,
+    text: colors.black,
+    bg: colors.lila
+  }
+},
+{
+  id: "random",
+  label: "Random Theme",
+  colors: {
+    primary: colors.green,
+    text: colors.blue,
+    bg: colors.white
+  }
+}
+// Aggiungi tutti i theme di colori che vuoi
 ];
 
 export const handleThemeChange = (selectedTheme: IThemes) => {

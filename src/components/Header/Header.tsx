@@ -17,7 +17,7 @@ interface IHeader {
 
 const Header: React.FC<IHeader> = ({}) => {
 
-  const { nextTheme, toggleTheme } = useTheme();
+  const { currentTheme, toggleTheme } = useTheme();
   const { smallDevice } = useBreakpoints()
   
   const [currentLanguage, setCurrentLanguage,] = useState(i18n.language)
@@ -82,7 +82,7 @@ const Header: React.FC<IHeader> = ({}) => {
         </div>
       </Fragment>}
       <div className={styles.theme} onClick={toggleTheme}>
-        <span className={styles.picker} style={{backgroundColor: nextTheme.colors.bg}}></span>
+        <span className={styles.picker} style={{backgroundColor: currentTheme.colors.primary}}></span>
         {/* {nextTheme.label} */}
       </div>
       {smallDevice && <div onClick={() => setMobileOpen(true)}><Icon name={"Menu"} /></div>}

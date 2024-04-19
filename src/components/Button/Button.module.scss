@@ -1,8 +1,10 @@
 .Button {
     appearance: none;
     background-color: transparent;
-    padding: 8px 14px;
-    border: 1px solid currentColor;
+    border: 0;
+    //padding: 8px 14px;
+    //border: 1px solid currentColor;
+    font-weight: 500;
     border-radius: 32px;
     font-size: 14px;
     display: flex;
@@ -14,12 +16,11 @@
         opacity: 0.6;
     }
     span {
-        
+        color: var(--primary);
     }
     &:hover {
         cursor: pointer;
-        color: var(--bg);
-        background-color: var(--primary);
-        border-color: var(--primary);
+        //background-color: var(--primary);
+        //border-color: var(--primary);
     }
 }
