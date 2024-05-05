@@ -1,11 +1,11 @@
 import { IProject } from '../../interfaces/IProject';
-import { useEffect, useRef, useState } from 'react';
+import { LegacyRef, useEffect, useRef, useState } from 'react';
 
 import styles from './PointsView.module.scss';
-import { Link } from 'react-router-dom';
 import { Image } from '../../components/Image/Image';
 import { useGlobalContext } from '../../contexts/GlobalContext';
 import useMousePosition from '../../hooks/useMousePosition';
+import Link from 'next/link';
 
 interface Position {
   dx: number;
@@ -124,8 +124,8 @@ const PointsView = ({ projects }: { projects: IProject[] }) => {
         return (
           <Link
             key={project.id}
-            ref={el => itemRefs.current[i] = el}
-            to={`/projects/${project.id}`}
+            ref={(el: any) => itemRefs.current[i] = el}
+            href={`/projects/${project.id}`}
             className={`${styles.project_flying} ${notCat ? styles.unable : ''}`}
             style={{
               left: positions[i].x,

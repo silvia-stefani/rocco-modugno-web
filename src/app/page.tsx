@@ -1,15 +1,16 @@
+'use client'
 import * as React from 'react';
 import { useEffect, useRef, useState } from 'react';
 
 import styles from './Home.module.scss';
-import Module from '../../components/Module/Module';
-import { moduleActions } from '../../utils/moduleActions';
-import Icon from '../../components/Icon/Icon';
-import Button from '../../components/Button/Button';
-import useMousePosition from '../../hooks/useMousePosition';
-import { useGlobalContext } from '../../contexts/GlobalContext';
+import Module from '../components/Module/Module';
+import { moduleActions } from '../utils/moduleActions';
+import Icon from '../components/Icon/Icon';
+import Button from '../components/Button/Button';
+import useMousePosition from '../hooks/useMousePosition';
+import { useGlobalContext } from '../contexts/GlobalContext';
 
-const Home: React.FC = () => {
+export default function home() {
 
   type modules = { nums: number, font: string, x: number; y: number; s: number, r: number };
 
@@ -27,7 +28,7 @@ const Home: React.FC = () => {
   const modW = modulesRef.current ? modulesRef.current.clientWidth : 0;
   const modH = modulesRef.current ? modulesRef.current.clientHeight : 0;
   const initialValues = {
-    nums: 0, /* Min 0 max 63 */
+    nums: 63, /* Min 0 max 63 */
     font: 'rolo deco a',
     s: 40,
     r: 0,
@@ -227,4 +228,3 @@ const Home: React.FC = () => {
   </div>
 };
 
-export default Home;

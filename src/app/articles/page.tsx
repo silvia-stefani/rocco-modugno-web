@@ -1,3 +1,4 @@
+'use client'
 import * as React from 'react';
 import { useTranslation } from 'react-i18next';
 
@@ -5,14 +6,11 @@ import styles from './Articles.module.scss';
 import { IArticles } from '../../interfaces/IArticles';
 import { useEffect, useState } from 'react';
 
-import ArticleBlock from '../../components/ArticleBlock/ArticleBlock';
 import Icon from '../../components/Icon/Icon';
 
-import {config} from 'dotenv';
+export default function articles() {
 
-const Articles = () => {
-
-    const parentPageId = process.env.NOTION;    
+    const parentPageId = process.env.NEXT_PUBLIC_NOTION;    
     const { t } = useTranslation()
     const articles = t("articles", { returnObjects: true }) as IArticles;
   
@@ -25,9 +23,7 @@ const Articles = () => {
     }, []);
 
     const articlesList = Object.keys(data);
-    console.log(data);
-    
-        
+
     return <div className={styles.Articles}>
         <div className={styles.container}>
             <h6 className={styles.title}>
@@ -45,7 +41,7 @@ const Articles = () => {
                 const content = el.properties?.title;
                 if(el.id === parentPageId) return null;
                 if(!(el.type === "page")) return null;
-                return <a className={styles.article_link} key={i} href={`/article/${el.id}`}>
+                return <a className={styles.article_link} key={i} href={`/articles/${el.id}`}>
                     <span className={styles.title}>{content}</span>
                     <span className={styles.icon}><Icon size={24} name={"ArrowRight"} /></span>
                 </a>
@@ -54,6 +50,4 @@ const Articles = () => {
 
     </div>;
 };
-
-export default Articles;
 

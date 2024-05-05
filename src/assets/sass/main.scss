@@ -10,25 +10,22 @@
     box-sizing: border-box;
 }
 
-#root {
-    width: 100%;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-}
-
-main:not(.notion) {
-    width: 100%;
-    display: flex;
-    flex-grow: 1;
-    padding-top: 63px;
-}
-
 body {
     font-family: 'supria-sans', 'Helvetica', sans-serif;
     font-size: 16px;
     color: var(--text);
     background-color: var(--bg);
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    min-height: 100vh;
+}
+
+
+main:not(.notion) {
+    width: 100%;
+    display: flex;
+    flex-grow: 1;
 }
 
 h6 {
@@ -107,60 +104,3 @@ button {
         }
     }
 }
-
-input[type="range"] {
-    /* removing default appearance */
-    -webkit-appearance: none;
-    appearance: none; 
-    /* creating a custom design */
-    width: 100%;
-    cursor: pointer;
-    outline: none;
-    /*  slider progress trick  */
-    overflow: hidden;
-    border-radius: 16px;
-  }
-  
-  /* Track: webkit browsers */
-  input[type="range"]::-webkit-slider-runnable-track {
-    height: 15px;
-    background: rgba(var(--text-rgb), 0.2);
-    border-radius: 16px;
-  }
-  
-  /* Track: Mozilla Firefox */
-  input[type="range"]::-moz-range-track {
-    height: 15px;
-    background: rgba(var(--text-rgb), 0.2);
-    border-radius: 16px;
-  }
-  
-  /* Thumb: webkit */
-  input[type="range"]::-webkit-slider-thumb {
-    /* removing default appearance */
-    -webkit-appearance: none;
-    appearance: none; 
-    /* creating a custom design */
-    height: 15px;
-    width: 15px;
-    background-color: var(--bg);
-    border-radius: 50%;
-    border: 2px solid var(--text);
-    /*  slider progress trick  */
-    box-shadow: -407px 0 0 400px var(--text);
-  }
-  
-  
-  /* Thumb: Firefox */
-  input[type="range"]::-moz-range-thumb {
-    height: 15px;
-    width: 15px;
-    background-color: var(--bg);
-    border-radius: 50%;
-    border: 1px solid var(--text);
-    /*  slider progress trick  */
-    box-shadow: -407px 0 0 400px var(--text);
-  }
-  
-  
-  

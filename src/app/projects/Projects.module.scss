@@ -2,6 +2,7 @@
 
 .Projects {
     width: 100%;
+    flex-grow: 1;
     display: flex;
     flex-direction: column;
 
@@ -9,11 +10,17 @@
         width: 100%;
         display: grid;
         align-items: center;
-        grid-template-columns: $projectsStripeGrid;
         gap: 16px;
         padding: 8px 16px;
         transition: all 200ms ease;
         border-bottom: 1px solid currentColor;
+
+        &.list {
+            grid-template-columns: $projectsStripeGrid;
+        }
+        &.points {
+            grid-template-columns: repeat(4, 1fr);
+        }
         &.increase {
             //grid-template-columns: $projectsStripeGridI;
         }
@@ -36,13 +43,6 @@
                 pointer-events: none;
                 cursor: default;
                 opacity: 0.6;
-            }
-            svg {
-                fill: var(--primary);
-                width: 14px;
-                display: flex;
-                align-items: center;
-                justify-content: center;
             }
         }
     }

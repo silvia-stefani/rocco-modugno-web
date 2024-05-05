@@ -1,0 +1,83 @@
+.Range {
+
+    position: relative;
+    width: 100%;
+    --s: 8px;
+
+    .value {
+        display: flex;
+        align-items: center;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        .icon {
+            position: absolute;
+            transform: rotate(90deg) translateY(50%);
+            padding: 2px;
+            //border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--bg);
+            //border: 1px solid var(--text);
+            //color: var(--bg);
+        }
+    }
+
+    input[type="range"] {
+        /* removing default appearance */
+        -webkit-appearance: none;
+        appearance: none;
+        /* creating a custom design */
+        width: 100%;
+        cursor: pointer;
+        outline: none;
+        /*  slider progress trick  */
+        overflow: hidden;
+        border-radius: 16px;
+        background: rgba(var(--text-rgb), 0.2);
+    }
+
+    /* Track: webkit browsers */
+    input[type="range"]::-webkit-slider-runnable-track {
+        height: var(--s);
+        background: rgba(var(--text-rgb), 0.2);
+        border-radius: 16px;
+    }
+
+    /* Track: Mozilla Firefox */
+    input[type="range"]::-moz-range-track {
+        height: var(--s);
+        background: rgba(var(--text-rgb), 0.2);
+        border-radius: 16px;
+    }
+
+    /* Thumb: webkit */
+    input[type="range"]::-webkit-slider-thumb {
+        /* removing default appearance */
+        -webkit-appearance: none;
+        appearance: none;
+        /* creating a custom design */
+        height: var(--s);
+        width: var(--s);
+        background-color: var(--bg);
+        border-radius: 50%;
+        border: 0px solid var(--text);
+        /*  slider progress trick  */
+        box-shadow: -407px 0 0 400px var(--text);
+    }
+
+    /* Thumb: Firefox */
+    input[type="range"]::-moz-range-thumb {
+        height: 15px;
+        width: 15px;
+        background-color: var(--bg);
+        border-radius: 50%;
+        border: 1px solid var(--text);
+        /*  slider progress trick  */
+        box-shadow: -407px 0 0 400px var(--text);
+    }
+
+
+}

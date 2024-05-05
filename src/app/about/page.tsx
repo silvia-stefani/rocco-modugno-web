@@ -1,3 +1,4 @@
+'use client'
 import * as React from 'react';
 import { useTranslation } from 'react-i18next';
 import { PersonalDataType } from '../../types/PersonalDataType';
@@ -5,7 +6,7 @@ import { PersonalDataType } from '../../types/PersonalDataType';
 import styles from './About.module.scss';
 import Paragraph from '../../components/Paragraph/Paragraph';
 
-const About: React.FC = () => {
+export default function about() {
 
   const { t } = useTranslation()
 
@@ -47,5 +48,3 @@ const About: React.FC = () => {
   )
 
 }
-
-export default About;

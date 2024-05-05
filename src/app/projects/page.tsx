@@ -1,9 +1,10 @@
+'use client'
 import * as React from 'react';
 
 import styles from './Projects.module.scss';
 
 import { ViewType } from '../../types/ViewType';
-import { ChangeEventHandler, useState } from 'react';
+import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { IProject, ProjectsCatsIds } from '../../interfaces/IProject';
 import PointsView from './PointsView';
@@ -12,8 +13,10 @@ import { orderByAlphabet } from '../../utils/orderByAlphabet';
 import Select from '../../components/Select/Select';
 import { useGlobalContext } from '../../contexts/GlobalContext';
 import { Option } from '../../components/Select/Select';
+import Icon from '../../components/Icon/Icon';
+import Range from '../../components/Range/Range';
 
-const Projects: React.FC = () => {
+export default function Projects() {
 
   const { t } = useTranslation()
   const { filters, setFilters } = useGlobalContext()
@@ -81,8 +84,8 @@ const Projects: React.FC = () => {
     }))
   }
 
-  const handleVelocityChange: ChangeEventHandler<HTMLInputElement> = (e) => {
-    const rangeVvalue = Number(e.currentTarget.value);
+  const handleVelocityChange = (n: string) => {
+    const rangeVvalue = Number(n);
     setFilters((prevState) => ({
       ...prevState,
       dynamicView: {
@@ -105,9 +108,9 @@ const Projects: React.FC = () => {
   return (
     <div className={styles.Projects}>
 
-      <div className={`${styles.menu} ${filters.listView.isExpanded ? styles.increase : ''}`}>
+      <div className={`${styles.menu} ${styles[currentView]} ${filters.listView.isExpanded ? styles.increase : ''}`}>
         <button className={styles.tab} onClick={handleViewToggle}>
-          <span>↩︎</span>
+          <span>↩</span>
           <div className={styles.tab_label}>view</div>
         </button>
         {currentView === "points" ? <button className={styles.tab} onClick={handleToggleStyle}>
@@ -115,16 +118,10 @@ const Projects: React.FC = () => {
           {isCurrentStyleImages ? "Titles" : "Images"}
         </button> :
           <button disabled={currentView === "points"} className={styles.tab} onClick={handleExpandedToggle}>
-            <span>{filters.listView.isExpanded ? "↖︎" : "↘︎"}</span>
+            <Icon size={14} name={filters.listView.isExpanded ? "ArrowTL" : "ArrowDR"} />
           </button>}
         {currentView === "list" && <button className={styles.tab} onClick={handleChangeOrder}>
-          <span>{alphabeticDescendent ? 
-          <span><svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 100 100">
-          {filters.listView.isExpanded ? <polygon className="cls-1" points="20.85 26.6 63.05 68.9 28.45 69.3 23.75 73.9 28.45 78.4 79.15 78.4 79.15 27.7 74.65 23 70.05 27.7 69.65 62.3 27.35 20.1 20.85 26.6"/>
-          : <polygon className="cls-1" points="44.72 10.2 44.72 71.5 18.62 47 12.12 47 12.12 54.1 49.72 90.4 87.32 54.1 87.32 47 80.82 47 54.72 71.5 54.72 10.2 44.72 10.2"/>
-        }
-        </svg>
-          </span> : "↑"}</span>
+          <Icon size={14} name={alphabeticDescendent ? "ArrowDown" : "ArrowUp"} />
           {alphabeticDescendent ? "a-z" : "z-a"}
         </button>}
         <Select
@@ -132,9 +129,7 @@ const Projects: React.FC = () => {
           options={projectsCats}
           getCurrentValue={handleChangeCat}
         />
-        {currentView === "points" && <div className="range">
-          <input type="range" name="" id="" min={0.25} max={10} step={0.1} onChange={handleVelocityChange} />
-        </div>}
+        {currentView === "points" && <Range defaultValue={filters.dynamicView.velocity} id='pr-dotv' onChange={handleVelocityChange} />}
       </div>
 
       <div className={styles.view}>
@@ -144,5 +139,3 @@ const Projects: React.FC = () => {
     </div>
   )
 };
-
-export default Projects;

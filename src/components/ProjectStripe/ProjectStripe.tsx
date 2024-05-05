@@ -2,7 +2,7 @@ import * as React from 'react';
 import { IProject } from '../../interfaces/IProject';
 
 import styles from './ProjectStripe.module.scss';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 import { useState } from 'react';
 import { Image } from '../Image/Image';
 import Paragraph from '../Paragraph/Paragraph';
@@ -24,7 +24,7 @@ const ProjectStripe: React.FunctionComponent<IProjectStripeProps> = ({project}) 
 
     return <Link key={project.id} 
       className={`${styles.ProjectStripe} ${hovering ? styles.expanded : ''} ${increase ? styles.increase : ''}`} 
-      to={`/projects/${project.id}`}
+      href={`/projects/${project.id}`}
       onMouseEnter={() => setHovering(true)}
       onMouseLeave={() => setHovering(false)}>
       <div className={styles.image}>

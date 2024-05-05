@@ -16,7 +16,7 @@ export const itScriptsProjects: ICodingProjects[] = [
         link: "https://editor.p5js.org/roccol.modugno/sketches/TQHlUF9-C"
     },
     {
-        id: "test_2",
+        id: "test_1",
         title: "Test 2",
         subtitle: "script 2",
         cover: "vid_script_test2.mov",
@@ -30,35 +30,35 @@ export const itScriptsProjects: ICodingProjects[] = [
         link: ""
     },
     {
-        id: "test_2",
+        id: "test_3",
         title: "Test 2",
         subtitle: "script 2",
         cover: "",
         link: ""
     },
     {
-        id: "test_2",
+        id: "test_4",
         title: "Test 2",
         subtitle: "script 2",
         cover: "",
         link: ""
     },
     {
-        id: "test_2",
+        id: "test_5",
         title: "Test 2",
         subtitle: "script 2",
         cover: "",
         link: ""
     },
     {
-        id: "test_2",
+        id: "test_6",
         title: "Test 2",
         subtitle: "script 2",
         cover: "",
         link: ""
     },
     {
-        id: "test_2",
+        id: "test_7",
         title: "Test 2",
         subtitle: "script 2",
         cover: "",

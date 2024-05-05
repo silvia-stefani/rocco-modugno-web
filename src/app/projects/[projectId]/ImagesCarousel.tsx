@@ -1,10 +1,11 @@
+'use client'
 import * as React from 'react';
 
 import styles from './ImagesCarousel.module.scss';
 import { MouseEventHandler, useEffect, useRef, useState } from 'react';
 
-import { Image } from '../../components/Image/Image';
-import Icon from '../../components/Icon/Icon';
+import { Image } from '../../../components/Image/Image';
+import Icon from '../../../components/Icon/Icon';
 
 interface IImagesCarouselProps {
   path: string;

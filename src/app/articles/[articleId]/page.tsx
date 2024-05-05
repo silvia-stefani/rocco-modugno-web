@@ -1,18 +1,14 @@
+'use client'
 import * as React from 'react';
 import { useEffect, useState } from 'react';
-import { Block, NotionRenderer } from 'react-notion';
-import { Link, useParams } from 'react-router-dom';
-import ArticleBlock from '../../components/ArticleBlock/ArticleBlock';
-import { parentPageId } from './Articles';
-import styles from './Articles.module.scss';
+import { NotionRenderer } from 'react-notion';
+import Link from 'next/link';
+import styles from '../Articles.module.scss';
 
-interface IArticlePageProps {
-}
 
-const ArticlePage: React.FunctionComponent<IArticlePageProps> = (props) => {
+function ArticlePage({params}: {params: {articleId: string}}) {
   
-  const { id } = useParams();
-  
+  const id = params.articleId;
   const [data, setData] = useState<any>({});
 
   useEffect(() => {
@@ -31,9 +27,9 @@ const ArticlePage: React.FunctionComponent<IArticlePageProps> = (props) => {
     <NotionRenderer
       blockMap={data}
       customBlockComponents={{
-        page: ({ blockValue, renderComponent }) => {
+        page: ({ blockValue }) => {
             console.log(blockValue);
-            return <Link to={`article/${blockValue.id}`}>{blockValue.properties?.title[0]}</Link>
+            return <Link href={`article/${blockValue.id}`}>{blockValue.properties?.title[0]}</Link>
       },
         header: ({blockValue}) => {
             const title = blockValue.properties?.title[0];

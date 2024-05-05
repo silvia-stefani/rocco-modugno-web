@@ -20,9 +20,11 @@
     animation-fill-mode: forwards;
 
     .module {
-        font-family: 'rolo deco rounded';
+        font-family: 'rolo deco a';
         font-size: 20px;
         line-height: 20px;
+        -webkit-text-stroke-width: 1px;
+        -webkit-text-stroke-color: inherit;
     }
 
     .loading_label {

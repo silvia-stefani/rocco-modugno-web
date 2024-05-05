@@ -1,3 +1,4 @@
+'use client'
 import React, { useState, useContext, createContext, ReactNode } from 'react';
 import { ProjectsCatsIds } from '../interfaces/IProject';
 

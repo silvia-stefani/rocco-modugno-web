@@ -1,3 +1,4 @@
+'use client'
 import React, { createContext, useContext, ReactNode, useState, useEffect } from 'react';
 import { IThemes, themes } from '../models/themes';
 import { hexToRGB } from '../utils/hexToRgb';

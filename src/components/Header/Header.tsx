@@ -1,3 +1,4 @@
+'use client'
 import * as React from 'react';
 
 import styles from './Header.module.scss';
@@ -5,12 +6,13 @@ import i18n from '../../i18n';
 import { Fragment, useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { MenuItemsType } from '../../types/MeuItemsType';
-import { Link, useLocation } from 'react-router-dom';
 import { useTheme } from '../../contexts/ThemeContext';
 import { languages } from '../../models/languages';
 import useBreakpoints from '../../hooks/useBreakpoints';
 import { createPortal } from 'react-dom';
 import Icon from '../Icon/Icon';
+import { usePathname } from 'next/navigation';
+import Link from 'next/link';
 
 interface IHeader { 
 }
@@ -30,8 +32,8 @@ const Header: React.FC<IHeader> = ({}) => {
   const menu = t('menu', { returnObjects: true }) as MenuItemsType[];
   const services = t('services', { returnObjects: true }) as any[];
   
-  const location = useLocation();
-  const currentPage = location.pathname.slice(1);  
+  //const location = useLocation();
+  const currentPage = usePathname();
 
   const [mobileOpen, setMobileOpen] = useState(false);
   const headerMobile = () => {
@@ -40,7 +42,8 @@ const Header: React.FC<IHeader> = ({}) => {
     <ul className={styles.menu}>
       {menu.map((item) => {
         const isCurrent = currentPage === item.id ? styles.current : "";
-        return <li key={item.id} className={`${styles.item} ${isCurrent}`}><Link to={item.id}>{item.name}</Link></li>
+        console.log(item);
+        return <li key={item.id} className={`${styles.item} ${isCurrent}`}><Link href={`/${item.id}`}>{item.name}</Link></li>
       })}
     </ul>
     </nav>, document.body)
@@ -48,7 +51,7 @@ const Header: React.FC<IHeader> = ({}) => {
 
   useEffect(() => {
     setMobileOpen(false); // Cierra el menú móvil cuando cambia la ubicación
-  }, [location]);
+  }, [currentPage]);
 
   const [currentI, setCurrentI] = useState(0);
   
@@ -63,14 +66,14 @@ const Header: React.FC<IHeader> = ({}) => {
     <header className={styles.Header}>
     <div className={styles.container}>
       <div className={styles.data}>
-        <h2 className={styles.name}><Link to={"/"}>Rocco Modugno</Link></h2>
+        <h2 className={styles.name}><Link href={"/"}>Rocco Modugno</Link></h2>
       </div>
       {!smallDevice && <Fragment>
         <nav className={styles.navbar}>
           <ul className={styles.menu}>
             {menu.map((item) => {
               const isCurrent = currentPage === item.id ? styles.current : "";
-              return <li key={item.id} className={`${styles.item} ${isCurrent}`}><Link to={item.id}>{item.name}</Link></li>
+              return <li key={item.id} className={`${styles.item} ${isCurrent}`}><Link href={`/${item.id}`}>{item.name}</Link></li>
             })}
           </ul>
         </nav>

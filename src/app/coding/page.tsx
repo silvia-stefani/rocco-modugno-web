@@ -1,3 +1,4 @@
+'use client'
 import * as React from 'react';
 
 import styles from './Coding.module.scss';
@@ -5,7 +6,7 @@ import { Image } from '../../components/Image/Image';
 import { useTranslation } from 'react-i18next';
 import { ICoding } from '../../interfaces/ICoding';
 
-const Coding: React.FC = () => {
+export default function coding() {
 
   const {t} = useTranslation()
 
@@ -20,7 +21,7 @@ const Coding: React.FC = () => {
       </div>
       <div className={styles.grid}>
         {scriptsProjects.map((sp) => (
-          <a className={styles.ScriptProject} href={sp.link} target='_blank'>
+          <a key={sp.id} className={styles.ScriptProject} href={sp.link} target='_blank'>
               <div className={styles.image}>
                 <Image cover src={'/scripts_img/' + sp.cover} />
               </div>
@@ -31,5 +32,3 @@ const Coding: React.FC = () => {
     </main>
   )
 };
-
-export default Coding;
