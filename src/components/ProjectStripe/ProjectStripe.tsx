@@ -11,10 +11,11 @@ import { getProjectCats } from '../../utils/getProjectCat';
 import { useGlobalContext } from '../../contexts/GlobalContext';
 
 interface IProjectStripeProps {
-    project: IProject
+    project: IProject;
+    smallDevice: boolean;
 }
 
-const ProjectStripe: React.FunctionComponent<IProjectStripeProps> = ({project}) => {
+const ProjectStripe: React.FunctionComponent<IProjectStripeProps> = ({project, smallDevice}) => {
 
     const {filters} = useGlobalContext()
     const cover = `/${project.id}/${project.images.cover}`;
@@ -35,6 +36,7 @@ const ProjectStripe: React.FunctionComponent<IProjectStripeProps> = ({project}) 
         { project.subtitle && <Paragraph text={project.subtitle} /> }
         { project.description && <Paragraph text={project.description} /> }
       </div>
+      {!smallDevice && <>
       <div className={styles.details}>
         {project.place && <div>{project.place}</div>}
         {project.client && <div>{project.client}</div>}
@@ -46,6 +48,7 @@ const ProjectStripe: React.FunctionComponent<IProjectStripeProps> = ({project}) 
         <TagGroup tags={getProjectCats(project.cat)} />
       </div>
       <div className={styles.date}>{project.date}</div>
+      </>}
     </Link>
 };
 

@@ -1,4 +1,4 @@
-import { MenuItemsType } from "../types/MeuItemsType";
+import { MenuItemsType } from "../../../types/MeuItemsType";
 
 export const enMenu: MenuItemsType[] = [
     {

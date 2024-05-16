@@ -1,22 +1,44 @@
 export type PersonalDataType = {
-    address: {
-        street: string,
-        location: string
+    contacts: {
+        mail: string,
+        tel: string,
+        address: {
+            street: string,
+            location: string
+        },
+        pIva: string
     }
-    presentation: {
-        title: string,
-        text: string
-    },
+    presentation: string,
     experience: {
         title: string,
-        text: string
+        content: string[]
     },
     mentions: {
         title: string,
-        text: string
+        content: {
+            title: string,
+            text: string
+        }[]
     },
     talks: {
         title: string,
-        text: string
+        content: {
+            title: string,
+            text: string
+        }[]
+    },
+    workshops: {
+        title: string,
+        content: {
+            title: string,
+            text: string
+        }[]
+    },
+    juryMem: {
+        title: string,
+        content: {
+            title: string,
+            text: string
+        }[]
     }
 }

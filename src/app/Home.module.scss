@@ -5,7 +5,11 @@
     50% {
       opacity: 1;
     }
-  }
+}
+
+body:has(.Home) {
+    overflow: hidden;
+}
 
 .Home {
     width: 100%;
@@ -13,6 +17,17 @@
     position: relative;
     overflow: hidden;
     /* padding: 16px 0; */
+    display: flex;
+    flex-direction: column;
+
+    .static_module {
+        width: fit-content;
+        padding: 20px;
+        position: absolute;
+        border-right: 1px solid var(--text);
+        border-bottom: 1px solid var(--text);
+        background-color: var(--bg);
+    }
 
     .cta {
         position: fixed;
@@ -23,73 +38,63 @@
         animation: pulse 2s ease-in-out 2 forwards;
     }
 
-    .legend {
-        grid-row: 2 / span 1;
-        grid-column: 1 / -1;
-        font-size: 14px;
-        padding: 0 16px 24px;
-        display: flex;
-        flex-direction: column;
-        gap: 16px;
-        color: currentColor;
-        //background-color: rgba(var(--primary-rgb), 0.1);
-        //border-top: 1px solid currentColor;
-        max-height: 200px;
-        overflow-y: auto;
-        .row {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            &.current {
-                font-weight: 600;
-            }
-        }
-        .data_title {
-            font-weight: 600;
-        }
-    }
-
     .actions {
         width: 100%;
-        position: absolute;
-        z-index: 1;
-        bottom: 0;
+        height: fit-content;
         display: flex;
         flex-direction: column;
         cursor: pointer;
         color: var(--text);
-        //background-color: rgba(var(--bg-rgb), 0.8);
-        //background-color: rgba(var(--bg-rgb), 0.1);
         background-color: var(--bg);
-        //border: 1px solid currentColor;
         backdrop-filter: blur(4px);
-        //border-radius: 16px 16px 0 0;
-
-        /* transform: translateY(0); */
-        transition: transform 300ms ease;
-
-        /* &.open {
-            transform: translateY(calc(100% - 54px));
-        } */
+        transition: all 300ms ease;
 
         .head {
             width: 100%;
-            display: grid;
-            grid-template-columns: 1fr auto;
-            min-height: 54px;
+            display: flex;
+            //min-height: 54px;
             padding: 16px;
             border-top: 1px solid var(--text);
-            .legend {
-                padding: 24px 8px 0;
+            .icon {
+                width: 20px;
             }
         }
 
         .container {
             display: flex;
+            flex-grow: 1;
             flex-wrap: wrap;
-            gap: 24px;
+            gap: 16px;
         }
 
-        .action {
+        .legend {
+            max-height: 100%;
+            grid-row: 2 / span 1;
+            grid-column: 1 / -1;
+            font-size: 14px;
+            padding: 0 16px 24px;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            color: currentColor;
+            overflow-y: auto;
+            .row {
+                display: grid;
+                grid-template-columns: repeat(4, 1fr);
+                &.current {
+                    font-weight: 600;
+                }
+            }
+            .data_title {
+                font-weight: 600;
+            }
+        }
+
+
+        &.open {
+            .legend {
+                overflow-y: auto;
+            }
         }
     }
 
@@ -103,10 +108,7 @@
     }
 
     .modules_wrapper {
-        position: absolute;
-        z-index: 0;
-        top: 0;
-        left: 0;
+        flex-grow: 1;
         width: 100%;
         height: 100%;
         cursor: none;

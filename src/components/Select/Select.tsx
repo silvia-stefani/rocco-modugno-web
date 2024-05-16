@@ -2,6 +2,7 @@ import * as React from 'react';
 import { useEffect, useRef, useState } from 'react';
 import { createPortal } from 'react-dom';
 import './Select.scss';
+import Icon from '../Icon/Icon';
 
 export type Option = {
     value: string;
@@ -66,13 +67,14 @@ const Select: React.FunctionComponent<ISelectProps> = ({ options, defaultValue, 
     const handleOptionClick = (option: Option) => {
         setSelectedOption(option.value);
         getCurrentValue(option.value)
-        //setIsOpen(false);
+        setIsOpen(false); 
     };
 
     const optionSelected = options.find((o) => o.value === selectedOption);
 
     return <div className={'Select'} ref={selectRef}>
         <div className={'current_value'} onClick={toggleSelect}>
+            <Icon size={14} name={"Select"} />
             {optionSelected ? optionSelected.label : 'Select an option'}
         </div>
         {isOpen && selectPosition && (

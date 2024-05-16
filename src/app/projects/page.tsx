@@ -15,11 +15,13 @@ import { useGlobalContext } from '../../contexts/GlobalContext';
 import { Option } from '../../components/Select/Select';
 import Icon from '../../components/Icon/Icon';
 import Range from '../../components/Range/Range';
+import useBreakpoints from '../../hooks/useBreakpoints';
 
 export default function Projects() {
 
   const { t } = useTranslation()
   const { filters, setFilters } = useGlobalContext()
+  const { smallDevice } = useBreakpoints();
   const projectsObject = t("projects", { returnObjects: true }) as IProject[];
   const projectsCats = t("projectsCats", { returnObjects: true }) as Option[];
   const [currentView, setCurrentView] = useState("points")
@@ -48,7 +50,7 @@ export default function Projects() {
     {
       id: "list",
       label: "Lista",
-      element: finalProjects.map((project: IProject) => <ProjectStripe key={project.id} project={project} />)
+      element: finalProjects.map((project: IProject) => <ProjectStripe smallDevice={smallDevice} key={project.id} project={project} />)
     }
   ]
 
@@ -110,14 +112,14 @@ export default function Projects() {
 
       <div className={`${styles.menu} ${styles[currentView]} ${filters.listView.isExpanded ? styles.increase : ''}`}>
         <button className={styles.tab} onClick={handleViewToggle}>
-          <span>↩</span>
+          <Icon size={14} name={"Return"} />
           <div className={styles.tab_label}>view</div>
         </button>
         {currentView === "points" ? <button className={styles.tab} onClick={handleToggleStyle}>
           <span>{isCurrentStyleImages ? "／" : "＼"}</span>
           {isCurrentStyleImages ? "Titles" : "Images"}
         </button> :
-          <button disabled={currentView === "points"} className={styles.tab} onClick={handleExpandedToggle}>
+          (!smallDevice) && <button disabled={currentView === "points"} className={styles.tab} onClick={handleExpandedToggle}>
             <Icon size={14} name={filters.listView.isExpanded ? "ArrowTL" : "ArrowDR"} />
           </button>}
         {currentView === "list" && <button className={styles.tab} onClick={handleChangeOrder}>

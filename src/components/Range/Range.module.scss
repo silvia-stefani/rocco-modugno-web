@@ -5,6 +5,7 @@
     --s: 8px;
 
     .value {
+        pointer-events: none;
         display: flex;
         align-items: center;
         position: absolute;
@@ -12,6 +13,7 @@
         height: 100%;
         pointer-events: none;
         .icon {
+            pointer-events: none;
             position: absolute;
             transform: rotate(90deg) translateY(50%);
             padding: 2px;

@@ -10,23 +10,24 @@
         width: 100%;
         display: grid;
         align-items: center;
-        gap: 16px;
-        padding: 8px 16px;
+        gap: 20px;
+        padding: 16px;
         transition: all 200ms ease;
-        border-bottom: 1px solid currentColor;
 
         &.list {
             grid-template-columns: $projectsStripeGrid;
         }
         &.points {
             grid-template-columns: repeat(4, 1fr);
+        
+            @media (max-width: 768px) {
+                grid-template-columns: repeat(2, 1fr);
+            }
         }
-        &.increase {
-            //grid-template-columns: $projectsStripeGridI;
-        }
+
         .tab {
             font-family: inherit;
-            font-size: 14px;
+            font-size: 12px;
             border: none;
             background: transparent;
             display: flex;
@@ -51,6 +52,13 @@
         flex-grow: 1;
         display: flex;
         flex-direction: column;
+    }
+    @media (max-width: 768px) {
+        .menu {
+            &.list {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
     }
 }
 

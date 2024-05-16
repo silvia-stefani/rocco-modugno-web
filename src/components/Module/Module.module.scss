@@ -6,10 +6,21 @@
     align-items: center;
     justify-content: center;
     &.stamp {
-        /* cursor: none; */
+        cursor: none;
         color: var(--primary);
         opacity: 0.8;
     }
+    .content {
+        transition: all 200ms ease;
+    }
+}
+
+.StaticModule {
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: inherit;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     .content {
         transition: all 200ms ease;
     }

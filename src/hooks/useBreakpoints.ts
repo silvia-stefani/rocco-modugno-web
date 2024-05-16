@@ -5,10 +5,12 @@ interface BreakPointsI {
   smallDevice: boolean;
   mediumDevice: boolean;
   largeDevice: boolean;
+  isTouchable: boolean;
 }
 
 const useBreakpoints = (): BreakPointsI => {
   const [category, setCategory] = useState<Breakpoint>('large');
+  const [isTouchable, setIsTouchable] = useState<boolean>(false);
 
   useEffect(() => {
     const handleResize = () => {
@@ -32,6 +34,17 @@ const useBreakpoints = (): BreakPointsI => {
     };
   }, []);
 
+  useEffect(() => {
+    function isTouchDevice() {
+      if (('ontouchstart' in window) || (navigator.maxTouchPoints > 0)) {
+        setIsTouchable(true)
+      } else {
+        setIsTouchable(false)
+      }
+    }
+    isTouchDevice()
+  }, [category]);
+
   const smallDevice = category === 'small';
   const mediumDevice = category === 'medium';
   const largeDevice = category === 'large';
@@ -39,7 +52,8 @@ const useBreakpoints = (): BreakPointsI => {
   return {
     smallDevice,
     mediumDevice,
-    largeDevice
+    largeDevice,
+    isTouchable
   };
 };
 

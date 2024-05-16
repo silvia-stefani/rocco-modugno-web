@@ -88,19 +88,14 @@ $t: 200ms;
         display: flex;
         flex-direction: column;
         gap: 4px;
-        .cat {
-        }
     }
 
     .date {
         font-size: 12px;
     }
-
-    @media (hover: none) {
-        
-    }
     
     @media (max-width: 768px) {
-        
+        height: 200px;
+        grid-template-columns: 150px 1fr;
     }
 }

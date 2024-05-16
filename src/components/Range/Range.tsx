@@ -29,7 +29,7 @@ const Range: React.FunctionComponent<IRangeProps> = ({id, defaultValue, onChange
 
     return <div className={styles.Range}>
         <div ref={airplaneRef} className={styles.value}>
-            <span className={styles.icon} style={{left: `${moveAirplane}%`}}><Icon size={14} name={"Airplane"} /></span>
+            <span className={styles.icon} style={{left: `${moveAirplane}%`}}><Icon size={16} name={"Airplane"} /></span>
         </div> 
         <input defaultValue={defaultValue} type="range" name={id} id={id} min={0.25} max={10} step={0.1} onChange={handleChange} />
     </div>

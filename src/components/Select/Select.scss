@@ -1,10 +1,14 @@
 .Select {
     width: fit-content;
     font-family: inherit;
-    font-size: 14px;
+    font-size: 12px;
     .current_value {
+        display: flex;
+        align-items: center;
+        gap: 4px;
         cursor: pointer;
         font-weight: 600;
+        text-transform: uppercase;
     }
 }
 
@@ -14,6 +18,8 @@
     background-color: var(--bg);
     border: 1px solid var(--text);
     border-radius: 4px;
+    font-size: 12px;
+    overflow: hidden;
     .select_option {
         padding: 8px;
         cursor: default;

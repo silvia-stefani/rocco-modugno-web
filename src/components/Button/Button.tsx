@@ -7,9 +7,10 @@ interface IButtonProps {
   onClick: () => void;
   icon?: React.ReactNode | string;
   disabled?: boolean;
+  isTouchable?: boolean;
 }
 
-const Button: React.FunctionComponent<IButtonProps> = ({ label, onClick, icon, disabled }) => {
+const Button: React.FunctionComponent<IButtonProps> = ({ label, onClick, icon, disabled, isTouchable }) => {
 
   const handleClick: MouseEventHandler<HTMLButtonElement> = (e) => {
     e.stopPropagation()
@@ -17,7 +18,7 @@ const Button: React.FunctionComponent<IButtonProps> = ({ label, onClick, icon, d
   }
 
   return (
-    <button disabled={disabled} className={styles.Button} onClick={handleClick}>
+    <button disabled={disabled} className={`${styles.Button} ${isTouchable ? styles.mobile : ''}`} onClick={handleClick}>
       {label}
       {icon && <span>{icon}</span>}
     </button>

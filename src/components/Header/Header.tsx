@@ -41,8 +41,9 @@ const Header: React.FC<IHeader> = ({}) => {
     <span onClick={() => setMobileOpen(false)}><Icon name={"Close"} /></span>
     <ul className={styles.menu}>
       {menu.map((item) => {
-        const isCurrent = currentPage === item.id ? styles.current : "";
-        console.log(item);
+        const isCurrent = currentPage === `/${item.id}` ? styles.current : "";
+        console.log(currentPage);
+        
         return <li key={item.id} className={`${styles.item} ${isCurrent}`}><Link href={`/${item.id}`}>{item.name}</Link></li>
       })}
     </ul>
@@ -65,9 +66,10 @@ const Header: React.FC<IHeader> = ({}) => {
     {mobileOpen && headerMobile()}
     <header className={styles.Header}>
     <div className={styles.container}>
-      <div className={styles.data}>
-        <h2 className={styles.name}><Link href={"/"}>Rocco Modugno</Link></h2>
-      </div>
+      <Link href={'/'} className={styles.data}>
+        <h2 className={styles.name}>Rocco Modugno</h2>
+        <div className={styles.metadata}>{services[currentI].title}</div>
+      </Link>
       {!smallDevice && <Fragment>
         <nav className={styles.navbar}>
           <ul className={styles.menu}>
@@ -90,7 +92,6 @@ const Header: React.FC<IHeader> = ({}) => {
       </div>
       {smallDevice && <div onClick={() => setMobileOpen(true)}><Icon name={"Menu"} /></div>}
     </div>
-    <div className={styles.metadata}>{services[currentI].title}</div>
   </header>
   </Fragment>;
 };

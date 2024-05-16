@@ -1,3 +1,4 @@
+'use client'
 import * as React from 'react';
 
 import styles from './Splash.module.scss';
@@ -5,6 +6,7 @@ import { splashTime } from '../../models/splashTime';
 import { useEffect, useState } from 'react';
 
 interface ISplashProps {
+  
 }
 
 const Splash: React.FunctionComponent<ISplashProps> = () => {

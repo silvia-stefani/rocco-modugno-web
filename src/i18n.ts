@@ -4,16 +4,18 @@ import { initReactI18next } from 'react-i18next';
 
 import { enPersonalData, enServices } from './data/about/about_en';
 import { itPersonalData, itServices } from './data/about/about_it';
-import { enMenu } from './data/menu_en';
-import { itMenu } from './data/menu_it';
+import { enMenu } from './data/app_texts/menu/menu_en';
+import { itMenu } from './data/app_texts/menu/menu_it';
 import { enProjects } from './data/projects/projects_en';
 import { itProjects } from './data/projects/projects_it';
-import { enArticles } from './data/articles_en';
-import { itArticles } from './data/articles_it';
+import { enArticles } from './data/articles/articles_en';
+import { itArticles } from './data/articles/articles_it';
 import { enProjectsCats } from './data/projects/projectsCats_en';
 import { itProjectsCats } from './data/projects/projectsCats_it';
 import { enCoding } from './data/coding/coding_en';
 import { itCoding } from './data/coding/coding_it';
+import { enHome } from './data/home/home_en';
+import { itHome } from './data/home/home_it';
 
 i18n
   .use(initReactI18next)
@@ -27,7 +29,8 @@ i18n
           projects: enProjects,
           projectsCats: enProjectsCats,
           articles: enArticles,
-          coding: enCoding
+          coding: enCoding,
+          home: enHome
           // ... otras traducciones
         },
       },
@@ -39,7 +42,8 @@ i18n
           projects: itProjects,
           projectsCats: itProjectsCats,
           articles: itArticles,
-          coding: itCoding
+          coding: itCoding,
+          home: itHome
           // ... otras traducciones
         },
       },
