@@ -23,19 +23,14 @@ export function simmetrica(string: string){
   }
   
   
-export function toBase(num: number, n: number,k:number) {
-    let numero=num;
-    
-    let a=numero.toString(n);
-    
-    if (a.length<=k) {
-      let difetto=k-a.length;
-      
-    for (let i=0; i<difetto; i++) {
-     a="0"+a;
-    }}
-    return a;
+export function toBase(num: number, classe: number) {
+  const base = 4;
+  let converted = num.toString(base);
+  while (converted.length < classe) {
+    converted = '0' + converted;
   }
+  return converted;
+};
   
 export function matrix(string: string,l: number) {
   let array=[];

@@ -15,6 +15,7 @@ import { toDecimalsTwo } from '../utils/toDecimalsTwo';
 import { useTranslation } from 'react-i18next';
 import i18n from '../i18n';
 import { keyboardModuleEvents } from '../interfaces/IModuleActions';
+import { toBase } from '../utils/generativeFunctions';
 
 export default function home() {
 
@@ -180,16 +181,7 @@ export default function home() {
   const handleClick = (action: keyboardModuleEvents) => {
     moduleHomeActions(action)
   }
-
-  const toBase = (num: number, classe: number) => {
-    const base = 4;
-    let converted = num.toString(base);
-    while (converted.length < classe) {
-      converted = '0' + converted;
-    }
-    return converted;
-  };
-
+  
   const [actionsOpen, setActionsOpen] = useState(true);
   const [headH, setHeadH] = useState(0);
   const headActionsRef = useRef<HTMLDivElement>(null);
