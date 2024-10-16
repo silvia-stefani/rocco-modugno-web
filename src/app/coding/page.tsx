@@ -6,7 +6,7 @@ import { Image } from '../../components/Image/Image';
 import { useTranslation } from 'react-i18next';
 import { ICoding } from '../../interfaces/ICoding';
 
-export default function coding() {
+export default function Coding() {
 
   const {t} = useTranslation()
 
@@ -31,4 +31,4 @@ export default function coding() {
       </div>
     </main>
   )
-};
+}

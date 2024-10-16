@@ -12,18 +12,22 @@ export default function App({
     children: React.ReactNode
   }) {
 
-    const [showSplashscreen, setShowSplashscreen] = useState<boolean>(
-      () => !JSON.parse(window.sessionStorage.getItem("showedSplashscreen") as string)
-    );
+    const [showSplashscreen, setShowSplashscreen] = useState<boolean >(true);
+    const [trigger, setTrigger] = useState<boolean>(false);
     
     useEffect(() => {
+      const splashLocalStorage = !JSON.parse(window.sessionStorage.getItem("showedSplashscreen") as string);
+      setShowSplashscreen(splashLocalStorage)
+      setTrigger(true)
       setTimeout(() => {
         setShowSplashscreen(false);
         window.sessionStorage.setItem("showedSplashscreen", JSON.stringify(true));
       }, splashTime)
     }, []);
+
+    if(!trigger) return;
   
-    return showSplashscreen ? <Splash />
+    return showSplashscreen === true ? <Splash />
     : <GlobalProvider>
     <ThemeProvider>
       <Header />

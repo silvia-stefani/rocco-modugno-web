@@ -15,10 +15,7 @@ export const useKeyPress = () => {
     window.addEventListener('keydown', handleKeyDown);
     window.addEventListener('keyup', handleKeyUp);
 
-    let keyInterval: NodeJS.Timeout;
-
-    // Establecer un intervalo para ejecutar handleKeyPress cada 100 milisegundos (ajusta según sea necesario)
-    keyInterval = setInterval(handleKeyUp, 100);
+    const keyInterval = setInterval(handleKeyUp, 100);
 
     return () => {
       window.removeEventListener('keydown', handleKeyDown);

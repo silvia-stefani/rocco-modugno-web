@@ -1,7 +1,8 @@
 import * as React from 'react';
+import { INotionArticle } from '../../interfaces/IArticles';
 
 interface IArticleBlockProps {
-    element: any
+    element: INotionArticle
 }
 
 const ArticleBlock: React.FunctionComponent<IArticleBlockProps> = ({element}) => {

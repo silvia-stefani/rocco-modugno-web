@@ -17,7 +17,7 @@ import i18n from '../i18n';
 import { keyboardModuleEvents } from '../interfaces/IModuleActions';
 import { toBase } from '../utils/generativeFunctions';
 
-export default function home() {
+export default function Home() {
 
   const { isTouchable } = useBreakpoints()  
   const { t } = useTranslation()
@@ -115,10 +115,11 @@ export default function home() {
           font: fonts[(fonts.indexOf(prev.font) + 1) % fonts.length]
         }));
         break;
-      case 'undo_action':
+      case 'undo_action': {
         const result = confirm("Stai cencellando");
         if (result) setFixedTexts([])
         break;
+      }        
       case 'undo_all':
         setFixedTexts((prev) => (prev.slice(0, -1)));
         break;
@@ -268,5 +269,5 @@ export default function home() {
     </div>
 
   </div>
-};
+}
 

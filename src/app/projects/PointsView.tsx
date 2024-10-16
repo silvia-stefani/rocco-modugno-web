@@ -1,5 +1,5 @@
 import { IProject } from '../../interfaces/IProject';
-import { LegacyRef, useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 import styles from './PointsView.module.scss';
 import { Image } from '../../components/Image/Image';
@@ -25,8 +25,8 @@ const PointsView = ({ projects }: { projects: IProject[] }) => {
   const refContainer = useRef<HTMLDivElement>(null);
   
   const initialArrayPos: Position[] = projects.map(() => { 
-    let x = Math.floor(Math.random() * (window.innerWidth / 2)); // Valore iniziale x
-    let y = Math.floor(Math.random() * (window.innerHeight / 2)); // Valore iniziale y
+    const x = Math.floor(Math.random() * (window.innerWidth / 2)); // Valore iniziale x
+    const y = Math.floor(Math.random() * (window.innerHeight / 2)); // Valore iniziale y
     const dx = Math.random() * 1 + 0.25; // Valore iniziale delta X
     const dy = Math.random() * 1 + 0.25; // Valore iniziale delta Y
     return { dx, dy, margin: 40, x, y };
@@ -42,7 +42,7 @@ const PointsView = ({ projects }: { projects: IProject[] }) => {
   const [positions, setPositions] = useState<Array<Position>>(initialArrayPos);
 
   useEffect(() => {
-    setPositions((prevPositions: any) => {
+    setPositions((prevPositions) => {
       return prevPositions.map((pos: Position) => {
         const valueX = Math.random() * (velocity) + (velocity/2)
         const valueY = Math.random() * (velocity) + (velocity/2)
@@ -62,8 +62,6 @@ const PointsView = ({ projects }: { projects: IProject[] }) => {
     setSelectedProject(null);
     setIsRunning(true);
   };
-
-  if(!projects) return null;
   
   useEffect(() => {
     let interval: NodeJS.Timeout;
@@ -114,6 +112,7 @@ const PointsView = ({ projects }: { projects: IProject[] }) => {
     return () => clearInterval(interval);
   }, [isRunning]);
 
+  if(!projects) return null;
   const sp = projects.find((p) => p.id === selectedProject);
 
   return <div className={styles.DotsView} ref={refContainer} id='container'>
@@ -124,7 +123,7 @@ const PointsView = ({ projects }: { projects: IProject[] }) => {
         return (
           <Link
             key={project.id}
-            ref={(el: any) => itemRefs.current[i] = el}
+            ref={(el: HTMLAnchorElement | null) => {itemRefs.current[i] = el}}
             href={`/projects/${project.id}`}
             className={`${styles.project_flying} ${notCat ? styles.unable : ''}`}
             style={{
