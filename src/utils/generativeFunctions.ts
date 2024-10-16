@@ -2,45 +2,40 @@
 //FUNZIONI
 
 export function simmetrica(string: string){
-    let a=string.charAt(0);
-    let b=string.charAt(1);
-    let c=string.charAt(2);
-    let d=string.charAt(3);
+    const a=string.charAt(0);
+    const b=string.charAt(1);
+    const c=string.charAt(2);
+    const d=string.charAt(3);
     
-    let r1=a+b+sav(b)+sav(a)+a+b+sav(b)+sav(a);
-    let r2=c+d+sav(d)+sav(c)+c+d+sav(d)+sav(c);
-    let r3=sah(c)+sah(d)+sac(d)+sac(c)+sah(c)+sah(d)+sac(d)+sac(c);
-    let r4=sah(a)+sah(b)+sac(b)+sac(a)+sah(a)+sah(b)+sac(b)+sac(a);
-    let r5=a+b+sav(b)+sav(a)+a+b+sav(b)+sav(a);
-    let r6=c+d+sav(d)+sav(c)+c+d+sav(d)+sav(c);
-    let r7=sah(c)+sah(d)+sac(d)+sac(c)+sah(c)+sah(d)+sac(d)+sac(c);
-    let r8=sah(a)+sah(b)+sac(b)+sac(a)+sah(a)+sah(b)+sac(b)+sac(a);
+    const r1=a+b+sav(b)+sav(a)+a+b+sav(b)+sav(a);
+    const r2=c+d+sav(d)+sav(c)+c+d+sav(d)+sav(c);
+    const r3=sah(c)+sah(d)+sac(d)+sac(c)+sah(c)+sah(d)+sac(d)+sac(c);
+    const r4=sah(a)+sah(b)+sac(b)+sac(a)+sah(a)+sah(b)+sac(b)+sac(a);
+    const r5=a+b+sav(b)+sav(a)+a+b+sav(b)+sav(a);
+    const r6=c+d+sav(d)+sav(c)+c+d+sav(d)+sav(c);
+    const r7=sah(c)+sah(d)+sac(d)+sac(c)+sah(c)+sah(d)+sac(d)+sac(c);
+    const r8=sah(a)+sah(b)+sac(b)+sac(a)+sah(a)+sah(b)+sac(b)+sac(a);
     
-    let newString=r1+r2+r3+r4+r5+r6+r7+r8;
+    const newString=r1+r2+r3+r4+r5+r6+r7+r8;
   
     return newString;  
     
   }
   
   
-export function toBase(num: number, n: number,k:number) {
-    let numero=num;
-    
-    let a=numero.toString(n);
-    
-    if (a.length<=k) {
-      let difetto=k-a.length;
-      
-    for (let i=0; i<difetto; i++) {
-     a="0"+a;
-    }}
-    return a;
+export function toBase(num: number, classe: number) {
+  const base = 4;
+  let converted = num.toString(base);
+  while (converted.length < classe) {
+    converted = '0' + converted;
   }
+  return converted;
+}
   
 export function matrix(string: string,l: number) {
-  let array=[];
+  const array=[];
   for (let i=0; i<=string.length/l; i+=1) {
-      let riga=string.substring(i*l, i*l+l);
+      const riga=string.substring(i*l, i*l+l);
         array.push(riga);
       
       //print(k);

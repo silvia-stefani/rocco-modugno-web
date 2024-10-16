@@ -15,8 +15,9 @@ import { toDecimalsTwo } from '../utils/toDecimalsTwo';
 import { useTranslation } from 'react-i18next';
 import i18n from '../i18n';
 import { keyboardModuleEvents } from '../interfaces/IModuleActions';
+import { toBase } from '../utils/generativeFunctions';
 
-export default function home() {
+export default function Home() {
 
   const { isTouchable } = useBreakpoints()  
   const { t } = useTranslation()
@@ -114,10 +115,11 @@ export default function home() {
           font: fonts[(fonts.indexOf(prev.font) + 1) % fonts.length]
         }));
         break;
-      case 'undo_action':
+      case 'undo_action': {
         const result = confirm("Stai cencellando");
         if (result) setFixedTexts([])
         break;
+      }        
       case 'undo_all':
         setFixedTexts((prev) => (prev.slice(0, -1)));
         break;
@@ -180,16 +182,7 @@ export default function home() {
   const handleClick = (action: keyboardModuleEvents) => {
     moduleHomeActions(action)
   }
-
-  const toBase = (num: number, classe: number) => {
-    const base = 4;
-    let converted = num.toString(base);
-    while (converted.length < classe) {
-      converted = '0' + converted;
-    }
-    return converted;
-  };
-
+  
   const [actionsOpen, setActionsOpen] = useState(true);
   const [headH, setHeadH] = useState(0);
   const headActionsRef = useRef<HTMLDivElement>(null);
@@ -276,5 +269,5 @@ export default function home() {
     </div>
 
   </div>
-};
+}
 

@@ -56,22 +56,22 @@ export const moduleActions: IModuleActions[] = [
     }
   },
   {
-    id: "undo_action",
+    id: "undo_all",
     key: "z",
     icon: "Z",
     label: {
-      it: "Annulla",
+      it: "Cancella",
       en: "Undo"
     }
   },
   {
-    id: "undo_all",
-    key: "c",
-    icon: "C",
+    id: "undo_action",
+    key: "a",
+    icon: "A",
     label: {
-      it: "Cancella",
+      it: "Ricominciare",
       en: "Clear"
     }
-  }
+  },
 ];
 

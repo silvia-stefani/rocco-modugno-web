@@ -5,8 +5,9 @@ import { PersonalDataType } from '../../types/PersonalDataType';
 
 import styles from './About.module.scss';
 import Paragraph from '../../components/Paragraph/Paragraph';
+import Image from 'next/image';
 
-export default function about() {
+export default function About() {
 
   const { t } = useTranslation()
 
@@ -34,7 +35,7 @@ export default function about() {
         </div>
 
         <div className={styles.image}>
-          <img src="/profile_photo.jpg" alt="" />
+          <Image src="/profile_photo.jpg" alt="" />
         </div>
 
         <div className={styles.presentation}>

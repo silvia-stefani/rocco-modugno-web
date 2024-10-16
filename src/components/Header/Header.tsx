@@ -13,11 +13,12 @@ import { createPortal } from 'react-dom';
 import Icon from '../Icon/Icon';
 import { usePathname } from 'next/navigation';
 import Link from 'next/link';
+import { ServicesType } from '../../types/ServicesType';
 
 interface IHeader { 
 }
 
-const Header: React.FC<IHeader> = ({}) => {
+const Header: React.FC<IHeader> = () => {
 
   const { currentTheme, toggleTheme } = useTheme();
   const { smallDevice } = useBreakpoints()
@@ -30,7 +31,7 @@ const Header: React.FC<IHeader> = ({}) => {
 
   const { t } = useTranslation();
   const menu = t('menu', { returnObjects: true }) as MenuItemsType[];
-  const services = t('services', { returnObjects: true }) as any[];
+  const services = t('services', { returnObjects: true }) as ServicesType[];
   
   //const location = useLocation();
   const currentPage = usePathname();
@@ -42,8 +43,6 @@ const Header: React.FC<IHeader> = ({}) => {
     <ul className={styles.menu}>
       {menu.map((item) => {
         const isCurrent = currentPage === `/${item.id}` ? styles.current : "";
-        console.log(currentPage);
-        
         return <li key={item.id} className={`${styles.item} ${isCurrent}`}><Link href={`/${item.id}`}>{item.name}</Link></li>
       })}
     </ul>

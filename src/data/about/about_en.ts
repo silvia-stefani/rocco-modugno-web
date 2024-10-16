@@ -1,6 +1,7 @@
 import { PersonalDataType } from "../../types/PersonalDataType"
+import { ServicesType } from "../../types/ServicesType"
 
-export const enServices = [
+export const enServices: ServicesType[] = [
     {
         id: 1,
         title: "Editorial services"

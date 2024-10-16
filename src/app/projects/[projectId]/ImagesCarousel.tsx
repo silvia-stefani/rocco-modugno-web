@@ -14,10 +14,10 @@ interface IImagesCarouselProps {
 
 const ImagesCarousel: React.FunctionComponent<IImagesCarouselProps> = ({path, gallery}) => {
 
-  const [topPosition, setTopPosition] = useState(null);
+  const [topPosition, setTopPosition] = useState<number | null>(null);
   const [currentImage, setCurrentImage] = useState(0)
   const [controls, setControls] = useState({direction: 'left', x: 0, y: 0, icon: 'ArrowRight'})
-  const relativeEl = useRef<any>(null)
+  const relativeEl = useRef<HTMLDivElement>(null)
   
   useEffect(() => {
     if (relativeEl.current) {

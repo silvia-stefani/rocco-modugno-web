@@ -7,8 +7,9 @@ import { useState } from 'react';
 import { Image } from '../Image/Image';
 import Paragraph from '../Paragraph/Paragraph';
 import { TagGroup } from '../Tag/Tag';
-import { getProjectCats } from '../../utils/getProjectCat';
 import { useGlobalContext } from '../../contexts/GlobalContext';
+import { useTranslation } from 'react-i18next';
+import { ProjectsCatsType } from '../../types/ProjectsTypes';
 
 interface IProjectStripeProps {
     project: IProject;
@@ -17,11 +18,26 @@ interface IProjectStripeProps {
 
 const ProjectStripe: React.FunctionComponent<IProjectStripeProps> = ({project, smallDevice}) => {
 
+    const { t } = useTranslation()
+    const projectsCats = t("projectsCats", { returnObjects: true }) as ProjectsCatsType[];
     const {filters} = useGlobalContext()
     const cover = `/${project.id}/${project.images.cover}`;
     const increase = filters.listView.isExpanded;
 
     const [hovering, setHovering] = useState(false);    
+
+    const projectCats = () => {
+      const cats: string[] = [];
+      project.cat.forEach(value => {
+        const catsList = projectsCats.find(project => project.value === value)?.label;
+        if (catsList) {
+          cats.push(catsList);
+        }
+    });
+
+      return cats;
+
+    }
 
     return <Link key={project.id} 
       className={`${styles.ProjectStripe} ${hovering ? styles.expanded : ''} ${increase ? styles.increase : ''}`} 
@@ -45,7 +61,7 @@ const ProjectStripe: React.FunctionComponent<IProjectStripeProps> = ({project, s
         ))}
       </div>
       <div className={styles.cats}>
-        <TagGroup tags={getProjectCats(project.cat)} />
+        <TagGroup tags={projectCats()} />
       </div>
       <div className={styles.date}>{project.date}</div>
       </>}
