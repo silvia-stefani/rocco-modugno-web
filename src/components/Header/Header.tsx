@@ -2,18 +2,18 @@
 import * as React from 'react';
 
 import styles from './Header.module.scss';
-import i18n from '../../i18n';
 import { Fragment, useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { MenuItemsType } from '../../types/MeuItemsType';
-import { useTheme } from '../../contexts/ThemeContext';
-import { languages } from '../../models/languages';
-import useBreakpoints from '../../hooks/useBreakpoints';
 import { createPortal } from 'react-dom';
-import Icon from '../Icon/Icon';
+import Icon from 'components/Icon/Icon';
 import { usePathname } from 'next/navigation';
 import Link from 'next/link';
-import { ServicesType } from '../../types/ServicesType';
+import { useTheme } from 'contexts/ThemeContext';
+import useBreakpoints from 'hooks/useBreakpoints';
+import { languages } from 'models/languages';
+import { MenuItemsType } from 'types/MeuItemsType';
+import { ServicesType } from 'types/ServicesType';
+import i18n from 'utils/i18n';
 
 interface IHeader { 
 }

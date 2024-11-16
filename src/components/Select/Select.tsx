@@ -2,12 +2,8 @@ import * as React from 'react';
 import { useEffect, useRef, useState } from 'react';
 import { createPortal } from 'react-dom';
 import './Select.scss';
-import Icon from '../Icon/Icon';
-
-export type Option = {
-    value: string;
-    label: string;
-}
+import Icon from 'components/Icon/Icon';
+import { Option } from 'types/Option';
 
 interface ISelectProps {
     options: Option[];

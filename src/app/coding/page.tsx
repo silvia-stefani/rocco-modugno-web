@@ -2,9 +2,9 @@
 import * as React from 'react';
 
 import styles from './Coding.module.scss';
-import { Image } from '../../components/Image/Image';
+import Image from 'components/Image/Image';
 import { useTranslation } from 'react-i18next';
-import { ICoding } from '../../interfaces/ICoding';
+import { ICoding } from 'interfaces/ICoding';
 
 export default function Coding() {
 

@@ -2,7 +2,7 @@ import * as React from 'react';
 import { ChangeEventHandler, useEffect, useRef, useState } from 'react';
 
 import styles from './Range.module.scss';
-import Icon from '../Icon/Icon';
+import Icon from 'components/Icon/Icon';
 
 interface IRangeProps {
     id: string,

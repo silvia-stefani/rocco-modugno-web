@@ -1,59 +1,21 @@
-'use client'
 import * as React from 'react';
-import { IProject } from '../../../interfaces/IProject';
-import { useTranslation } from 'react-i18next';
 
-import styles from './ProjectPage.module.scss'
-import Paragraph from '../../../components/Paragraph/Paragraph';
-import ImagesCarousel from './ImagesCarousel';
+import { itProjects } from 'data/projects/projects_it';
+import ProjectPage from './client/ProjectPage';
 
-const ProjectPage = ({ params }: { params: { projectId: string } }) => {
+export async function generateStaticParams() {
+  return itProjects.map((project) => ({
+    projectId: project.id,
+  }));
+}
+
+const Project = ({ params }: { params: { projectId: string } }) => {
 
   const id = params.projectId;
-  const { t } = useTranslation()
-  const projects = t("projects", { returnObjects: true }) as IProject[];
-  const project = projects.find(item => item.id === id) as IProject;
 
-  if (!project) return null;
+  if (!id) return null;
 
-  return <div className={styles.ProjectPage}>
-
-    {/* <div className={styles.nav}>{viewTypes.map((view) => {
-      const activeView = currentView === view.id;
-      return (
-        <div
-          key={view.id}
-          onClick={() => setCurrentView(view.id)}
-          className={`${styles.link} ${activeView ? styles.current : ''}`}
-        >
-          {view.label}
-        </div>
-      );
-    })}</div> */}
-
-    <div className={styles.container}>
-      <div className={styles.images}>
-        <ImagesCarousel path={`/${project.id}/`} gallery={project.images.gallery} />
-      </div>
-      <div className={styles.info}>
-
-        <div className={styles.head}>
-          <h3 className={styles.title}>{project.title}</h3>
-        </div>
-
-        <p>{project.subtitle}</p>
-        {project.description && <Paragraph text={project.description} />}
-
-        {project.details && <div className={styles.collab}>
-          <ul className={styles.details}>
-            <li>{project.place} {project.date}</li>
-            {project.details.map((d, i) => <li key={i}>{d}</li>)}
-          </ul>
-        </div>}
-
-      </div>
-    </div>
-  </div>;
+  return <ProjectPage projectId={id} />
 };
 
-export default ProjectPage;
+export default Project;

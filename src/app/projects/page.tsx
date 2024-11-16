@@ -2,20 +2,19 @@
 import * as React from 'react';
 
 import styles from './Projects.module.scss';
-
-import { ViewType } from '../../types/ViewType';
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { IProject, ProjectsCatsIds } from '../../interfaces/IProject';
-import PointsView from './PointsView';
-import ProjectStripe from '../../components/ProjectStripe/ProjectStripe';
-import { orderByAlphabet } from '../../utils/orderByAlphabet';
-import Select from '../../components/Select/Select';
-import { useGlobalContext } from '../../contexts/GlobalContext';
-import { Option } from '../../components/Select/Select';
-import Icon from '../../components/Icon/Icon';
-import Range from '../../components/Range/Range';
-import useBreakpoints from '../../hooks/useBreakpoints';
+import Icon from 'components/Icon/Icon';
+import PointsView from 'components/PointsView/PointsView';
+import ProjectStripe from 'components/ProjectStripe/ProjectStripe';
+import Select from 'components/Select/Select';
+import Range from 'components/Range/Range';
+import { useGlobalContext } from 'contexts/GlobalContext';
+import useBreakpoints from 'hooks/useBreakpoints';
+import { IProject, ProjectsCatsIds } from 'interfaces/IProject';
+import { ViewType } from 'types/ViewType';
+import { orderByAlphabet } from 'utils/orderByAlphabet';
+import { Option } from 'types/Option';
 
 export default function Projects() {
 

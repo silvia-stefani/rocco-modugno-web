@@ -4,7 +4,7 @@ import { IProject } from '../../interfaces/IProject';
 import styles from './ProjectStripe.module.scss';
 import Link from 'next/link';
 import { useState } from 'react';
-import { Image } from '../Image/Image';
+import Image from 'components/Image/Image';
 import Paragraph from '../Paragraph/Paragraph';
 import { TagGroup } from '../Tag/Tag';
 import { useGlobalContext } from '../../contexts/GlobalContext';

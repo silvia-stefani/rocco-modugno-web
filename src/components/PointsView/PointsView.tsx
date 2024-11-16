@@ -2,7 +2,7 @@ import { IProject } from '../../interfaces/IProject';
 import { useEffect, useRef, useState } from 'react';
 
 import styles from './PointsView.module.scss';
-import { Image } from '../../components/Image/Image';
+import Image from 'components/Image/Image';
 import { useGlobalContext } from '../../contexts/GlobalContext';
 import useMousePosition from '../../hooks/useMousePosition';
 import Link from 'next/link';

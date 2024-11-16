@@ -55,30 +55,3 @@
         }
     }
 }
-
-.ArticlePage {
-    max-width: 800px;
-    width: 100%;
-    padding: 16px;
-    padding-top: 32px;
-    display: flex;
-    flex-direction: column;
-    .to_do {
-        display: flex;
-        gap: 8px;
-        .checkmark {
-            width: 14px;
-            height: 14px;
-            margin-top: 4px;
-            background-color: rgba(var(--text-rgb), 0.2);
-            border-radius: 2px;
-            &.checked {
-                background-color: var(--text);
-                border-radius: 50%;
-            }
-        }
-    }
-    .quote {
-        font-style: italic;
-    }
-}

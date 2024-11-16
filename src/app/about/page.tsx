@@ -1,11 +1,10 @@
 'use client'
 import * as React from 'react';
 import { useTranslation } from 'react-i18next';
-import { PersonalDataType } from '../../types/PersonalDataType';
+import { PersonalDataType } from 'types/PersonalDataType';
 
 import styles from './About.module.scss';
-import Paragraph from '../../components/Paragraph/Paragraph';
-import Image from 'next/image';
+import Paragraph from 'components/Paragraph/Paragraph';
 
 export default function About() {
 
@@ -35,7 +34,7 @@ export default function About() {
         </div>
 
         <div className={styles.image}>
-          <Image src="/profile_photo.jpg" alt="" />
+          <img src="/profile_photo.jpg" alt="" />
         </div>
 
         <div className={styles.presentation}>

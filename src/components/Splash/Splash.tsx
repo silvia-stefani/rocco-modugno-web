@@ -2,9 +2,9 @@
 import * as React from 'react';
 
 import styles from './Splash.module.scss';
-import { splashTime } from '../../models/splashTime';
 import { useEffect, useState } from 'react';
-import { toBase } from '../../utils/generativeFunctions';
+import { splashTime } from 'models/splashTime';
+import { toBase } from 'utils/generativeFunctions';
 
 interface ISplashProps {
   

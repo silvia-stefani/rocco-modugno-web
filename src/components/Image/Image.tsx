@@ -5,7 +5,7 @@ interface IImage {
   cover?: boolean
 }
 
-export const Image: React.FC<IImage> = ({ src, cover }) => {
+const Image: React.FC<IImage> = ({ src, cover }) => {
 
   const isVideo = src.includes("vid");
 
@@ -19,3 +19,5 @@ export const Image: React.FC<IImage> = ({ src, cover }) => {
 
   return <img className={styles.Image} src={src} />;
 }
+
+export default Image;

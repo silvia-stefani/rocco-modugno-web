@@ -13,7 +13,7 @@ import useBreakpoints from '../hooks/useBreakpoints';
 import StaticModule from '../components/Module/StaticModule';
 import { toDecimalsTwo } from '../utils/toDecimalsTwo';
 import { useTranslation } from 'react-i18next';
-import i18n from '../i18n';
+import i18n from '../utils/i18n';
 import { keyboardModuleEvents } from '../interfaces/IModuleActions';
 import { toBase } from '../utils/generativeFunctions';
 

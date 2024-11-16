@@ -7,6 +7,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "export": "next export",
     "start": "next start -p 8080",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
@@ -14,10 +15,9 @@
   "dependencies": {
     "@notionhq/client": "^2.2.15",
     "dotenv": "^16.4.5",
-    "express": "^4.21.1",
     "i18n": "^0.15.1",
     "i18next": "^23.7.11",
-    "next": "^14.2.15",
+    "next": "^13.4.19",
     "notion-client": "^6.16.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
