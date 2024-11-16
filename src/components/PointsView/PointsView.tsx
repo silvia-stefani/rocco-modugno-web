@@ -127,8 +127,8 @@ const PointsView = ({ projects }: { projects: IProject[] }) => {
             href={`/projects/${project.id}`}
             className={`${styles.project_flying} ${notCat ? styles.unable : ''}`}
             style={{
-              left: positions[i].x,
-              top: positions[i].y
+              left: positions[i]?.x,
+              top: positions[i]?.y
             }}
             onMouseEnter={() => stop(project.id)}
             onMouseLeave={resume}
