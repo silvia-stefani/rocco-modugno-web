@@ -242,10 +242,9 @@ export const itProjects: IProject[] = [
         In this work I show the advantages of a combinatory approach to the problem of surface design, defining a new method based on the historical ones of S. Truchet (1704) and D. Douat (1722).How many drawings can you make with n modules in a k class squared grid? Which kind of drawings can you make? How can you catalogue them?
         In this work I show the advantages of a combinatory approach to the problem of surface design, defining a new method based on the historical ones of S. Truchet (1704) and D. Douat (1722).`,
         images: {
-            cover: "qm_img_1.jpg",
+            cover: "qm_img_2.gif",
             gallery: [
                 "qm_img_1.jpg",
-                "qm_img_2.gif",
                 "qm_img_3.jpg",
                 "qm_img_4.jpg"
             ]
@@ -263,7 +262,7 @@ export const itProjects: IProject[] = [
         title: "Calendario Motola",
         subtitle: "Calendario “barocco” realizzato per la Tipografia Motola, lo scopo era quello di dimostrare all’interno di un artefatto grafico le nuove possibilità espressive date dai nuovi macchinari acquistati dalla tipografia.",
         images: {
-            cover: "cm_img_1.jpg",
+            cover: "cm_img_10.gif",
             gallery: [
                 "cm_img_1.jpg",
                 "cm_img_2.jpg",
