@@ -1,3 +1,11 @@
+export interface ContentI {
+    title: string,
+    content: string[] | {
+        title: string,
+        text: string
+    }[]
+}
+
 export type PersonalDataType = {
     contacts: {
         mail: string,
@@ -9,36 +17,5 @@ export type PersonalDataType = {
         pIva: string
     }
     presentation: string,
-    experience: {
-        title: string,
-        content: string[]
-    },
-    mentions: {
-        title: string,
-        content: {
-            title: string,
-            text: string
-        }[]
-    },
-    talks: {
-        title: string,
-        content: {
-            title: string,
-            text: string
-        }[]
-    },
-    workshops: {
-        title: string,
-        content: {
-            title: string,
-            text: string
-        }[]
-    },
-    juryMem: {
-        title: string,
-        content: {
-            title: string,
-            text: string
-        }[]
-    }
+    content: ContentI[],
 }
