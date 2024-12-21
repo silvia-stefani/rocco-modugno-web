@@ -2,22 +2,21 @@ import { PersonalDataType } from "../../types/PersonalDataType"
 
 
 //Testi correnti sotto intestazione
-/*
+
 export const itServices = [
   {
     id: 1,
-    title: "Bevenuto!"
+    title: ""
   },
   {
     id: 2,
-    title: "Vuoi fare un disegno?" 
+    title: "" 
   },
   {
     id: 3,
-    title: "Ti serve altro?"
+    title: ""
   }
-] 
-*/
+]
 
 export const itPersonalData: PersonalDataType = {
   contacts: {
@@ -35,9 +34,10 @@ export const itPersonalData: PersonalDataType = {
       title: "Esperienze principali",
       content: [
         "2024 Assegnista di ricerca per la libera università di Bolzano, Libero professionista a P.Iva",
-        "2023 Ricercatore FADE per la Libera Università di Bolzano BZ",
-        "2021 Collaboratore per Claudia Polizzi Graphic Design Studio, Assistente di progetto per la Libera Università di Bolzano BZ",
-        "2020 Grafico editoriale per Manfredi Edizioni, Imola BO",
+        "2023 Ricercatore FADE e Assistente alla didattica per la Libera Università di Bolzano",
+        "2022 Assistente alla didattica per la Libera Università di Bolzano",
+        "2021 Collaboratore per Claudia Polizzi Graphic Design Studio, Assistente alla didattica per la Libera Università di Bolzano",
+        "2020 Grafico editoriale per Manfredi Edizioni",
         "2019 Grafico editoriale per Lilit Books, Montescaglioso  MT",
         "2018 Grafico per Vertigo Coop, Tito PZ"
       ],
@@ -78,22 +78,35 @@ export const itPersonalData: PersonalDataType = {
       ]
     },
     {
-      title: "Talks",
+      title: "",
       content: [
         {
-          title: 'Tiling Trough Typography, typing shapes combining types',
-          text: '· 24.11.2023 Universitat Oberta de Catalunya, Barcelona, Spagna'
+          title: '',
+          text: ''
         },
         {
-          title: 'Pensiero algoritmico, Spazi generativi e combinatoria del pattern',
-          text: `· 18.10.2022 ABADIR di Sant’Agata li Battiati CT, Italia
-          *enter*Presentazione da remoto dei workshop tenuti presso Abadir`
+          title: '',
+          text: ``
         },
         {
-          title: 'Tradizione e innovazione attraverso la pratica del design',
-          text: `· 09.02.2022 REX Upcycling Convention, Brixen BZ`
+          title: '',
+          text: ``
         }
       ]
+    },
+
+    /*Array di oggetti per intestazioni elastiche
+    {
+      title: "cane",
+      content: [ //array o di titoli e oggetti oppure di sole stringhe ("...","...")
+     {title: "uccellino",
+     text: "gattino",
+     }]
     }
+*/
+
+
+
+
   ]
 }

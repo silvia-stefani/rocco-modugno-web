@@ -1,22 +1,22 @@
 import { PersonalDataType } from "../../types/PersonalDataType"
 
 //Testi correnti sotto intestazione
-/*
-export const itServices = [
+
+export const enServices = [
   {
     id: 1,
-    title: "Bevenuto!"
+    title: ""
   },
   {
     id: 2,
-    title: "Vuoi fare un disegno?" 
+    title: "" 
   },
   {
     id: 3,
-    title: "Ti serve altro?"
+    title: ""
   }
 ] 
-*/
+
 
 export const enPersonalData: PersonalDataType = {
   contacts: {
@@ -42,7 +42,7 @@ export const enPersonalData: PersonalDataType = {
       ],
     },
     {
-      title: "Pubblicazioni e menzioni",
+      title: "Publications and mentions",
       content: [
         {
           title: 'Tiling through typography, typing shapes combining types;',
@@ -77,20 +77,19 @@ export const enPersonalData: PersonalDataType = {
       ]
     },
     {
-      title: "Talks",
+      title: "",
       content: [
         {
-          title: 'Tiling Trough Typography, typing shapes combining types',
-          text: '· 24.11.2023 Universitat Oberta de Catalunya, Barcelona, Spagna'
+          title: '',
+          text: ''
         },
         {
-          title: 'Pensiero algoritmico, Spazi generativi e combinatoria del pattern',
-          text: `· 18.10.2022 ABADIR di Sant’Agata li Battiati CT, Italia
-          *enter*Presentazione da remoto dei workshop tenuti presso Abadir`
+          title: '',
+          text: ``
         },
         {
-          title: 'Tradizione e innovazione attraverso la pratica del design',
-          text: `· 09.02.2022 REX Upcycling Convention, Brixen BZ`
+          title: '',
+          text: ``
         }
       ]
     }

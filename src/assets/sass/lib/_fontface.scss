@@ -1,35 +1,38 @@
+//Importazione dei caratteri, 
+//NB: devono essere rinominate con le lettere altrimenti non funzionano (rolo deco 01 > diventa > rolo deco a)
+
 @font-face {
     font-family: "rolo deco a";
-    src: url("../../generative-fonts/rolo\ deco.otf") format("opentype");
+    src: url("../../generative-fonts/rolo\ deco\ 01.otf") format("opentype");
 }
 
 @font-face {
     font-family: "rolo deco b";
-    src: url("../../generative-fonts/rolo deco b.otf") format("opentype");
+    src: url("../../generative-fonts/rolo deco 02.otf") format("opentype");
 }
 
 @font-face {
     font-family: "rolo deco c";
-    src: url("../../generative-fonts/rolo deco c.otf") format("opentype");
+    src: url("../../generative-fonts/rolo deco 03.otf") format("opentype");
 }
 
 @font-face {
     font-family: "rolo deco d";
-    src: url("../../generative-fonts/rolo deco d.otf") format("opentype");
+    src: url("../../generative-fonts/rolo deco 04.otf") format("opentype");
 }
 
 @font-face {
     font-family: "rolo deco e";
-    src: url("../../generative-fonts/rolo deco e.otf") format("opentype");
+    src: url("../../generative-fonts/rolo deco 05.otf") format("opentype");
 }
 
 @font-face {
     font-family: "rolo deco f";
-    src: url("../../generative-fonts/rolo deco f.otf") format("opentype");
+    src: url("../../generative-fonts/rolo deco 06.otf") format("opentype");
 }
 
 @font-face {
     font-family: "rolo deco g";
-    src: url("../../generative-fonts/rolo deco g.otf") format("opentype");
+    src: url("../../generative-fonts/rolo deco 07.otf") format("opentype");
 }
 

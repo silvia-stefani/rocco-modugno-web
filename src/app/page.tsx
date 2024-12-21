@@ -1,3 +1,5 @@
+//Qui ci sono delle cose relative ai font per la decorazione
+
 'use client'
 import * as React from 'react';
 import { useEffect, useRef, useState } from 'react';
@@ -77,11 +79,12 @@ export default function Home() {
   function moduleHomeActions(action: keyboardModuleEvents) {
     switch (action) {
       case 'change_module_plus':
-        setPrintSettings((prev) => ({
-          ...prev,
-          nums: prev.nums + 1
-        }));
-        break;
+
+  setPrintSettings((prev) => ({
+    ...prev,
+    nums: prev.nums + 1
+  }));
+     break;
       case 'change_module_minus':
         setPrintSettings((prev) => ({
           ...prev,
@@ -164,7 +167,7 @@ export default function Home() {
   const handleKeyDown = (event: KeyboardEvent) => {
     const action = moduleActions.find(m => m.key === event.key)?.id;
     if(action) moduleHomeActions(action)
-    if (printSettings.nums > Math.pow(6, 4) / 4) {
+    if (printSettings.nums > Math.pow(4, 4) / 4) {
       setPrintSettings((prev) => ({
         ...prev,
         nums: 0

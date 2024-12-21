@@ -4,39 +4,40 @@ export const moduleActions: IModuleActions[] = [
   {
     id: "change_module_minus",
     key: "ArrowLeft",
-    icon: "←",
+    icon: "←→",
     label: {
-      it:  "Nodo",
-      en: "Node"
+      it:  "Configurazione",
+      en: "Configuration"
     }
   },
-  {
+  { //modificato da R
     id: "change_module_plus",
     key: "ArrowRight",
-    icon: "→",
+    icon: "",
     label: {
-      it:  "Nodo",
-      en: "Node"
+      it:  "",
+      en: ""
     }
-  },
+  }, 
   {
     id: "enlarge_text",
     key: "ArrowUp",
-    icon: "↑",
+    icon: "↑↓",
     label: {
-      it: "Misura",
+      it: "Scala",
       en: "Size"
     }
   },
-  {
+  
+  { //modificato da R
     id: "reduce_text",
     key: "ArrowDown",
-    icon: "↓",
+    icon: "",
     label: {
-      it: "Misura",
-      en: "Size"
+      it: "",
+      en: ""
     }
-  },
+  }, 
   {
     id: "rotate_text",
     key: "r",
@@ -51,8 +52,8 @@ export const moduleActions: IModuleActions[] = [
     key: "m",
     icon: "M",
     label: {
-      it: "Modulo",
-      en: "Module"
+      it: "Forma",
+      en: "Shape"
     }
   },
   {
@@ -69,8 +70,8 @@ export const moduleActions: IModuleActions[] = [
     key: "a",
     icon: "A",
     label: {
-      it: "Ricominciare",
-      en: "Clear"
+      it: "Tabula Rasa",
+      en: "Clear All"
     }
   },
 ];

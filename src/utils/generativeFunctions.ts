@@ -23,6 +23,7 @@ export function simmetrica(string: string){
   }
   
   
+//Questa funzione viene usata? Penso si usi quella "ToDecimalTwo" che ho modificata per farla lavorare in base 4
 export function toBase(num: number, classe: number) {
   const base = 4;
   let converted = num.toString(base);

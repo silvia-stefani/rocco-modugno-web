@@ -23,7 +23,7 @@ export default function Projects() {
   const { smallDevice } = useBreakpoints();
   const projectsObject = t("projects", { returnObjects: true }) as IProject[];
   const projectsCats = t("projectsCats", { returnObjects: true }) as Option[];
-  const [currentView, setCurrentView] = useState("points")
+  const [currentView, setCurrentView] = useState(smallDevice?"list":"points")
 
   const alphabeticDescendent = filters.listView.order === "alph-desc";
   const isCurrentStyleImages = filters.dynamicView.style === "images";

@@ -9,7 +9,7 @@ export const enProjects: IProject[] = [
         title: "60 Tavole Illustrate di Dominique Douat",
         subtitle: "Riadattamento contemporaneo della teoria decorativa di Dominique Douat, delle sue tavole illustrate ed elaborazioni di variazioni formali delle composizioni.",
         images: {
-            cover: "60tidd_img_5.jpg",
+            cover: "60tidd_img_1.jpg",
             gallery: [
                 "60tidd_img_1.jpg",
                 "60tidd_img_2.jpg",
@@ -173,6 +173,7 @@ export const enProjects: IProject[] = [
             "Collaborazione con Antonino Benincasa"
         ]
     }, 
+    /*
     { // l-ove
         id: "l-ove",
         cat: [ "poster" ],
@@ -186,14 +187,14 @@ export const enProjects: IProject[] = [
                 "lv_img_1.jpg"
             ]
         }
-    }, 
+    }, */
     { // il_cielo_nella_stalla
         id: "il_cielo_nella_stalla",
         cat: [ "pattern", "research" ],
         date: "2021",
         place: "Noci (BA)",
         title: "Il Cielo nella Stalla",
-        subtitle: "Pavimento retroilluminato realizzato con la tecnica del terrazzo alla veneziana a partire da scarti di marmo.",
+        subtitle: "Pavimento retroilluminato realizzato con la tecnica del terrazzo alla veneziana a partire da scarti di marmo, realizzato durante la residenza d'artista presso la Masseria Cultura (Noci, BA).",
         description: `Progetto finanziato da Masseria Cultura, Calcarea`,
         images: {
             cover: "icns_img_1.jpg",
@@ -211,7 +212,7 @@ export const enProjects: IProject[] = [
             ]
         },
         details: [
-            "Collaborazione con Franceso Bianco"
+            "Collaborazione con Franceso Bianco, Calcarea"
         ]
     }, 
     { // storie_d_arte_e_di_critica
@@ -261,7 +262,7 @@ export const enProjects: IProject[] = [
         date: "2019",
         place: "Montescaglioso",
         title: "Calendario Motola",
-        subtitle: "Calendario “barocco” realizzato per la Tipografia Motola, lo scopo era quello di dimostrare all’interno di un artefatto grafico le nuove possibilità espressive date dai nuovi macchinari acquistati dalla tipografia.",
+        subtitle: "Calendario “barocco” realizzato con Mauro Bubbico per la Tipografia Motola, lo scopo era quello di dimostrare all’interno di un artefatto grafico le nuove possibilità espressive date dai nuovi macchinari acquistati dalla tipografia.",
         images: {
             cover: "cm_img_1.jpg",
             gallery: [
@@ -279,8 +280,8 @@ export const enProjects: IProject[] = [
             ]
         },
         details: [
-            "Collaborazione con Mauro Bubbico",
-            "Fotografia di Andrea Righetto"
+            "In collaborazione con Mauro Bubbico",
+            "Fotografie di Andrea Righetto"
         ]
     }, 
     { // infinita_disegni
@@ -290,13 +291,13 @@ export const enProjects: IProject[] = [
         place: "ISIA di Faenza",
         title: "Un’infinità di disegni",
         subtitle: "Progetto di Tesi Magistrale in Design della Comunicazione presso l’ISIA di Faenza, a.a. 19/20.",
-        description: `Relatore: Valentina Rachiele
+        description: `Relatrice: Valentina Rachiele
         *enter*Correlatore: Marco Buiani
         *enter*Progetto Selezionato per essere esposto nella mostra collettiva “Neologia”:
         • 16-26 ottobre 2021 at Toolbox Coworking, Torino
         • 25-27 marzo 2022 presso Certosa Graphic Village, Milano`,
         images: {
-            cover: "id_img_14.jpg",
+            cover: "id_vid_1.mp4",
             gallery: [
                 "id_vid_1.mp4",
                 "id_img_1.jpg",
@@ -316,7 +317,7 @@ export const enProjects: IProject[] = [
             ]
         },
         details: [
-            "Collabrozaione con Andrea Badiali"
+            "Fotografie di Andrea Badiali"
         ]
     }, 
 ]
