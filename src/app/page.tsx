@@ -42,6 +42,8 @@ export default function Home() {
     "rolo deco g"
   ]
 
+  const maxNums = Math.pow(4, 4) / 4;
+
   const modulesRef = useRef<HTMLDivElement>(null)
   const modW = modulesRef.current ? modulesRef.current.clientWidth : 0;
   const modH = modulesRef.current ? modulesRef.current.clientHeight : 0;
@@ -74,64 +76,63 @@ export default function Home() {
     const clientX = Math.floor(mouseX / initialValues.s) * initialValues.s;
     const clientY = Math.floor(mouseY / initialValues.s) * initialValues.s;
     setPosition({ x: clientX, y: clientY });
-  }, [mouseX, mouseY])
+  }, [mouseX, mouseY]);
 
   function moduleHomeActions(action: keyboardModuleEvents) {
-    switch (action) {
-      case 'change_module_plus':
-
-  setPrintSettings((prev) => ({
-    ...prev,
-    nums: prev.nums + 1
-  }));
-     break;
-      case 'change_module_minus':
-        setPrintSettings((prev) => ({
-          ...prev,
-          nums: prev.nums - 1
-        }));
-        break;
-      case 'enlarge_text':
-        setPrintSettings((prev) => ({
-          ...prev,
-          s: prev.s * 2
-        }));
-        break;
-      case 'reduce_text':
-        if (printSettings.s > 10) {
-          setPrintSettings((prev) => ({
+    setPrintSettings((prev) => {
+      switch (action) {
+        case 'change_module_plus':
+          if (prev.nums < maxNums) {
+            return {
+              ...prev,
+              nums: prev.nums + 1,
+            };
+          }
+          return prev;
+        case 'change_module_minus':
+          return {
             ...prev,
-            s: prev.s / 2
-          }));
+            nums: Math.max(0, prev.nums - 1),
+          };
+        case 'enlarge_text':
+          return {
+            ...prev,
+            s: prev.s * 2,
+          };
+        case 'reduce_text':
+          return prev.s > 10
+            ? {
+                ...prev,
+                s: prev.s / 2,
+              }
+            : prev;
+        case 'rotate_text':
+          return {
+            ...prev,
+            r: prev.r + 45,
+            s: prev.r.toString().endsWith('5')
+              ? prev.s * Math.sqrt(2)
+              : prev.s / Math.sqrt(2),
+          };
+        case 'change_shape':
+          return {
+            ...prev,
+            font: fonts[(fonts.indexOf(prev.font) + 1) % fonts.length],
+          };
+        case 'undo_action': {
+          const result = confirm('Stai cencellando');
+          if (result) setFixedTexts([]);
+          return prev;
         }
-        break;
-      case 'rotate_text':
-        setPrintSettings((prev) => ({
-          ...prev,
-          r: prev.r + 45,
-          s: prev.r.toString().endsWith('5') ? prev.s * Math.sqrt(2) : prev.s / Math.sqrt(2)
-        }));
-        break;
-      case 'change_shape':
-        setPrintSettings((prev) => ({
-          ...prev,
-          font: fonts[(fonts.indexOf(prev.font) + 1) % fonts.length]
-        }));
-        break;
-      case 'undo_action': {
-        const result = confirm("Stai cencellando");
-        if (result) setFixedTexts([])
-        break;
-      }        
-      case 'undo_all':
-        setFixedTexts((prev) => (prev.slice(0, -1)));
-        break;
-      default:
-        break;
-    }
-
+        case 'undo_all':
+          setFixedTexts((texts) => texts.slice(0, -1));
+          return prev;
+        default:
+          return prev;
+      }
+    });
   }
-
+  
   const [isDrawing, setIsDrawing] = useState(false);
   
   const handleMouseDown = (e: React.MouseEvent<HTMLDivElement, MouseEvent> | React.TouchEvent<HTMLDivElement>) => {
@@ -167,12 +168,6 @@ export default function Home() {
   const handleKeyDown = (event: KeyboardEvent) => {
     const action = moduleActions.find(m => m.key === event.key)?.id;
     if(action) moduleHomeActions(action)
-    if (printSettings.nums > Math.pow(4, 4) / 4) {
-      setPrintSettings((prev) => ({
-        ...prev,
-        nums: 0
-      }));
-    }
   };
 
   useEffect(() => {
