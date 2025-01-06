@@ -2,7 +2,7 @@
 import * as React from 'react';
 
 import styles from './Projects.module.scss';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import Icon from 'components/Icon/Icon';
 import PointsView from 'components/PointsView/PointsView';
@@ -23,7 +23,15 @@ export default function Projects() {
   const { smallDevice } = useBreakpoints();
   const projectsObject = t("projects", { returnObjects: true }) as IProject[];
   const projectsCats = t("projectsCats", { returnObjects: true }) as Option[];
-  const [currentView, setCurrentView] = useState(smallDevice?"list":"points")
+  const [currentView, setCurrentView] = useState<"list" | "points" | null>(null);
+
+  useEffect(() => {
+    if(smallDevice) { 
+      setCurrentView("list") 
+    } else {
+      setCurrentView("points");
+    }
+  }, [smallDevice]);
 
   const alphabeticDescendent = filters.listView.order === "alph-desc";
   const isCurrentStyleImages = filters.dynamicView.style === "images";
@@ -106,6 +114,8 @@ export default function Projects() {
     }))
   }
 
+  if(!currentView) return null;
+
   return (
     <div className={styles.Projects}>
 
@@ -118,7 +128,7 @@ export default function Projects() {
           <span>{isCurrentStyleImages ? "／" : "＼"}</span>
           {isCurrentStyleImages ? "Titles" : "Images"}
         </button> :
-          (!smallDevice) && <button disabled={currentView === "points"} className={styles.tab} onClick={handleExpandedToggle}>
+          (!smallDevice) && <button className={styles.tab} onClick={handleExpandedToggle}>
             <Icon size={14} name={filters.listView.isExpanded ? "ArrowTL" : "ArrowDR"} />
           </button>}
         {currentView === "list" && <button className={styles.tab} onClick={handleChangeOrder}>
