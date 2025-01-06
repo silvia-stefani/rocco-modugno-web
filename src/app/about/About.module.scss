@@ -3,6 +3,14 @@
     padding: 16px;
     padding-bottom: 32px;
 
+    .column {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 8px; //Interlinea superiore dei titoletti
+    }
+
+
     .content {
         width: 100%;
         max-width: 1200px;

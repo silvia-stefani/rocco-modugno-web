@@ -30,6 +30,7 @@ export const themes: IThemes[] = [
     bg: colors.white
   }
 },
+
 {
   id: "dark",
   label: "Dark Theme",
@@ -39,6 +40,7 @@ export const themes: IThemes[] = [
     bg: colors.black
   }
 },
+
 {
   id: "gray",
   label: "Gray Theme",

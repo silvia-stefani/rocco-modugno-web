@@ -3,50 +3,45 @@ import { IProject } from "../../interfaces/IProject";
 export const itProjects: IProject[] = [ 
     { // 60_tavole_illustrate_di_dominique_douat
         id: "60_tavole_illustrate_di_dominique_douat",
-        cat: ["research", "pattern"],
+        cat: ["editorial", "pattern"],
         date: "2020",
-        place: "ISIA di Faenza",
-        title: "60 Tavole Illustrate di Dominique Douat",
-        subtitle: "Riadattamento contemporaneo della teoria decorativa di Dominique Douat, delle sue tavole illustrate ed elaborazioni di variazioni formali delle composizioni.",
+        place: "Faenza RA",
+        title: "60 Tavole di DD",
+    subtitle: "Quaderno di studio della teoria decorativa elaborata da Dominique Douat nel 1722, sulla base degli studi combinatori di Sebastien Truchet. Analisi del metodo, riproduzione vettoriale delle sue tavole illustrate, elaborazioni di variazioni formali delle composizioni.",
         images: {
-            cover: "60tidd_img_5.jpg",
+            cover: "60tidd_gif_1.gif",
             gallery: [
-                "60tidd_img_1.jpg",
-                "60tidd_img_2.jpg",
                 "60tidd_img_3.jpg",
-                "60tidd_img_4.jpg",
+                "60tidd_img_2.jpg",
                 "60tidd_img_5.jpg",
-                "60tidd_img_6.jpg",
-                "60tidd_img_7.jpg",
-                "60tidd_img_8.jpg",
                 "60tidd_img_9.jpg",
-                "60tidd_img_10.jpg",
-                "60tidd_vid_1.mp4"
+                "60tidd_img_10.jpg"
             ]
         },
         details: [
-            "Fotografia di Andrea Righetto"
+            "Fotografie di Andrea Righetto"
         ]
     },    
     { // ABC_61250_e_altre
         id: "ABC_61250_e_altre",
-        cat: [ "scripting", "consult" ],
+        cat: [ "scripting", "editorial" ],
         date: "2023",
         place: "Remoto",
         title: "ABC 61250 e Altre",
         subtitle: "Progetto di Aurora Pelaggi e Matteo Mariangioli",
-        description: `Script combinatorio e consulenza per la ricombinazione delle righe degli strilloni di diversi giornali marchigiani.
-        *enter*"Allora cosa succede se una notizia assolutamente popolare, che altro non è che un insieme di righe, viene inserita all'interno di una macchina combinatoria che permette di generare infinite combinazioni?”`,
+        description: `"Allora cosa succede se una notizia assolutamente popolare, che altro non è che un insieme di righe, viene inserita all'interno di una macchina combinatoria che permette di generare infinite combinazioni?”.
+        Aurora e Matteo, studenti dell'ISIA di Urbino, mi hanno chiesto un aiuto per ricombinare le righe degli iconici strilloni di diverse testate Marchigiane.`,
         images: {
-            cover: "abc_img_1.jpg",
+            cover: "ABC-gif-lq.gif",
             gallery: [
-                "abc_img_1.jpg",
                 "abc_img_2.jpg",
-                "abc_img_3.jpg"
+                "abc_img_3.jpg",
+                "abc_img_1.jpg"
             ]
         },
         details: [
-            ""
+            "Citazione estratta dal libro",
+            "Fotografie di Francesco Gaviano"
         ]
     },
     { // archeologia_tradizione_e_arti_applicate
@@ -57,7 +52,7 @@ export const itProjects: IProject[] = [
         title: "Archeologia Tradizionale e Arti Applicate",
         subtitle: "Tesi triennale discussa presso l’ISIA di Urbino a Marzo 2020.",
         images: {
-            cover: "atap_img_1.jpg",
+            cover: "atap_img_2.jpg",
             gallery: [
                 "atap_img_1.jpg"
             ]
@@ -68,6 +63,7 @@ export const itProjects: IProject[] = [
             "Fotografia di Andrea Righetto"
         ]
     },
+    /*
     { // bandiere_abadir
         id: "bandiere_abadir",
         cat: [ "motion" ],
@@ -83,6 +79,9 @@ export const itProjects: IProject[] = [
             ]
         }
     },
+    */
+
+    /*
     { // blauer_schnipsel_book
         id: "blauer_schnipsel_book",
         cat: [ "editorial", "pattern" ],
@@ -103,6 +102,9 @@ export const itProjects: IProject[] = [
             "Fotografia di Andrea Righetto"
         ]
     }, 
+    */
+
+    /*
     { // blake_ordito
         id: "blake_ordito",
         cat: [ "type", "textile" ],
@@ -118,6 +120,9 @@ export const itProjects: IProject[] = [
             gallery: []
         }
     }, 
+    */
+
+    /*
     { // carnevale_di_putignano
         id: "carnevale_di_putignano",
         cat: [ "pattern" ],
@@ -134,6 +139,10 @@ export const itProjects: IProject[] = [
             ]
         }
     }, 
+
+    */
+
+    /*
     { // catalogo_matera_2019
         id: "catalogo_matera_2019",
         cat: [ "editorial" ],
@@ -155,6 +164,9 @@ export const itProjects: IProject[] = [
             "Collaborazione con Giulia B. Francalanci"
         ]
     }, 
+
+    */
+
     { // design_classics
         id: "design_classics",
         cat: [ "editorial" ],
@@ -170,9 +182,10 @@ export const itProjects: IProject[] = [
             ]
         },
         details: [
-            "Collaborazione con Antonino Benincasa"
+            "Responsabile di progetto: Antonino Benincasa, Fotografie: Andrea Righetto"
         ]
     }, 
+    /*
     { // l-ove
         id: "l-ove",
         cat: [ "poster" ],
@@ -186,7 +199,10 @@ export const itProjects: IProject[] = [
                 "lv_img_1.jpg"
             ]
         }
-    }, 
+        
+    }, */
+    
+    /*
     { // il_cielo_nella_stalla
         id: "il_cielo_nella_stalla",
         cat: [ "pattern", "research" ],
@@ -213,14 +229,14 @@ export const itProjects: IProject[] = [
         details: [
             "Collaborazione con Franceso Bianco"
         ]
-    }, 
+    }, */
     { // storie_d_arte_e_di_critica
         id: "storie_d_arte_e_di_critica",
         cat: [ "editorial" ],
         date: "2021",
-        place: "Imola",
+        place: "Imola BO",
         title: "Storie d'Arte e di Critica",
-        subtitle: "?",
+        subtitle: "Libro impaginato per Manfredi Edizioni",
         images: {
             cover: "sac_img_1.jpg",
             gallery: [
@@ -231,6 +247,7 @@ export const itProjects: IProject[] = [
             "Fotografia di Andrea Righetto"
         ]
     }, 
+    /*
     { // quadrati_magici
         id: "quadrati_magici",
         cat: [ "pattern", "research" ],
@@ -253,28 +270,23 @@ export const itProjects: IProject[] = [
         details: [
             "Fotografia di Andrea Righetto"
         ]
-    }, 
+    }, */
     { // calendario_motola
         id: "calendario_motola",
         cat: [ "pattern", "editorial" ],
         date: "2019",
         place: "Montescaglioso",
-        title: "Calendario Motola",
+        title: "Calendario per la Tipografia Motola",
         subtitle: "Calendario “barocco” realizzato per la Tipografia Motola, lo scopo era quello di dimostrare all’interno di un artefatto grafico le nuove possibilità espressive date dai nuovi macchinari acquistati dalla tipografia.",
         images: {
-            cover: "cm_img_10.gif",
+            cover: "cm_img_10_2.gif",
             gallery: [
                 "cm_img_1.jpg",
-                "cm_img_2.jpg",
-                "cm_img_3.jpg",
                 "cm_img_4.jpg",
+                "cm_img_11.jpg",
                 "cm_img_5.jpg",
                 "cm_img_6.jpg",
-                "cm_img_7.jpg",
-                "cm_img_8.jpg",
-                "cm_img_9.jpg",
-                "cm_img_10.gif",
-                "cm_img_11.jpg"
+                "cm_img_6.jpg"
             ]
         },
         details: [
@@ -285,24 +297,18 @@ export const itProjects: IProject[] = [
     { // infinita_disegni
         id: "infinita_disegni",
         cat: [ "editorial" ],
-        date: "2019/2020",
-        place: "ISIA di Faenza",
+        date: "A.A. 2019/2020",
+        place: "ISIA di Faenza RA",
         title: "Un’infinità di disegni",
-        subtitle: "Progetto di Tesi Magistrale in Design della Comunicazione presso l’ISIA di Faenza, a.a. 19/20.",
-        description: `Relatore: Valentina Rachiele
-        *enter*Correlatore: Marco Buiani
-        *enter*Progetto Selezionato per essere esposto nella mostra collettiva “Neologia”:
-        • 16-26 ottobre 2021 at Toolbox Coworking, Torino
-        • 25-27 marzo 2022 presso Certosa Graphic Village, Milano`,
+        subtitle: "Progetto di Tesi Magistrale in Design della Comunicazione",
+        description: `Quanti e quali disegni è possibile ottenere con un numero n di mattonelle quadrate tutte uguali? In questo lavoro esploro le potenzialità
+        dell'analisi combinatoria applicata alle tassellature ed al disegno grafico. Il progetto è stato selezionato per essere esposto nella mostra collettiva “Neologia”,
+        prima a Torino (16-26 ottobre 2021 at Toolbox Coworking), e poi a Milano (5-27 marzo 2022 presso Certosa Graphic Village, Milano)`,
         images: {
-            cover: "id_img_14.jpg",
+            cover: "id_img_3.gif",
             gallery: [
-                "id_vid_1.mp4",
+                //"id_img_14.jpg",
                 "id_img_1.jpg",
-                "id_img_2.gif",
-                "id_img_3.gif",
-                "id_img_4.gif",
-                "id_img_5.jpg",
                 "id_img_6.jpg",
                 "id_img_7.jpg",
                 "id_img_8.jpg",
@@ -311,11 +317,12 @@ export const itProjects: IProject[] = [
                 "id_img_11.jpg",
                 "id_img_12.jpg",
                 "id_img_13.jpg",
-                "id_img_14.jpg"
             ]
         },
         details: [
-            "Collabrozaione con Andrea Badiali"
+            "Relatore: Valentina Rachiele",
+            "Correlatore: Marco Buiani",
+            "Fotografie: Andrea Badiali"
         ]
     }, 
 ]
