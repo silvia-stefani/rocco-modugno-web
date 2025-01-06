@@ -3,6 +3,22 @@
     padding-top: 16px;
     padding-bottom: 32px;
 
+    .back {
+        width: 100%;
+        display: flex;
+        padding-bottom: 16px;
+        a {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            color: inherit;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 13px;
+            font-weight: 500;
+        }
+    }
+
     .nav {
         width: 100%;
         display: flex;
@@ -34,7 +50,7 @@
             max-width: 700px;
             display: flex;
             flex-direction: column;
-            gap: 16px;
+            gap: 4px;
             font-size: 14px;
 
             .head {

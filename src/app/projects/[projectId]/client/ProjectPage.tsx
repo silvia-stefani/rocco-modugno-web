@@ -5,6 +5,8 @@ import { IProject } from "interfaces/IProject";
 import { useTranslation } from "react-i18next";
 
 import styles from './ProjectPage.module.scss';
+import Link from "next/link";
+import Icon from "components/Icon/Icon";
 
 const ProjectPage = ({ projectId }: { projectId: string } ) => {
 
@@ -22,6 +24,10 @@ const ProjectPage = ({ projectId }: { projectId: string } ) => {
           <ImagesCarousel path={`/${project.id}/`} gallery={project.images.gallery} />
         </div>
         <div className={styles.info}>
+
+          <div className={styles.back}>
+            <Link href={"/projects"}><Icon size={14} name={"ArrowLeft"} />Progetti</Link>
+          </div>
   
           <div className={styles.head}>
             <h3 className={styles.title}>{project.title}</h3>
