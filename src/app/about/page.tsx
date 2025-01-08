@@ -1,7 +1,7 @@
 'use client'
 import * as React from 'react';
 import { useTranslation } from 'react-i18next';
-import { ContentI, PersonalDataType } from 'types/PersonalDataType';
+import { ContentI, DetailsI, PersonalDataType } from 'types/PersonalDataType';
 
 import styles from './About.module.scss';
 import Paragraph from 'components/Paragraph/Paragraph';
@@ -15,10 +15,9 @@ export default function About() {
   const contacts = about.contacts;
   const presentation = about.presentation;
 
-  const divideBlocks = (blocks: any[]) => {
+  const divideBlocks = (blocks: ContentI[]) => {
     const leftColumn: ContentI[] = [];
     const rightColumn: ContentI[] = [];
-  
     blocks.forEach((block, index) => {
       if (index % 2 === 0) {
         leftColumn.push(block);
@@ -31,6 +30,36 @@ export default function About() {
   };
   
   const { leftColumn, rightColumn } = divideBlocks(about.content);
+
+  function renderContent(content: string[] | DetailsI[]) {
+    return content.map((c, i) => {
+      
+      switch (typeof c) {
+        case "string":
+          return <Paragraph key={i} text={c} />;
+        case "object":
+          if(c.singleLine) {            
+            return (
+              <div key={i} className={styles.text}>
+                <p>{c.title && <b>{c.title} </b>}{c.text && c.text} {c.link && <a href={c.link.url} target="_blank" rel="noopener noreferrer">  {c.link.name}</a>}</p>
+              </div>
+            );
+          } else {
+            return (
+              <div key={i} className={styles.text}>
+                {c.title && <p><b>{c.title}</b></p>}
+                {c.text && <Paragraph text={c.text} />}
+                {c.link && <a href={c.link.url} target="_blank" rel="noopener noreferrer">{c.link.name}</a>}
+              </div>
+            );
+          }
+
+        default:
+          return null;
+      }
+    });
+  }
+  
 
   return (
     <div className={styles.About}>
@@ -56,17 +85,7 @@ export default function About() {
             {leftColumn.map((content, index) => (
               <div key={index} className={styles.block}>
                 <h6>{content.title}</h6>
-                {content.content.map((c, i) => {
-                  const isString = typeof c === "string";
-                  return isString ? (
-                    <Paragraph key={i} text={c} />
-                  ) : (
-                    <div key={i} className={styles.text}>
-                      <p><b>{c.title}</b></p>
-                      <Paragraph text={c.text} />
-                    </div>
-                  );
-                })}
+                {renderContent(content.content)}
               </div>
             ))}
           </div>
@@ -75,17 +94,7 @@ export default function About() {
             {rightColumn.map((content, index) => (
               <div key={index} className={styles.block}>
                 <h6>{content.title}</h6>
-                {content.content.map((c, i) => {
-                  const isString = typeof c === "string";
-                  return isString ? (
-                    <Paragraph key={i} text={c} />
-                  ) : (
-                    <div key={i} className={styles.text}>
-                      <p><b>{c.title}</b></p>
-                      <Paragraph text={c.text} />
-                    </div>
-                  );
-                })}
+                {renderContent(content.content)}
               </div>
             ))}
           </div>
