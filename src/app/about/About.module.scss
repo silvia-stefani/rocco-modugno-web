@@ -4,10 +4,13 @@
     padding-bottom: 32px;
 
     .column {
-        width: 100%;
+        width: 50%;
         display: flex;
         flex-direction: column;
-        gap: 8px; //Interlinea superiore dei titoletti
+        gap: 16px; //Interlinea superiore dei titoletti
+        @media (max-width: 768px) {
+           width: 100%;
+        }
     }
 
 
@@ -58,9 +61,11 @@
             gap: 16px;
 
             .content {
+                display: flex;
                 width: 100%;
-                grid-template-columns: repeat(2, 1fr); 
-                grid-auto-rows: auto;
+                @media (max-width: 768px) {
+                   flex-direction: column;
+                }
             }
 
             .title {
@@ -96,7 +101,7 @@
         width: 100%;
         display: flex;
         flex-direction: column;
-        gap: 4px;
+        gap: 8px;
         break-inside: avoid; /* Evita que los bloques se dividan entre columnas */
     }
 
