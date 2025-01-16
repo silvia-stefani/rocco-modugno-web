@@ -79,26 +79,25 @@ export default function About() {
         </div>
 
         <div className={styles.presentation}>
-          <div className={styles.title}>{presentation}</div>
-          <div className={styles.content}>
-          <div className={styles.column}>
-            {leftColumn.map((content, index) => (
-              <div key={index} className={styles.block}>
-                <h6>{content.title}</h6>
-                {renderContent(content.content)}
-              </div>
-            ))}
-          </div>
-
-          <div className={styles.column}>
-            {rightColumn.map((content, index) => (
-              <div key={index} className={styles.block}>
-                <h6>{content.title}</h6>
-                {renderContent(content.content)}
-              </div>
-            ))}
-          </div>
+          <Paragraph text={presentation} />
         </div>
+
+        <div className={styles.column}>
+          {leftColumn.map((content, index) => (
+            <div key={index} className={styles.block}>
+              <h6>{content.title}</h6>
+              {renderContent(content.content)}
+            </div>
+          ))}
+        </div>
+        
+        <div className={styles.column}>
+          {rightColumn.map((content, index) => (
+            <div key={index} className={styles.block}>
+              <h6>{content.title}</h6>
+              {renderContent(content.content)}
+            </div>
+          ))}
         </div>
 
       </div>
