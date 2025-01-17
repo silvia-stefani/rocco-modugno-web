@@ -1,6 +1,7 @@
 'use client'
-import React, { useState, useContext, createContext, ReactNode } from 'react';
+import React, { useState, useContext, createContext, ReactNode, useEffect } from 'react';
 import { ProjectsCatsIds } from '../interfaces/IProject';
+import useBreakpoints from 'hooks/useBreakpoints';
 
 
 type modules = { nums: number, font: string, x: number; y: number; s: number, r: number };
@@ -35,11 +36,17 @@ const GlobalContext = createContext<{
   setFilters: React.Dispatch<React.SetStateAction<FiltersI>>;
   fixedTexts: modules[] | [];
   setFixedTexts: React.Dispatch<React.SetStateAction<modules[]>>;
+  currentView: 'points' | 'list';
+  scrollPosition: number;
+  setCurrentView: (view: 'points' | 'list') => void;
 }>({
   filters: initialFiltersValues,
   setFilters: () => {},
   fixedTexts: [],
-  setFixedTexts: () => {}
+  setFixedTexts: () => {},
+  currentView: "points",
+  setCurrentView: () => {},
+  scrollPosition: 0,
 });
 
 interface IGlobalProvider {
@@ -49,9 +56,24 @@ interface IGlobalProvider {
 export const GlobalProvider: React.FC<IGlobalProvider> = ({ children }) => {
   const [filters, setFilters] = useState<FiltersI>(initialFiltersValues);
   const [fixedTexts, setFixedTexts] = useState<modules[]>([]);
+  const [currentView, setCurrentView] = useState<'points' | 'list'>('points');
+  const [scrollPosition, setScrollPosition] = useState<number>(0);
+  const { smallDevice } = useBreakpoints();
+
+  useEffect(() => {
+    if(smallDevice) { 
+      setCurrentView("list") 
+    } else {
+      setCurrentView("points");
+    }
+  }, [smallDevice]);
+
+  useEffect(() => {
+    setScrollPosition(window.scrollY);
+  }, [window.scrollY]);
 
   return (
-    <GlobalContext.Provider value={{ filters, setFilters, fixedTexts, setFixedTexts }}>
+    <GlobalContext.Provider value={{ filters, setFilters, fixedTexts, setFixedTexts, currentView, setCurrentView, scrollPosition }}>
       {children}
     </GlobalContext.Provider>
   );

@@ -2,7 +2,7 @@
 import * as React from 'react';
 
 import styles from './Projects.module.scss';
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import Icon from 'components/Icon/Icon';
 import PointsView from 'components/PointsView/PointsView';
@@ -19,19 +19,10 @@ import { Option } from 'types/Option';
 export default function Projects() {
 
   const { t } = useTranslation()
-  const { filters, setFilters } = useGlobalContext()
+  const { filters, setFilters, scrollPosition, currentView, setCurrentView } = useGlobalContext()
   const { smallDevice } = useBreakpoints();
   const projectsObject = t("projects", { returnObjects: true }) as IProject[];
   const projectsCats = t("projectsCats", { returnObjects: true }) as Option[];
-  const [currentView, setCurrentView] = useState<"list" | "points" | null>(null);
-
-  useEffect(() => {
-    if(smallDevice) { 
-      setCurrentView("list") 
-    } else {
-      setCurrentView("points");
-    }
-  }, [smallDevice]);
 
   const alphabeticDescendent = filters.listView.order === "alph-desc";
   const isCurrentStyleImages = filters.dynamicView.style === "images";
@@ -113,6 +104,10 @@ export default function Projects() {
       }
     }))
   }
+
+  useEffect(() => {
+    window.scrollTo(0, scrollPosition);
+  }, [scrollPosition]);
 
   if(!currentView) return null;
 
