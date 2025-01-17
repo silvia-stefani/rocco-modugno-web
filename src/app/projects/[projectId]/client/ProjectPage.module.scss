@@ -1,12 +1,12 @@
 .ProjectPage {
     width: 100%;
-    padding-top: 16px;
-    padding-bottom: 32px;
+    padding: 16px 0;
 
     .back {
         width: 100%;
         display: flex;
-        padding-bottom: 16px;
+        justify-content: end;
+        margin-top: auto;
         a {
             display: flex;
             align-items: center;
@@ -16,6 +16,10 @@
             text-transform: uppercase;
             font-size: 13px;
             font-weight: 500;
+        }
+        @media (max-width: 768px) {
+            justify-content: start;
+            padding-top: 32px;
         }
     }
 

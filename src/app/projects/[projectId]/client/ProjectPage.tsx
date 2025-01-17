@@ -24,10 +24,6 @@ const ProjectPage = ({ projectId }: { projectId: string } ) => {
           <ImagesCarousel path={`/${project.id}/`} gallery={project.images.gallery} />
         </div>
         <div className={styles.info}>
-
-          <div className={styles.back}>
-            <Link href={"/projects"}><Icon size={14} name={"ArrowLeft"} />Progetti</Link>
-          </div>
   
           <div className={styles.head}>
             <h3 className={styles.title}>{project.title}</h3>
@@ -42,6 +38,10 @@ const ProjectPage = ({ projectId }: { projectId: string } ) => {
               {project.details.map((d, i) => <li key={i}>{d}</li>)}
             </ul>
           </div>}
+
+          <div className={styles.back}>
+            <Link href={"/projects"}><Icon size={14} name={"ArrowLeft"} />Progetti</Link>
+          </div>
   
         </div>
       </div>
