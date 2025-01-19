@@ -9,8 +9,6 @@ import Link from 'next/link';
 
 const Article = ({ id }: { id: string } ) => {
 
-    if (!id) return null;
-
     const [data, setData] = useState<INotionArticles | null>(null);
 
     useEffect(() => {
@@ -19,8 +17,8 @@ const Article = ({ id }: { id: string } ) => {
         .then((data) => setData(data))
         .catch((error) => console.error('Error fetching article:', error));
     }, [id]);
-  
-  
+
+    if (!id) return null;
     if(!data) return null;
     const articlesBlocks = getNotionBlocks(data);
     
