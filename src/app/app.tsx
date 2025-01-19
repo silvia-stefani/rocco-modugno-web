@@ -16,6 +16,9 @@ export default function App({
     const [trigger, setTrigger] = useState<boolean>(false);
     
     useEffect(() => {
+      if (!window.location.pathname.endsWith("/")) {
+        window.location.pathname += "/";
+      }
       const splashLocalStorage = !JSON.parse(window.sessionStorage.getItem("showedSplashscreen") as string);
       setShowSplashscreen(splashLocalStorage)
       setTrigger(true)
