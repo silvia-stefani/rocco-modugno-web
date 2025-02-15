@@ -205,6 +205,7 @@ export default function Home() {
   }
 
   const hasDrawing = fixedTexts.length > 0;
+  const rotation = (r: number) => (r % 360 + 360) % 360;
 
   return <div className={styles.Home}>
 
@@ -216,7 +217,7 @@ export default function Home() {
     <div
       ref={modulesRef}
       className={styles.modules_wrapper}
-      onMouseDown={handleMouseDown}
+      onMouseDown={handleMouseDown} 
       onMouseUp={handleMouseUp}
       onMouseMove={handleMouseMove}
       onTouchStart={handleMouseDown}
@@ -252,14 +253,14 @@ export default function Home() {
         </div>
         <div className={`${styles.row} ${styles.current}`}>
           <div className={styles.data}>{printSettings.nums}</div>
-          <div className={styles.data}>{printSettings.r}</div>
+          <div className={styles.data}>{rotation(printSettings.r)}</div>
           <div className={styles.data}>{toDecimalsTwo(printSettings.s)}</div>
           <div className={styles.data}>{`${mouseX}, ${mouseY}`}</div>
         </div>
         {hasDrawing && fixedTexts.map((ft, i) => (
           <div key={i} className={styles.row}>
             <div className={styles.data}>{ft.nums}</div>
-            <div className={styles.data}>{ft.r}</div>
+            <div className={styles.data}>{rotation(ft.r)}</div>
             <div className={styles.data}>{toDecimalsTwo(ft.s)}</div>
             <div className={styles.data}>{`${ft.x}, ${ft.y}`}</div>
           </div>
