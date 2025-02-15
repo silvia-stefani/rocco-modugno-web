@@ -41,14 +41,15 @@ export default function Home() {
     "rolo deco f",
     "rolo deco g"
   ]
+//  const maxNums = Math.pow(4, 4) / 4;
 
-  const maxNums = Math.pow(4, 4) / 4;
+  const maxNums = Math.pow(4, 4);
 
   const modulesRef = useRef<HTMLDivElement>(null)
   const modW = modulesRef.current ? modulesRef.current.clientWidth : 0;
   const modH = modulesRef.current ? modulesRef.current.clientHeight : 0;
   const initialValues = {
-    nums: 63, /* Min 0 max 63 */
+    nums: 0, /* Min 0 max 63 */
     font: 'rolo deco a',
     s: 40,
     r: 0,

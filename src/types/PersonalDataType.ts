@@ -1,10 +1,10 @@
 export interface DetailsI {
-    title?: string,
-    text?: string,
-    singleLine?: boolean,
-    link?: {
-        name: string,
-        url: string;
+    title?: string, //opzionale
+    text?: string, //opzionale
+    singleLine?: boolean, //true mette tutto su una riga, false mette su più
+    link?: { //opzionale
+        name: string, //quello che vedi
+        url: string; //link
     },
 }
 
