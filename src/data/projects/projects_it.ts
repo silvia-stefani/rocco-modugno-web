@@ -1,6 +1,7 @@
 import { IProject } from "../../interfaces/IProject";
 
 export const itProjects: IProject[] = [ 
+    /*
     { // 60_tavole_illustrate_di_dominique_douat
         id: "60_tavole_illustrate_di_dominique_douat",
         cat: ["editorial", "pattern"],
@@ -22,6 +23,7 @@ export const itProjects: IProject[] = [
             "Fotografie di Andrea Righetto"
         ]
     },    
+    */
     { // ABC_61250_e_altre
         id: "ABC_61250_e_altre",
         cat: [ "scripting", "editorial" ],
@@ -44,6 +46,7 @@ export const itProjects: IProject[] = [
             "Fotografie di Francesco Gaviano"
         ]
     },
+    /*
     { // archeologia_tradizione_e_arti_applicate
         id: "archeologia_tradizione_e_arti_applicate",
         cat: [ "research", "pattern" ],
@@ -51,6 +54,7 @@ export const itProjects: IProject[] = [
         place: "ISIA di Urbino",
         title: "Archeologia Tradizionale e Arti Applicate",
         subtitle: "Tesi triennale discussa presso l’ISIA di Urbino a Marzo 2020.",
+        description: "La decorazione è una delle prime forme di espressione artistica ed è incentrata sull’abbellimento degli oggetti (spesso di uso quotidiano). La regione Basilicata presenta un ricco patrimonio decorativo: dalle decorazioni geometriche e figurative della ceramica greca, fino agli intagli con figure antropomorfe e segni a punta di coltello sugli oggetti di legno della cultura materiale. «Se si leggono i libri di etnologia si vede che gli oggetti d’uso fatti a mano dai popoli primitivi, cioè dai popoli che ancora non conoscono l’agricoltura ma solo la caccia e la pesca, passano sempre attraverso un’impostazione magica, nel senso che la loro funzionalità – e quindi le forme che assumono – risponde prima ad esigenze magiche e poi ad esigenze, come diciamo noi, meccaniche: strettamente meccaniche [...] Se un primitivo si fa un cucchiaio, non . tanto il peso, la materia, la comodità del manico a preoccuparlo, quanto il fatto che la forma e i segni sul cucchiaio abbiano un significato, siano d’aiuto e di commento a quello che il bere – rito più che gesto – può significare nell’idea generale del mondo e della vita.» (Sottsass Ettore, Per qualcuno può essere lo spazio, Adelphi, Milano 2017).Il mio intento è quello di rilevare questo ricco deposito di segni e dopo l’analisi e l’osservazione dell’intero apparato decorativo presente nel museo, riscriverlo con le tecniche del disegno vettoriale e il linguaggio della programmazione digitale, per ipotizzare nuove applicazioni.",
         images: {
             cover: "atap_img_2.jpg",
             gallery: [
@@ -62,7 +66,7 @@ export const itProjects: IProject[] = [
             "Correlatore: Mauro Bubbico",
             "Fotografia di Andrea Righetto"
         ]
-    },
+    },*/
     /*
     { // bandiere_abadir
         id: "bandiere_abadir",
@@ -81,92 +85,139 @@ export const itProjects: IProject[] = [
     },
     */
 
-    /*
-    { // blauer_schnipsel_book
-        id: "blauer_schnipsel_book",
+    
+    { // blauer_schnipsel_book_presentation
+        id: "blauer_schnipsel",
         cat: [ "editorial", "pattern" ],
         date: "2022",
-        place: "Bolzano",
-        title: "Blauer Schnipsel Book",
-        subtitle: "Pubblicazione finanziata da Weight Station, WS Call 2022",
-        description: `Progettazione del libro Blauer Schnipsel, edito da Franzlab. Pattern design per alcune pagine interne.`,
+        place: "Bozen-Bolzano BZ",
+        title: "Blauer Schnipsel",
+        client: "Pubblicazione finanziata da Weight Station, edita da Franzlab",
+
+        subtitle: "Co-generating a social fabric",
+        description: `Il progetto Blauer Schnipsel nasce come una serie di laboratori di upcycling grafico-sartoriali documentati con una pubblicazione per raccontare e replicare l'esperimento sociale. Con più di 70 persone abbiamo trasformato lo scarto tessile derivato dalla produzione del Blauer Schurz (grembiule sudtirolese) in 54 tessiti decorati modulari, per una superficie totale di 27m2. Durante i laboratori abbiamo sviluppato una serie di strumenti ed una metodologia descritti nel dettaglio nella pubblicazione. `,
+        
         images: {
-            cover: "bsb_img_1.jpg",
+            cover: "bs_img_1.png",
             gallery: [
-                "bsb_img_1.jpg",
-                "bsb_img_2.jpg",
-                "bsb_img_3.jpg"
+                "bs_img_1.png",
+                "bs_img_2.png",
+                "bs_img_3.png",
+                "bs_img_4.png",
+                "bs_img_5.png",
+                "bs_img_6.png",
+                "bs_img_7.png",
+                "bs_img_8.png",
+                "bs_img_9.png",
+                "bs_img_10.png"
             ]
         },
         details: [
-            "Fotografia di Andrea Righetto"
+            'Progetto e testi di Adele Buffa, Rocco Modugno e Andrea Righetto',
+            'Testi di Aart van Bezooijen, Barbara Stocker, Secil Ugur Yavuz',
+            'Pubblicazione Finanziata da Weigh Station',
+            'Pubblicata con Franzlab, Cento #6',
+            'Laboratori supportati da Officine Vispa e Fablab Bitz'
+
+
+            
         ]
     }, 
-    */
 
-    /*
-    { // blake_ordito
-        id: "blake_ordito",
-        cat: [ "type", "textile" ],
+
+    
+    { // 17/4
+        id: "17_4",
+        cat: [ "poster"],
+        date: "2016",
+        place: "Urbino PU",
+        client: "",
+        title: "Il 17/4 Vota si",
+        subtitle: "Poster realizzato per il referendum nazionale sul rinnovo delle concessioni per le estrazioni con gli impianti del Mar Adriatico.",
+        description: ``,
+        images: {
+            cover: "174_img_1.png",
+            gallery: [
+                "174_img_1.png",
+                "174_img_2.png"
+            ]
+        }
+    }, 
+    
+    { // Machine Co-Creativity
+        id: "machine_co_creativity",
+        cat: [ "editorial"],
         date: "2023",
-        place: "Remoto",
-        client: "Mauro Bubbico",
-        title: "Blake Ordito (TIGER)",
-        subtitle: "Custom font ottimizzato per la maglia jacquard",
-        description: `Il font è stato disegnato per ottenere una tipografia coerente e omogenea per la maglia jacquard con tecnica di intreccio piqué.
-        *enter*Realizzato per Mauro Bubbico per il suo arazzo per il Lanificio Leo.`,
+        place: "Libera Università di Bolzano, Italia",
+        client: "",
+        title: "Machine Co-creativity",
+        subtitle: "Il sito Machine Co-Creativity è un promptbook online che raccoglie le esplorazioni degli studenti che hanno sperimentato la generazione di immagine modelli text-to-image, seguendo tre principali assi tematici  ambienti, creature e oggetti ibridi.",
+        description: ``,
         images: {
-            cover: "bo_img_1.jpg",
-            gallery: []
-        }
-    }, 
-    */
-
-    /*
-    { // carnevale_di_putignano
-        id: "carnevale_di_putignano",
-        cat: [ "pattern" ],
-        date: "2020",
-        place: "Montescaglioso",
-        client: "Mauro Bubbico",
-        title: "Carnevale di Putignano",
-        subtitle: "Disegno e progettazione del pattern per la manifestazione culturale del Carnevale di Putignano.",
-        images: {
-            cover: "cp_img_1.jpg",
+            cover: "mcc_img_01.png",
             gallery: [
-                "cp_img_1.jpg",
-                "cp_img_2.jpg"
-            ]
-        }
-    }, 
+                "mcc_img_01.png",
 
-    */
-
-    /*
-    { // catalogo_matera_2019
-        id: "catalogo_matera_2019",
-        cat: [ "editorial" ],
-        date: "2019",
-        place: "Montescaglioso",
-        client: "Mauro Bubbico",
-        title: "Catalogo Matera 2019",
-        subtitle: "Impaginazione esecutiva ed ottimizzazione di alcune sezioni del catalogo degli eventi della manifestazione Matera Capitale Europea della Cultura 2019.",
-        images: {
-            cover: "cm19_img_1.png",
-            gallery: [
-                "cm19_img_1.png",
-                "cm19_img_2.png",
-                "cm19_img_3.png",
-                "cm19_img_4.png"
-            ]
-        },
+            ],            
+        },     
         details: [
-            "Collaborazione con Giulia B. Francalanci"
+            'https://sites.google.com/view/machine-co-creativity/',
+            'Facoltà di Design, progetto "WUP"',
+            "Titolare del corso Antonino Benincasa",
+            "Ospite Marco Buiani"
         ]
     }, 
 
-    */
+    
+    { // love your experiments
+        id: "love_your_experiments",
+        cat: [ "poster" ],
+        date: "2024",
+        place: "Basel CH",
+        client: "",
+        title: "Love your experiments",
+        subtitle: 'Realizzat per la mostra "Prospectives on AI", Basel Academy of Art and Design FHNW',
+        description: 'La rigidità teorica e i vincoli autoimposti del design “convenzionale” non portano da nessuna parte. I modelli testo-immagine sono strumenti, come un pennello di piume o una punta di penna di latta, che possono aiutarci ad espandere i nostri confini, esplorare nuove prospettive. Il punto di partenza del designer è definire un significato appropriato con un segno espressivo per un dato contesto. Giocare, sperimentare, osare e divertirsi non riguardano gli strumenti ma soprattutto il contenuto. Non dovrebbero esserci limiti nella ricerca, “l’arte non ha limiti perché ciò che può essere conosciuto è illimitato”. Non possiamo rimanere statici, facendo solo ciò che già sappiamo. Desideriamo un mondo migliore e ogni strumento può fare la sua parte. Combinando le immagini generate dall’intelligenza artificiale con il tocco manuale, possiamo esprimere emozioni profonde. "Ama i tuoi esperimenti (come faresti con un bambino brutto). La gioia è il motore della crescita" (Bruce Mau 1998).',
+        images: {
+            cover: "lye_img_0.png",
+            gallery: [
+                "lye_img_2.png",
+                "lye_img_1.png",
+                "lye_img_0.png"
+            ]
+        },
+        details: [
+            "Realizzato con Mauro Bubbico"
+        ]
+    }, 
 
+    
+
+    
+    { // blake ordito
+        id: "woven_blake",
+        cat: [ "type" ],
+        date: "2022",
+        place: "Milano",
+        client: "",
+        title: "Blake Woven",
+        subtitle: "Font personalizzato per la realizzazione di arazzo in maglia jacquard con tecnica di intreccio piqué, 55x80 cm.",
+        images: {
+            cover: "wb_img_7.png",
+            gallery: [
+                "wb_img_3.png",
+                "wb_img_2.png",
+                "wb_img_4.png",
+                "wb_img_5.png"
+            ]
+        },
+        details: [
+            "Per Mauro Bubbico"
+        ]
+    }, 
+
+    
+/*
     { // design_classics
         id: "design_classics",
         cat: [ "editorial" ],
@@ -184,13 +235,13 @@ export const itProjects: IProject[] = [
         details: [
             "Responsabile di progetto: Antonino Benincasa, Fotografie: Andrea Righetto"
         ]
-    }, 
-    /*
+    }, */
+    
     { // l-ove
         id: "l-ove",
         cat: [ "poster" ],
-        date: "?",
-        place: "?",
+        date: "2021",
+        place: "Bologna",
         title: "l-ove",
         subtitle: "Poster realizzato per l’asta di beneficenza da Sostieni Impegno Sociale.",
         images: {
@@ -198,9 +249,12 @@ export const itProjects: IProject[] = [
             gallery: [
                 "lv_img_1.jpg"
             ]
-        }
-        
-    }, */
+        },
+        details: [
+            "",
+            ""
+        ]
+    }, 
     
     /*
     { // il_cielo_nella_stalla
@@ -230,21 +284,25 @@ export const itProjects: IProject[] = [
             "Collaborazione con Franceso Bianco"
         ]
     }, */
+
+    
     { // storie_d_arte_e_di_critica
-        id: "storie_d_arte_e_di_critica",
-        cat: [ "editorial" ],
-        date: "2021",
-        place: "Imola BO",
-        title: "Storie d'Arte e di Critica",
-        subtitle: "Libro impaginato per Manfredi Edizioni",
+        id: "voto_vergogna",
+        cat: [ "poster" ],
+        date: "2023",
+        place: "Pisticci MT",
+        title: "Il voto è segreto",
+        subtitle: 'Illustrazione di apertura del testo "Il volto del Voto" di Miriana Serravalle; "Plume. Pensieri, Letture, Visioni", vol.3',
         images: {
-            cover: "sac_img_1.jpg",
+            cover: "vv_img_2.png",
             gallery: [
-                "sac_img_1.jpg"
+                "vv_img_1.png",
+                "vv_img_2.png"
+
             ]
         },
         details: [
-            "Fotografia di Andrea Righetto"
+            ''
         ]
     }, 
     /*
@@ -271,6 +329,7 @@ export const itProjects: IProject[] = [
             "Fotografia di Andrea Righetto"
         ]
     }, */
+    /*
     { // calendario_motola
         id: "calendario_motola",
         cat: [ "pattern", "editorial" ],
@@ -294,9 +353,65 @@ export const itProjects: IProject[] = [
             "Fotografia di Andrea Righetto"
         ]
     }, 
+*/
+
+    { // novecento
+        id: "novecento",
+        cat: [ "poster" ],
+        date: "2023",
+        place: "Teatro Tertulliano, Milano",
+        title: "novecento",
+        subtitle: "Poster per spettacolo teatrale",
+        images: {
+            cover: "novecento_img_1.png",
+            gallery: [
+                "novecento_img_1.png",
+                "novecento_img_2.png"
+            ]
+        },
+        details: [
+            "Novecento, Monologo di Alessandro Baricco",
+            "Interpretazione di Franco Pigoli",
+            "Supporto Tecnico: M. M. Moreschi, M. Beshara, M. Veninati",
+            "Supporto organizzativo: R. Benassi, P. Bosisio",
+            "Consulenza musicale M. Mariani"        ]
+    }, 
+
+    { // leopold mono
+        id: "leopold_mono",
+        cat: [ "type" ],
+        date: "2023",
+        place: "Bozen-Bolzano, Italy",
+        title: "Leopold Mono",
+        subtitle: "Revival font",
+        description: 'Font realizzato a partire dal lettering del poster di Leopold Forstner per la mostra della associazione "Wiener Kunst im House".',
+        images: {
+            cover: "lm_img_02.png",
+            gallery: [
+                "lm_img_02.png",
+                "lm_img_04.png",
+                "lm_img_03.png"
+
+
+            ]
+        },
+        details: [
+            "Poster-specimen di Anita Bianchi.",
+            "Font Relizzato con Hoffmann1.0.0 di Giovanni Abbatepaolo",     
+            "e progettato con Anita Bianchi",
+            "\r",
+            'Responsabile di progetto: Antonino Benincasa"',
+            "Progetto Graphic Design from the Alps",
+            "Facoltà di Design, unibz",
+            "NB: il poster un refuso sul nome di Forstner"
+        ]
+   
+    }, 
+
+
     { // infinita_disegni
         id: "infinita_disegni",
-        cat: [ "editorial" ],
+        cat: [ "editorial", "scripting" ],
         date: "A.A. 2019/2020",
         place: "ISIA di Faenza RA",
         title: "Un’infinità di disegni",
@@ -305,7 +420,7 @@ export const itProjects: IProject[] = [
         dell'analisi combinatoria applicata alle tassellature ed al disegno grafico. Il progetto è stato selezionato per essere esposto nella mostra collettiva “Neologia”,
         prima a Torino (16-26 ottobre 2021 at Toolbox Coworking), e poi a Milano (5-27 marzo 2022 presso Certosa Graphic Village, Milano)`,
         images: {
-            cover: "id_img_3.gif",
+            cover: "id_img_9.jpg",
             gallery: [
                 //"id_img_14.jpg",
                 "id_img_1.jpg",

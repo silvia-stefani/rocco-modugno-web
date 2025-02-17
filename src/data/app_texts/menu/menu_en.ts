@@ -7,7 +7,7 @@ export const enMenu: MenuItemsType[] = [
     },
    {
         id: "articles",
-        name: "Articles"
+        name: "Texts"
     },
      /*
     {

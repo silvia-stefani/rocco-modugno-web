@@ -7,7 +7,7 @@ export const itMenu: MenuItemsType[] = [
     },
    {
         id: "articles",
-        name: "Articoli"
+        name: "Texts"
     },
     /*
     {

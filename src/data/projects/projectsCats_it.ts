@@ -9,11 +9,11 @@ export const itProjectsCats: ProjectsCatsType[] = [
         value: "editorial",
         label: "Editoriale"
     },
-    /*
+    
     {
         value: "type",
-        label: "Tipografia"
-    }, */
+        label: "Type Design"
+    }, 
     {
         value: "scripting",
         label: "Scripting"
@@ -24,6 +24,10 @@ export const itProjectsCats: ProjectsCatsType[] = [
         label: "Consulenza"
     },
     */
+    {
+        value: "poster",
+        label: "Poster"
+    },
     {
         value: "pattern",
         label: "Pattern"
@@ -39,10 +43,7 @@ export const itProjectsCats: ProjectsCatsType[] = [
         value: "motion",
         label: "Animazione"
     },
-   /* {
-        value: "poster",
-        label: "Poster"
-    },
+   /* 
     {
         value: "textile",
         label: "Tessile"

@@ -1,8 +1,8 @@
 import { IArticles } from "../../interfaces/IArticles";
 
 export const itArticles: IArticles = {
-    title: "Design practice & critical thinking",
-    subtitle: "Here you can find links to some articles about my design practice and critical thinking, for further information or feedback do not hesitate to contact me!",
+    title: "texts",
+    subtitle: "Una raccolta di testi per raccontare i progetti da dietro le quinte, per rettificare gli errori, speculare sulle piccole scoperte quotidiane",
     link_notion: "Link al Notion"
 }
 

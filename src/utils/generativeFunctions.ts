@@ -1,4 +1,5 @@
 
+// USIAMO QUESTE FUNZIONI? SERVONO?
 //FUNZIONI
 
 export function simmetrica(string: string){
@@ -21,7 +22,6 @@ export function simmetrica(string: string){
     return newString;  
     
   }
-  
   
 //Questa funzione viene usata? Penso si usi quella "ToDecimalTwo" che ho modificata per farla lavorare in base 4
 export function toBase(num: number, classe: number) {

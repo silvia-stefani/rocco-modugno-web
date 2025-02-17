@@ -180,16 +180,7 @@ export const itPersonalData: PersonalDataType = {
           title: '17/4: A bottom-up environmental campaign',
           text: '– Sfligiotti, Silvia. 365 typo, 2 (2015-16): pp.308-309, étapes editions, ISBN: 9791095254010.'
         },
-        {
-          singleLine: true,
-          title: 'Da due studenti un progetto per raccontare con le immagini il referendum no trivelle',
-          text: '– Romei, Leonardo. Huffington Post (11.04.2016)',
-          link: {
-            name: 'Huffington post',
-            url: 'https://www.huffingtonpost.it/archivio/2016/04/11/news/da_due_studenti_un_progetto_per_raccontare_con_le_immagini_il_referendum_no_trivelle_-5566466/',
-          }
-        
-        }
+
 
       ]
     }, 
@@ -215,10 +206,6 @@ export const itPersonalData: PersonalDataType = {
 
         {
           text: '“Neologia: Nuovi linguaggi del visual design in Italia", 25-27.3.2022 Certosa Graphic Village, Milano MI; in mostra: “Un’infinità di disegni”.'
-        },
-
-        {
-          text: '"Il tempo è finito!", 16.2.2022, Megastore Sonic Belligeranza, via Mascarella 16, Bologna BO; in mostra: "The Blisset Family".'
         },
         {
           text: '"Giovani senza futuro, anziani senza passato", 24.9-10.10.2021, Casa Baldassarri, via Fratelli Bedeschi 2, Bagnacavallo BO; in mostra: "The Blisset Family".'
