@@ -24,7 +24,7 @@ export const itPersonalData: PersonalDataType = {
     tel: '+39 366 345 84 22',
     address: {
       street: "Via Aurelio Saffi 43",
-      location: "Bologna BO, 40131 – Italy"
+      location: "Bologna BO, 40131 - Italy"
     },
     pIva: '04194631208'
   },
@@ -39,13 +39,13 @@ export const itPersonalData: PersonalDataType = {
       content: [
         { singleLine:true,
           title: 'Assistente Ricercatore',
-        text: '– Libera Università di Bolzano, Facoltà di Design. Progetto start-up "INTRA – Designing Embodied Human-Data IntraActions". Responsabile di progetto: Seçil Uğur Yavuz, 2025.',
+        text: '- Libera Università di Bolzano, Facoltà di Design. Progetto start-up "INTRA - Designing Embodied Human-Data IntraActions". Responsabile di progetto: Seçil Uğur Yavuz, 2025.',
         },
 
         {
           singleLine:true,
           title: 'Ricercatore FADE',
-        text: '– Libera Università di Bolzano; Facoltà di Design, progetto "Graphic Design From the Alps", Responsabile di progetto: Antonino Benincasa, 2023.',
+        text: '- Libera Università di Bolzano; Facoltà di Design, progetto "Graphic Design From the Alps", Responsabile di progetto: Antonino Benincasa, 2023.',
         },
 
       {
@@ -59,13 +59,13 @@ export const itPersonalData: PersonalDataType = {
         
         {
           singleLine: true,
-          title: 'Lost / Found / Changed – GREP, GREP styles and TOC.',
-          text: '– Libera Università di Bolzano, Bolzano BZ, Facoltà di Design, Corso: Tipografia e Grafica, Titolare del corso: Antonino Benincasa; A.A. 2023-24, A.A. 2022-23.',
+          title: 'Lost / Found / Changed - GREP, GREP styles and TOC.',
+          text: '- Libera Università di Bolzano, Bolzano BZ, Facoltà di Design, Corso: Tipografia e Grafica, Titolare del corso: Antonino Benincasa; A.A. 2023-24, A.A. 2022-23.',
         },
         {          
           singleLine: true,
           title: 'La combinatoria del pattern: disegno decorativo attraverso l’analisi combinatoria e lo scripting',
-          text: "– Accademia ABADIR, Sant'Agata li Battiati CT, Corso di studio: Graphic Design e Media Digitali, Titolare del corso: Mauro Bubbico; A.A. 2020-2021.",
+          text: "- Accademia ABADIR, Sant'Agata li Battiati CT, Corso di studio: Graphic Design e Media Digitali, Titolare del corso: Mauro Bubbico; A.A. 2020-2021.",
         }
 
       ],
@@ -95,7 +95,7 @@ export const itPersonalData: PersonalDataType = {
         {
           singleLine: true,
           title:'Tiling through typography, typing shapes combining types',
-          text: '– Modugno, Rocco Lorenzo; Algorithminc pattern catalogue (2023). DOI:',
+          text: '- Modugno, Rocco Lorenzo; Algorithminc pattern catalogue (2023). DOI:',
           link: {
             name: 'https://doi.org/10.21428/108765d1.7ce0eb8b',
             url: 'https://doi.org/10.21428/108765d1.7ce0eb8b'
@@ -105,7 +105,7 @@ export const itPersonalData: PersonalDataType = {
           singleLine: true,
 
           title: 'Blauer Schnipsel, Co-generating a social fabric',
-          text: '– Buffa Adele, Modugno Rocco L., Righetto Andrea et al. (2020). Bolzano, Franzlab. ISBN: 978-88-945462-5-5',
+          text: '- Buffa Adele, Modugno Rocco L., Righetto Andrea et al. (2020). Bolzano, Franzlab. ISBN: 978-88-945462-5-5',
           link: {
             name: 'link al libro',
             url: 'https://www.franzlab.com/shop/cento-06-blauer-schnipsel'
@@ -115,7 +115,7 @@ export const itPersonalData: PersonalDataType = {
           singleLine: true,
 
           title: 'Rappresentare il potere',
-          text: '– Modugno, Rocco Lorenzo. Plume, Pensieri Letture Visioni, #3 (2024), Cubical Press, ISBN: 979-12-210-5080-6',
+          text: '- Modugno, Rocco Lorenzo. Plume, Pensieri Letture Visioni, #3 (2024), Cubical Press, ISBN: 979-12-210-5080-6',
           link: {
             name: 'link alla rivista',
             url: 'https://letterecubitali.it/prodotto/plume-pensieri-letture-visioni-3/'
@@ -132,8 +132,8 @@ export const itPersonalData: PersonalDataType = {
         {
           singleLine: true,
           title: 'Tiling Trough Typography, typing shapes combining types',
-          text: '– Modugno, Rocco Lorenzo, 1:48. 2023, Universitat Oberta de Catalunya, Barcelona, 24.11.23.',
-          link: {
+          text: '- Modugno, Rocco Lorenzo, 1:48. 2023, Universitat Oberta de Catalunya, Barcelona, 24.11.23.',
+          link: {
             name: "guarda la presentazione",
             url: 'https://www.youtube.com/live/TGIpkoW4FHM?si=9GdUKeTuk1Z6jGKa',
           }
@@ -142,7 +142,7 @@ export const itPersonalData: PersonalDataType = {
         {
           singleLine: true,
           title: 'Pensiero algoritmico, Spazi generativi e combinatoria del pattern',
-          text: `– Modugno, Rocco Lorenzo. 2022, Lecture non pubblicata svoltasi da remoto sulle metodologie utilizzate nei workshop tenuti presso Abadir; ABADIR di Sant’Agata li Battiati CT, Italia, 18.10.22.`
+          text: `- Modugno, Rocco Lorenzo. 2022, Lecture non pubblicata svoltasi da remoto sulle metodologie utilizzate nei workshop tenuti presso Abadir; ABADIR di Sant’Agata li Battiati CT, Italia, 18.10.22.`
         },
         {
           singleLine: true,
@@ -158,8 +158,8 @@ export const itPersonalData: PersonalDataType = {
         {
           singleLine: true,
           title: 'Plotting Empowerment, das generative Design der Draft Masters',
-          text: '– Mehler Ludwig, Franz Magazine (4.2.25).',
-          link: {
+          text: '- Mehler Ludwig, Franz Magazine (4.2.25).',
+          link: {
             name: "leggi l'articolo",
             url: 'https://franzmagazine.com/2025/02/04/plotting-empowerment',
           }
@@ -169,8 +169,8 @@ export const itPersonalData: PersonalDataType = {
           {
             singleLine: true,
             title: 'Blauer Schnipsel: Ein alter Stoff wird neu gedacht',
-            text: '– Oberrauch Maria, Franz Magazine (24.11.22).',
-            link: {
+            text: '- Oberrauch Maria, Franz Magazine (24.11.22).',
+            link: {
               name: "leggi l'articolo",
               url: 'https://franzmagazine.com/2022/11/24/blauer-schnipsel-ein-alter-stoff-wird-neu-gedacht',
             }
@@ -178,7 +178,7 @@ export const itPersonalData: PersonalDataType = {
         {
           singleLine: true,
           title: '17/4: A bottom-up environmental campaign',
-          text: '– Sfligiotti, Silvia. 365 typo, 2 (2015-16): pp.308-309, étapes editions, ISBN: 9791095254010.'
+          text: '- Sfligiotti, Silvia. 365 typo, 2 (2015-16): pp.308-309, étapes editions, ISBN: 9791095254010.'
         },
 
 
@@ -227,7 +227,7 @@ export const itPersonalData: PersonalDataType = {
       singleLine: true,
       title: 'Blauer Schnipsel',
   text: 'con Adele Buffa e Andrea Righetto. Upcycling degli scarti industriali derivati dalla produzione del Blauer Schurz (tipico grembiule sudtirolese), attraverso pratiche collettive.',
-  link: {
+  link: {
 
     name: 'Account Instagram',
     url: 'https://www.instagram.com/blauerschnipsel/',
