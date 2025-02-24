@@ -438,6 +438,16 @@ export const itProjects: IProject[] = [
             "Relatore: Valentina Rachiele",
             "Correlatore: Marco Buiani",
             "Fotografie: Andrea Badiali"
+        ],
+        link: [
+            {
+                name: 'Esempio 1',
+                url: 'https://instagram.com/'
+            },
+            {
+                name: 'Esempio 2',
+                url: 'https://instagram.com/'
+            }
         ]
     }, 
 ]

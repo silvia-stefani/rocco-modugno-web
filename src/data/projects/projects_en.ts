@@ -251,7 +251,6 @@ export const enProjects: IProject[] = [
                 "qm_img_4.jpg"
             ]
         },
-        link: "https://wikipedia.com/",
         details: [
             "Fotografia di Andrea Righetto"
         ]

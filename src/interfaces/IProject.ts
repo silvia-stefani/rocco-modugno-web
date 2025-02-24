@@ -24,6 +24,9 @@ export type IProject = {
         cover: string,
         gallery: string[]
     },
-    link?: string,
+    link?: {
+        name: string,
+        url: string,
+    }[],
     details?: string[],
 }
