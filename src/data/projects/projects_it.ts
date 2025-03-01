@@ -286,7 +286,7 @@ export const itProjects: IProject[] = [
     }, */
 
     
-    { // storie_d_arte_e_di_critica
+    { // voto e vergogna
         id: "voto_vergogna",
         cat: [ "poster" ],
         date: "2023",
@@ -294,7 +294,7 @@ export const itProjects: IProject[] = [
         title: "Il voto è segreto",
         subtitle: 'Illustrazione di apertura del testo "Il volto del Voto" di Miriana Serravalle; "Plume. Pensieri, Letture, Visioni", vol.3',
         images: {
-            cover: "vv_img_2.png",
+            cover: "vv_img_1.png",
             gallery: [
                 "vv_img_1.png",
                 "vv_img_2.png"
