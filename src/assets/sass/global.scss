@@ -111,3 +111,13 @@ button {
         }
     }
 }
+
+a[target="_blank"] {
+    font-size: inherit;
+    font-weight: inherit;
+    color: inherit;
+    word-break: break-word;
+    &:hover {
+        opacity: 0.7;
+    }
+}

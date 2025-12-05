@@ -53,11 +53,14 @@ const ProjectStripe: React.FunctionComponent<IProjectStripeProps> = ({project, s
         { project.description && <Paragraph text={project.description} /> }
       </div>
       {!smallDevice && <>
-      <div className={styles.details}>
+      <div className={styles.details} onClick={(e) => e.stopPropagation()}>
         {project.place && <div>{project.place}</div>}
         {project.client && <div>{project.client}</div>}
         {project.details && project.details.map((detail, i) => (
           <div key={i}>{detail}</div>
+        ))}
+        {project.link && project.link.map((link, i) => (
+          <Link key={i} href={link.url} target='_blank'>{link.name}</Link>
         ))}
       </div>
       <div className={styles.cats}>

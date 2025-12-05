@@ -39,6 +39,11 @@ const ProjectPage = ({ projectId }: { projectId: string } ) => {
             </ul>
           </div>}
 
+          {project.link && 
+          <ul className={styles.links}>
+            {project.link.map((link, i) => (<li><Link key={i} href={link.url} target='_blank'>{link.name}</Link></li>))}
+          </ul>}
+
           <div className={styles.back}>
             <Link href={"/projects"}><Icon size={14} name={"ArrowLeft"} />Progetti</Link>
           </div>
