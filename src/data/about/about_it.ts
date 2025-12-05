@@ -30,8 +30,7 @@ export const itPersonalData: PersonalDataType = {
   },
   //presentation: `Collaboro con università, aziende e professionisti per sviluppare progetti innovativi. Puoi contattarmi per condividere strumenti, esperienze e visioni. `,
   //presentation: `Multidisciplinary Designer with a focus on Design Research, Digital Manufacturing and publishing. I provide designs and consultancy for companies, studios and museums who need to implement their workflow in terms of time saving, control, and technological implementation. More in general I look for simple solutions to complex problems. I also teach in the field of graphic design and visual communication, with a focus on collective creative processes. I am currently based in Bolzano-Bozen (Italy) where I am involved in two different artistic projects: Blauer Schnipsel and Draft Masters.`,
-  presentation: `Mi occupo di Ricerca nell'ambito del Design, Digital Manufacturing ed Editoria. La mia pratica tiene insieme diverse discipline, come la comunicazione visiva e la programmazione, l'editoria e la didattica, la tipografia e la tessitura, il calcolo combinatorio e la decorazione. 
-  Progetto, faccio consulenza e formazione per aziende, studi di design, e musei che hanno bisogno di migliorare il loro flusso di lavoro, in termini di ottimizzazione dei tempi, controllo e implementazione tecnologica. Più in generale mi piace trovare soluzioni semplici a problemi complessi. Insegno nell'ambito della progettazione grafica e della comunicazione visiva, con una particolare attenzione ai processi creativi collettivi. Attualmente vivo a Bolzano-Bozen (Italia) dove collaboro a diversi progetti artistici, come Blauer Schnipsel e Draft Masters.`,
+  presentation: `CIAO! Mi occupo di Design Research e progettazione grafica. Su questa pagina trovi un sommario delle mie esperienze. Nella pagina Progetti ci sono i lavori a cui sono più affezionato, mentre nella home trovi una superficie ideale per comporre decorazioni.`,
 
   content: [
     {
@@ -40,7 +39,11 @@ export const itPersonalData: PersonalDataType = {
         { singleLine:true,
           title: 'Assistente Ricercatore',
         text: '- Libera Università di Bolzano, Facoltà di Design. Progetto start-up "INTRA - Designing Embodied Human-Data IntraActions". Responsabile di progetto: Seçil Uğur Yavuz, 2025.',
-        },
+        link: {
+          name: 'Sito del progetto INTRA',
+          url: 'https://intra.projects.unibz.it/'
+        }, 
+      },
 
         {
           singleLine:true,

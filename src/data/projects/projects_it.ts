@@ -403,7 +403,6 @@ export const itProjects: IProject[] = [
             'Responsabile di progetto: Antonino Benincasa"',
             "Progetto Graphic Design from the Alps",
             "Facoltà di Design, unibz",
-            "NB: il poster un refuso sul nome di Forstner"
         ]
    
     }, 
