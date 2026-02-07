@@ -38,14 +38,27 @@ export default function Articles() {
         <div className={styles.list}>
             {articlesList.map((d, i) => {                
                 const el = data[d].value;
-                if(!el) return null;
-                const content = el.properties?.title;
-                if(el.id === parentPageId) return null;
-                if(!(el.type === "page")) return null;
-                return <a className={styles.article_link} key={i} href={`/articles/${el.id}`}>
-                    <span className={styles.title}>{content}</span>
-                    <span className={styles.icon}><Icon size={24} name={"ArrowRight"} /></span>
-                </a>
+                if (!el) return null;
+                if (el.id === parentPageId) return null;
+                if (el.type !== "page") return null;
+
+                const title = el.properties?.title?.[0]?.[0];
+                const pageId = el.id.replace(/-/g, "");
+
+                return (
+                    <a
+                        className={styles.article_link}
+                        key={i}
+                        href={`https://www.notion.so/${pageId}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <span className={styles.title}>{title}</span>
+                        <span className={styles.icon}>
+                            <Icon size={24} name={"ArrowRight"} />
+                        </span>
+                    </a>
+                );
             })}
         </div>
 
