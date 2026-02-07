@@ -186,7 +186,7 @@ export default function Projects() {
 
         {/* Column 3: Speed & Alignment (Points view) / Spacer (List view) */}
         <div className={styles.col3}>
-          {currentView === "points" && (
+          {currentView === "points" ? (
             <div className={styles.flockingGroup}>
               <Range
                 id="v-velocity"
@@ -207,12 +207,17 @@ export default function Projects() {
                 onChange={(v) => updateFilter('alignment', v)}
               />
             </div>
+          ) : (
+            <button className={styles.tab} onClick={handleChangeOrder}>
+              <Icon size={14} name={alphabeticDescendent ? "ArrowDown" : "ArrowUp"} />
+              {t('ui.sort')}
+            </button>
           )}
         </div>
 
         {/* Column 4: Cohesion & Separation (Points view) / Sorting (List view) */}
         <div className={styles.col4}>
-          {currentView === "points" ? (
+          {currentView === "points" && (
             <div className={styles.flockingGroup}>
               <Range
                 id="v-cohesion"
@@ -233,11 +238,6 @@ export default function Projects() {
                 onChange={(v) => updateFilter('separation', v)}
               />
             </div>
-          ) : (
-            <button className={styles.tab} onClick={handleChangeOrder}>
-              <Icon size={14} name={alphabeticDescendent ? "ArrowDown" : "ArrowUp"} />
-              {t('ui.sort')}
-            </button>
           )}
         </div>
 
