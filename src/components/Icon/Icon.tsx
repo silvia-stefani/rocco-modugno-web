@@ -7,12 +7,12 @@ interface IIconProps {
     name: keyof typeof icons;
 }
 
-const Icon: React.FunctionComponent<IIconProps> = ({name, size = 24}) => {
-    
+const Icon: React.FunctionComponent<IIconProps> = ({ name, size = 24 }) => {
+
     const IconComponent = icons[name];
-    
+
     return (
-        <svg xmlns="http://www.w3.org/2000/svg" className={styles.Icon} fill="none" width={size} height={size} viewBox="0 0 100 100">
+        <svg xmlns="http://www.w3.org/2000/svg" className={styles.Icon} width={size} height={size} viewBox="0 0 100 100">
             {IconComponent && <IconComponent />}
         </svg>
     );

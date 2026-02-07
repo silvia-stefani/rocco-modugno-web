@@ -5,94 +5,373 @@ import { PersonalDataType } from "../../types/PersonalDataType"
 export const enServices = [
   {
     id: 1,
-    title: ""
+    title: "VISUAL DESIGN"
   },
   {
     id: 2,
-    title: "" 
+    title: "CREATIVE CODING"
   },
   {
     id: 3,
-    title: ""
+    title: "DESIGN RESEARCH"
+  },
+  {
+    id: 4,
+    title: "ALL AND NONE"
   }
-] 
+]
 
 
 export const enPersonalData: PersonalDataType = {
   contacts: {
-    mail: 'roccol.modugno@gmail.com ',
-    tel: '+39 366 345 84 22',
+
+
     address: {
-      street: "Via Aurelio Saffi 43",
-      location: "Bologna BO, 40131 – Italy"
+      street: "Rocco Lorenzo Modugno",
+      location: "Visual Designer"
     },
-    pIva: '04194631208'
+
+    mail: 'roccol.modugno@gmail.com',
+    tel: '',
+
+    pIva: 'VAT 04194631208'
   },
-  presentation: `I collaborate with universities, companies, and freelancers to develop innovative projects. Contact me to share tools, experiences, and visions.`,
+  presentation: `ALL AND NONE – This website is a Playground, a Portfolio, a Portal. Here you can find, graphics, patterns, and various projects.`,
+
+
+
+
   content: [
+
+
     {
-      title: "Esperienze principali",
+
+      title: 'INDEPENDENT PROJECTS',
       content: [
-        "2024 Assegnista di ricerca per la libera università di Bolzano, Libero professionista a P.Iva",
-        "2023 Ricercatore FADE per la Libera Università di Bolzano BZ",
-        "2021 Collaboratore per Claudia Polizzi Graphic Design Studio, Assistente di progetto per la Libera Università di Bolzano BZ",
-        "2020 Grafico editoriale per Manfredi Edizioni, Imola BO",
-        "2019 Grafico editoriale per Lilit Books, Montescaglioso  MT",
-        "2018 Grafico per Vertigo Coop, Tito PZ"
+        {
+          singleLine: true,
+          title: 'Blauer Schnipsel',
+          text: 'with Adele Buffa e Andrea Righetto we take the trash and make it fresh.',
+          link: {
+
+            name: 'Explore',
+            url: 'https://www.blauerschnipsel.com/',
+
+          }
+
+        },
+
+        {
+          singleLine: true,
+          title: 'WhateverDev()',
+          text: 'with Andrea Maffei e Michele Maffei we challange the algorithmic authority.',
+          link: {
+
+            name: 'Explore',
+            url: 'https://whatever-dev-ws.github.io/',
+
+          }
+
+        },
+
+        {
+          singleLine: true,
+          title: 'Draft Masters',
+          text: 'with Amedeo Bonini hackeriamo vecchi pen plotter.',
+          link: {
+
+            name: 'Explore',
+            url: 'https://whatever-dev-ws.github.io/',
+
+          }
+
+        }
+
+
+      ]
+
+    },
+
+
+    {
+      title: "Teaching and Research",
+      content: [
+        {
+          singleLine: true,
+          title: 'Contract Professor – IED Torino',
+          text: 'Type Design 1 (Modulo ABPR-19), Design della Comunicazione Visiva, A.A. 24-25, 25-26.',
+          link: {
+            name: '',
+            url: ''
+          },
+        },
+
+        {
+          singleLine: true,
+          title: 'Contract Professor – ABADIR Sant\'Agata li Battiati',
+          text: 'Graphic Design (Curricolare ABPR-19), Progettazione artistica per l\'impresa DAPL06, A.A. 24-25',
+          link: {
+            name: '',
+            url: ''
+          },
+        },
+
+
+
+        {
+          singleLine: true,
+          title: 'Assistant Researcher – unibz',
+          text: 'Progetto start-up INTRA - Designing Embodied Human-Data IntraActions, 2025.',
+          link: {
+            name: 'INTRA website',
+            url: 'https://intra.projects.unibz.it/'
+          },
+        },
+
+        {
+          singleLine: true,
+          title: 'External Researcher – unibz',
+          text: 'Progetto "Graphic Design From the Alps", Responsabile di progetto: Antonino Benincasa, 2023.',
+        },
+
+        {
+          singleLine: true,
+          title: 'Teaching Assistant – unibz',
+          text: 'Faculty of Design, WUP Project, Visual Communication, A.A. 21-22, 22-23, 23-24, 25-26.',
+        }
+
+
       ],
     },
+
+
     {
-      title: "Publications and mentions",
+      title: "Publications",
       content: [
+
         {
-          title: 'Tiling through typography, typing shapes combining types;',
-          text: 'R. Modugno, Algorithminc pattern catalogue. DOI: https://doi.org/10.21428/108765d1.7ce0eb8b',
           singleLine: true,
+          title: 'Lettere dal Tirolo',
+          text: 'in Alpitypes, Franzlab, Bolzano IT, 2025. ISBN 978-88-946405-3-3.',
           link: {
-            name: "https://doi.org/10.21428/108765d1.7ce0eb8b",
-            url: "https://doi.org/10.21428/108765d1.7ce0eb8b"
-          }
+            name: 'Book',
+            url: 'https://www.franzlab.com/shop/alpitypes'
+          },
+        },
+
+        {
+          singleLine: true,
+          title: 'Designing Embodied Interactive Experiences on Environmental Issues',
+          text: '- Ugur Yavuz, Menendez-Blanco, Modugno, Fruhstorfer. In Proceedings of the CHItaly 2025. ACM, New York, USA.',
+          link: {
+            name: 'Paper',
+            url: 'https://doi.org/10.1145/3750069.3750156'
+          },
+        },
+
+        {
+          singleLine: true,
+          title: 'Tiling through typography, typing shapes combining types',
+          text: 'in Algorithminc pattern catalogue, 2023.',
+          link: {
+            name: 'Paper',
+            url: 'https://doi.org/10.21428/108765d1.7ce0eb8b'
+          },
         },
         {
-          title: 'Blauer Schnipsel, co-generating a social fabric;',
-          text: 'Buffa, Modugno, Righetto; Franzlab 2020. ISBN: 978-88-945462-5-5',
           singleLine: true,
+
+          title: 'Combinatoria del Blauer Schnipsel',
+          text: 'in Blauer Schnipsel, Co-generating a social fabric, Bozen-Bolzano IT, Franzlab, 2022.',
+          link: {
+            name: 'Book',
+            url: 'https://www.franzlab.com/shop/cento-06-blauer-schnipsel'
+          },
         },
         {
-          title: 'Silvia Sfigiotti, 17/4: A bottom-up environmental campaign,',
-          text: '365 typo 2, étapes editions, 2015-16',
           singleLine: true,
-        }
+
+          title: 'Rappresentare il potere',
+          text: 'in Plume, Pensieri Letture Visioni, #3, 2024, Cubical Press.',
+          link: {
+            name: 'Magazine',
+            url: 'https://letterecubitali.it/prodotto/plume-pensieri-letture-visioni-3/'
+          },
+        },
       ]
     },
+
+
+
+
+
+
     {
-      title: "Talks",
+      title: "Lectures, Talks, Workshops",
       content: [
         {
+          singleLine: true,
           title: 'Tiling Trough Typography, typing shapes combining types',
-          text: '· 24.11.2023 Universitat Oberta de Catalunya, Barcelona, Spagna'
+          text: 'Universitat Oberta de Catalunya, Barcelona ES, 24.11.23.',
+          link: {
+            name: "video (1:48)",
+            url: 'https://www.youtube.com/live/TGIpkoW4FHM?si=9GdUKeTuk1Z6jGKa',
+          }
+
         },
         {
+          singleLine: true,
           title: 'Pensiero algoritmico, Spazi generativi e combinatoria del pattern',
-          text: `· 18.10.2022 ABADIR di Sant’Agata li Battiati CT, Italia
-          *enter*Presentazione da remoto dei workshop tenuti presso Abadir`
+          text: `– ABADIR di Sant’Agata li Battiati IT, Italia, 18.10.22.`
+        },
+
+        {
+          singleLine: true,
+          title: 'Lost / Found / Changed - GREP, GREP styles and TOC.',
+          text: '- unibz, Bozen-Bolzano IT, Facoltà di Design, 2023.',
         },
         {
-          title: 'Tradizione e innovazione attraverso la pratica del design',
-          text: `· 09.02.2022 REX Upcycling Convention, Brixen BZ`
+          singleLine: true,
+          title: 'La combinatoria del pattern: disegno decorativo attraverso l’analisi combinatoria e lo scripting',
+          text: "- Accademia ABADIR, Sant'Agata li Battiati IT, Corso di studio: Graphic Design e Media Digitali.",
+        }
+
+      ]
+    },
+
+
+    {
+      title: "EDUCATION",
+      content: [
+        {
+          text: 'ISIA Faenza IT, Master in Communication Design, 2021.'
+        },
+
+        {
+          text: 'ISIA Urbino IT, Bachelor in Graphic Design and Visual Communication, 2018.'
+        },
+
+        {
+          text: 'Erasmus Project at Burg Giebichenstein University of art and design, Halle (Saale) DE, Editorial Design Project, 2017.'
         }
       ]
     },
+
+
+
     {
-      title: "Progetti artistici",
+      title: "MENTIONS",
       content: [
         {
+          singleLine: true,
+          title: 'Plotting Empowerment, das generative Design der Draft Masters',
+          text: '- Mehler Ludwig, Franz Magazine (4.2.25).',
           link: {
-            name: "Nome del link",
-            url: "https://url.com",
+            name: "Article",
+            url: 'https://franzmagazine.com/2025/02/04/plotting-empowerment',
           }
         },
+
+
+        {
+          singleLine: true,
+          title: 'Blauer Schnipsel: Ein alter Stoff wird neu gedacht',
+          text: '- Oberrauch Maria, Franz Magazine (24.11.22).',
+          link: {
+            name: "Article",
+            url: 'https://franzmagazine.com/2022/11/24/blauer-schnipsel-ein-alter-stoff-wird-neu-gedacht',
+          }
+        },
+        {
+          singleLine: true,
+          title: '17/4: A bottom-up environmental campaign',
+          text: '- Sfligiotti, Silvia. 365 typo, 2 (2015-16): pp.308-309, étapes editions, ISBN: 9791095254010.'
+        },
+
+
       ]
     },
+
+    {
+      title: "SELECTED EXPOSITIONS",
+      content: [
+        {
+          singleLine: true,
+          title: 'Love your experiments',
+          text: ' in Prospectives on AI, Basel Academy of Art and Design FHNW, Basel CH, 28.9-1.10.2024.'
+        },
+
+        {
+          singleLine: false,
+          title: 'Blauer Schnipsel',
+          text: 'in Identity in motion, Sala Espositiva di Laives, via Pietralba 29, Laives IT, 7-14.9.2024.'
+        },
+
+        {
+          text: '"Biolife”, 03.11.2022 Fiera Bolzano, Bozen-Bolzano IT; in mostra: "Blauer Schnipsel"'
+        },
+
+        {
+          singleLine: false,
+          title: 'Blissett\'s Post Mortem Portraits',
+          text: 'in Giovani senza futuro, anziani senza passato; Casa Baldassarri, via Fratelli Bedeschi 2, Bagnacavallo IT, 24.9-10.10.2021.'
+        },
+
+        {
+          text: 'in Il tempo è finito! Megastore Sonic Belligeranza, via Mascarella 16, Bologna IT, 16.02.2022.'
+        },
+
+        {
+          singleLine: false,
+          title: 'Un\'infinità di disegni',
+
+          text: 'in Neologia: Nuovi linguaggi del visual design in Italia, Certosa Graphic Village, Milano IT, 25-27.3.2022'
+        },
+
+        {
+          text: '“Neologia: Nuovi linguaggi del visual design in Italia", 16-26.10.2021 Toolbox Coworking, Torino TO; in mostra: “Un’infinità di disegni”.'
+        },
+
+
+
+
+
+
+
+      ]
+    }
+
+
+
+
+
+    /*
+        export interface DetailsI {
+          title?: string, //opzionale
+          text?: string, //opzionale
+          singleLine?: boolean, //true mette tutto su una riga, false mette su più
+          link?: { //opzionale
+              name: string, //quello che vedi
+              url: string; //link
+          },
+      }
+    */
+
+
+
+
+    /*Array di oggetti per intestazioni elastiche
+    {
+      title: "cane",
+      content: [ //array o di titoli e oggetti oppure di sole stringhe ("...","...")
+     {title: "uccellino",
+     text: "gattino",
+     }]
+    }
+*/
+
+
+
+
   ]
 }

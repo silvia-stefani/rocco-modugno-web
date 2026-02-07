@@ -63,14 +63,14 @@ const Select: React.FunctionComponent<ISelectProps> = ({ options, defaultValue, 
     const handleOptionClick = (option: Option) => {
         setSelectedOption(option.value);
         getCurrentValue(option.value)
-        setIsOpen(false); 
+        setIsOpen(false);
     };
 
     const optionSelected = options.find((o) => o.value === selectedOption);
 
     return <div className={'Select'} ref={selectRef}>
         <div className={'current_value'} onClick={toggleSelect}>
-            <Icon size={14} name={"Select"} />
+            <Icon size={14} name={"ArrowDown"} />
             {optionSelected ? optionSelected.label : 'Select an option'}
         </div>
         {isOpen && selectPosition && (

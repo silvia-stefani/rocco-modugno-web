@@ -15,14 +15,19 @@ import { MenuItemsType } from 'types/MeuItemsType';
 import { ServicesType } from 'types/ServicesType';
 import i18n from 'utils/i18n';
 
-interface IHeader { 
+interface IHeader {
 }
 
+/**
+ * Header component that provides navigation, branding, language switching, and theme toggling.
+ * It also features a rotating list of services/roles under the name.
+ */
 const Header: React.FC<IHeader> = () => {
 
   const { currentTheme, toggleTheme } = useTheme();
   const { smallDevice } = useBreakpoints()
-  
+
+  // Manage current language state for persistence/UI updates
   const [currentLanguage, setCurrentLanguage,] = useState(i18n.language)
   const changeLanguage = (language: string) => {
     i18n.changeLanguage(language)
@@ -32,66 +37,78 @@ const Header: React.FC<IHeader> = () => {
   const { t } = useTranslation();
   const menu = t('menu', { returnObjects: true }) as MenuItemsType[];
   const services = t('services', { returnObjects: true }) as ServicesType[];
-  
-  //const location = useLocation();
+
   const currentPage = usePathname();
 
   const [mobileOpen, setMobileOpen] = useState(false);
+
+  /**
+   * Renders the mobile menu using a React Portal to ensure it appears above all other content.
+   */
   const headerMobile = () => {
     return createPortal(<nav className={styles.MobileMenu}>
-    <span onClick={() => setMobileOpen(false)}><Icon name={"Close"} /></span>
-    <ul className={styles.menu}>
-      {menu.map((item) => {
-        const isCurrent = currentPage === `/${item.id}` ? styles.current : "";
-        return <li key={item.id} className={`${styles.item} ${isCurrent}`}><Link href={`/${item.id}`}>{item.name}</Link></li>
-      })}
-    </ul>
+      <span onClick={() => setMobileOpen(false)}><Icon name={"Close"} /></span>
+      <ul className={styles.menu}>
+        {menu.map((item) => {
+          const isCurrent = currentPage === `/${item.id}` ? styles.current : "";
+          return <li key={item.id} className={`${styles.item} ${isCurrent}`}><Link href={`/${item.id}`}>{item.name}</Link></li>
+        })}
+      </ul>
     </nav>, document.body)
   }
 
+  // Close mobile menu automatically when navigation occurs
   useEffect(() => {
-    setMobileOpen(false); // Cierra el menú móvil cuando cambia la ubicación
+    setMobileOpen(false);
   }, [currentPage]);
 
   const [currentI, setCurrentI] = useState(0);
-  
-  useEffect(() => {
-    setTimeout(() => {
-      setCurrentI((currentI + 1) % services.length)
-    }, 3000);
-  }, [currentI]);
 
   return <Fragment>
+    {/* Render mobile menu if open */}
     {mobileOpen && headerMobile()}
+
     <header className={styles.Header}>
-    <div className={styles.container}>
-      <Link href={'/'} className={styles.data}>
-        <h2 className={styles.name}>Rocco Modugno</h2>
-        <div className={styles.metadata}>{services[currentI].title}</div>
-      </Link>
-      {!smallDevice && <Fragment>
-        <nav className={styles.navbar}>
-          <ul className={styles.menu}>
-            {menu.map((item) => {
-              const isCurrent = currentPage === item.id ? styles.current : "";
-              return <li key={item.id} className={`${styles.item} ${isCurrent}`}><Link href={`/${item.id}`}>{item.name}</Link></li>
+      <div className={styles.container}>
+        {/* Branding and rotating role description */}
+        <Link href={'/'} className={styles.data}>
+          <h2 className={styles.name}>Rocco Modugno</h2>
+          <div
+            className={styles.metadata}
+            onAnimationIteration={() => setCurrentI((prev) => (prev + 1) % services.length)}
+          >
+            {services[currentI].title}
+          </div>
+        </Link>
+
+        {!smallDevice && <Fragment>
+          {/* Desktop Navigation */}
+          <nav className={styles.navbar}>
+            <ul className={styles.menu}>
+              {menu.map((item) => {
+                const isCurrent = currentPage === item.id ? styles.current : "";
+                return <li key={item.id} className={`${styles.item} ${isCurrent}`}><Link href={`/${item.id}`}>{item.name}</Link></li>
+              })}
+            </ul>
+          </nav>
+          {/* Language Switcher */}
+          <div className={styles.languages}>
+            {languages.map((lan) => {
+              const isCurrent = lan.id === currentLanguage ? styles.current : "";
+              return <div className={`${styles.language} ${isCurrent}`} key={lan.id} onClick={() => changeLanguage(lan.id)}>{lan.label}</div>
             })}
-          </ul>
-        </nav>
-        <div className={styles.languages}>
-          {languages.map((lan) => {
-            const isCurrent = lan.id === currentLanguage ? styles.current : "";
-            return <div className={`${styles.language} ${isCurrent}`} key={lan.id} onClick={() => changeLanguage(lan.id)}>{lan.label}</div>
-          })}
+          </div>
+        </Fragment>}
+
+        {/* Theme Toggle Button */}
+        <div className={styles.theme} onClick={toggleTheme}>
+          <span className={styles.picker} style={{ backgroundColor: currentTheme.colors.primary }}></span>
         </div>
-      </Fragment>}
-      <div className={styles.theme} onClick={toggleTheme}>
-        <span className={styles.picker} style={{backgroundColor: currentTheme.colors.primary}}></span>
-        {/* {nextTheme.label} */}
+
+        {/* Hamburger Menu Icon for mobile */}
+        {smallDevice && <div onClick={() => setMobileOpen(true)}><Icon name={"Menu"} /></div>}
       </div>
-      {smallDevice && <div onClick={() => setMobileOpen(true)}><Icon name={"Menu"} /></div>}
-    </div>
-  </header>
+    </header>
   </Fragment>;
 };
 

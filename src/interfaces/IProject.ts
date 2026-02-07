@@ -1,15 +1,18 @@
-export type ProjectsCatsIds = 
-"all" |
-"editorial" |
-"type" |
-"scripting" |
-"consult" |
-"pattern" |
-"research" |
-"motion" |
-"poster" |
-"textile" 
-;
+export type ProjectsCatsIds =
+    "all" |
+    "editorial" |
+    "type" |
+    "scripting" |
+    "coding" |
+    "consult" |
+    "pattern" |
+    "research" |
+    "motion" |
+    "poster" |
+    "illustration" |
+    "text-to-image" |
+    "textile"
+    ;
 
 export type IProject = {
     id: string,
@@ -22,6 +25,8 @@ export type IProject = {
     description?: string,
     images: {
         cover: string,
+        coverList?: string,   // Specific cover for List View
+        coverPoints?: string, // Specific cover for Points View
         gallery: string[]
     },
     link?: {

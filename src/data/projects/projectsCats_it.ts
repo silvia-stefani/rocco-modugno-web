@@ -5,40 +5,43 @@ export const itProjectsCats: ProjectsCatsType[] = [
         value: "all",
         label: "Tutti"
     },
+
     {
         value: "editorial",
-        label: "Editoriale"
+        label: "Editorial"
     },
-    
+
     {
         value: "type",
-        label: "Type Design"
-    }, 
-    {
-        value: "scripting",
-        label: "Scripting"
+        label: "Type"
     },
-    /*
+
     {
-        value: "consult",
-        label: "Consulenza"
+        value: "coding",
+        label: "Coding"
     },
-    */
+
     {
         value: "poster",
         label: "Poster"
     },
+
     {
         value: "pattern",
         label: "Pattern"
     },
 
-    /* 
     {
         value: "research",
-        label: "Ricerca"
+        label: "Research"
     },
-    
+
+    {
+        value: "illustration",
+        label: "Illustration"
+    }
+
+    /* 
     {
         value: "motion",
         label: "Animazione"

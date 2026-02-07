@@ -1,19 +1,34 @@
 @import '/src/assets/sass/lib/vars';
 
-/* Animación de escritura */
+/* Animazione di scrittura */
 @keyframes typing {
     0% {
-        width: 0;
+        width: 0%;
     }
-    50% {
+
+    10% {
+        width: 0%;
+    }
+
+    // Breve pausa invisibile all'inizio per il cambio testo
+    45% {
         width: 100%;
     }
-    100% {
-        width: 0;
-    }
-}    
 
-.Header {  
+    // Scrittura completata
+    75% {
+        width: 100%;
+    }
+
+    // Pausa per la lettura
+    100% {
+        width: 0%;
+    }
+
+    // Sparizione totale (qui scatterà l'evento iteration)
+}
+
+.Header {
     width: 100%;
     font-size: 14px;
     z-index: 1;
@@ -56,7 +71,7 @@
         }
 
         .metadata {
-    
+
             font-weight: 600;
             padding-top: 2px;
             width: fit-content;
@@ -79,16 +94,19 @@
             align-items: center;
             justify-content: center;
             list-style: none;
+
             li.item {
                 text-transform: uppercase;
                 transition: all 200ms ease-in-out;
                 font-weight: 600;
+
                 &:hover:not(.current) {
                     //border-bottom: 1px solid var(--primary);
                     cursor: pointer;
                     color: var(--primary);
                     opacity: 0.6;
                 }
+
                 &.current {
                     color: var(--primary);
                     pointer-events: none;
@@ -105,7 +123,7 @@
         height: fit-content;
 
         .language {
-            
+
             cursor: pointer;
 
             color: var(--text);
@@ -135,10 +153,12 @@
         gap: 4px;
         flex-shrink: 0;
         transition: opacity 320ms ease-in-out;
+
         &:hover {
             opacity: 0.8;
             transition: opacity 320ms ease-in-out;
         }
+
         .picker {
             width: 14px;
             height: 14px;
@@ -152,10 +172,12 @@
         h2.name {
             flex-shrink: 1;
         }
+
         nav.navbar {
             display: none;
-        }    
+        }
     }
+
     /* (end) Mobile Menu */
 }
 
@@ -171,6 +193,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+
     span {
         position: absolute;
         top: 16px;
@@ -180,6 +203,7 @@
         align-items: center;
         justify-content: center;
     }
+
     ul.menu {
         list-style: none;
         padding: 0;
@@ -187,10 +211,12 @@
         flex-direction: column;
         align-items: center;
         gap: 32px;
+
         li.item a {
             text-decoration: none;
             color: currentColor;
         }
+
         li.item.current {
             pointer-events: none;
             opacity: 0.6;

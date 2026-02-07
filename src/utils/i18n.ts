@@ -16,6 +16,8 @@ import { enCoding } from '../data/coding/coding_en';
 import { itCoding } from '../data/coding/coding_it';
 import { enHome } from '../data/home/home_en';
 import { itHome } from '../data/home/home_it';
+import { enUi } from '../data/app_texts/ui_en';
+import { itUi } from '../data/app_texts/ui_it';
 
 i18n
   .use(initReactI18next)
@@ -30,7 +32,8 @@ i18n
           projectsCats: enProjectsCats,
           articles: enArticles,
           coding: enCoding,
-          home: enHome
+          home: enHome,
+          ui: enUi
           // ... otras traducciones
         },
       },
@@ -43,7 +46,8 @@ i18n
           projectsCats: itProjectsCats,
           articles: itArticles,
           coding: itCoding,
-          home: itHome
+          home: itHome,
+          ui: itUi
           // ... otras traducciones
         },
       },

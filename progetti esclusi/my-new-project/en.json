@@ -1,0 +1,15 @@
+{
+    "title": "Example Project",
+    "subtitle": "A test for the new system",
+    "description": "This is a long description in English to test the automatic synchronization system.",
+    "details": [
+        "AI Collaboration",
+        "System Test"
+    ],
+    "link": [
+        {
+            "name": "Website",
+            "url": "https://example.com"
+        }
+    ]
+}

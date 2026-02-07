@@ -1,4 +1,4 @@
-//Qui ci sono delle cose relative ai font per la decorazione
+// This file contains logic related to decorative fonts and generative modules.
 
 'use client'
 import * as React from 'react';
@@ -19,18 +19,33 @@ import i18n from '../utils/i18n';
 import { keyboardModuleEvents } from '../interfaces/IModuleActions';
 import { toBase } from '../utils/generativeFunctions';
 
+/**
+ * Homepage component.
+ * Features an interactive generative art area where users can "stamp" modules.
+ * Supports keyboard shortcuts and touch interactions.
+ */
 export default function Home() {
 
-  const { isTouchable } = useBreakpoints()  
+  const { isTouchable } = useBreakpoints()
   const { t } = useTranslation()
-  const texts = t("home", {returnObjects: true}) as {
+  const texts = t("home", { returnObjects: true }) as {
     cta: string,
     legend: string[]
   };
-  
+
   const currentLanguage: "it" | "en" = i18n.language as "it" | "en";
-  
-  type modules = { nums: number, font: string, x: number; y: number; s: number, r: number };
+
+  /**
+   * Represents the configuration of a single module.
+   */
+  type modules = {
+    nums: number;    // The base-4 representation of the module shape
+    font: string;    // The font family used for the decorative character
+    x: number;       // X coordinate on the grid
+    y: number;       // Y coordinate on the grid
+    s: number;       // Size of the module
+    r: number;       // Rotation in degrees
+  };
 
   const fonts = [
     "rolo deco a",
@@ -41,15 +56,17 @@ export default function Home() {
     "rolo deco f",
     "rolo deco g"
   ]
-//  const maxNums = Math.pow(4, 4) / 4;
 
+  // Maximum number of variations for a module based on base-4 (4^4 = 256)
   const maxNums = Math.pow(4, 4);
 
   const modulesRef = useRef<HTMLDivElement>(null)
   const modW = modulesRef.current ? modulesRef.current.clientWidth : 0;
   const modH = modulesRef.current ? modulesRef.current.clientHeight : 0;
+
+  // Default settings for the "stamp" module
   const initialValues = {
-    nums: 0, /* Min 0 max 63 */
+    nums: 0, /* Min 0 max 255 */
     font: 'rolo deco a',
     s: 40,
     r: 0,
@@ -57,28 +74,35 @@ export default function Home() {
     y: Math.floor(Math.random() * (modH + 1))
   }
 
+  // State for the current module being "stamped" or customized
   const [printSettings, setPrintSettings] = useState<modules>(initialValues);
-  
+
+  // Adjust size for touch devices
   useEffect(() => {
-    if(isTouchable) {
+    if (isTouchable) {
       setPrintSettings((prevState) => ({
         ...prevState,
         s: 20
       }))
     }
   }, [isTouchable]);
-  
+
+  // Track the snapped grid position of the mouse
   const [position, setPosition] = useState({ x: 200, y: 200 });
 
   const { x: mouseX, y: mouseY } = useMousePosition();
   const { fixedTexts, setFixedTexts } = useGlobalContext();
 
+  // Snapping logic: align the "brush" to the grid defined by module size
   useEffect(() => {
     const clientX = Math.floor(mouseX / initialValues.s) * initialValues.s;
     const clientY = Math.floor(mouseY / initialValues.s) * initialValues.s;
     setPosition({ x: clientX, y: clientY });
   }, [mouseX, mouseY]);
 
+  /**
+   * Handles state updates for the module based on user actions (buttons or keys).
+   */
   function moduleHomeActions(action: keyboardModuleEvents) {
     setPrintSettings((prev) => {
       switch (action) {
@@ -103,14 +127,15 @@ export default function Home() {
         case 'reduce_text':
           return prev.s > 10
             ? {
-                ...prev,
-                s: prev.s / 2,
-              }
+              ...prev,
+              s: prev.s / 2,
+            }
             : prev;
         case 'rotate_text':
           return {
             ...prev,
             r: prev.r + 45,
+            // Adjust size when rotating to 45-degree increments to maintain grid visual consistency
             s: prev.r.toString().endsWith('5')
               ? prev.s * Math.sqrt(2)
               : prev.s / Math.sqrt(2),
@@ -133,11 +158,12 @@ export default function Home() {
       }
     });
   }
-  
+
   const [isDrawing, setIsDrawing] = useState(false);
-  
+
+  // Interaction handlers for clicking/touching the canvas
   const handleMouseDown = (e: React.MouseEvent<HTMLDivElement, MouseEvent> | React.TouchEvent<HTMLDivElement>) => {
-    setIsDrawing(true)    
+    setIsDrawing(true)
     handleMouseClick(e);
   };
   const handleMouseUp = () => {
@@ -147,8 +173,11 @@ export default function Home() {
     if (isDrawing) {
       handleMouseClick(e);
     }
-  };  
+  };
 
+  /**
+   * "Stamps" a module onto the canvas at the current mouse/touch position.
+   */
   const handleMouseClick = (e: React.MouseEvent<HTMLDivElement, MouseEvent> | React.TouchEvent<HTMLDivElement>) => {
 
     let clientX: number, clientY: number;
@@ -160,15 +189,19 @@ export default function Home() {
       clientX = e.clientX;
       clientY = e.clientY;
     }
-    
+
+    // Snap to grid based on current size
     const gridMouseX = Math.floor(clientX / initialValues.s) * initialValues.s;
     const gridMouseY = Math.floor(clientY / initialValues.s) * initialValues.s;
     setFixedTexts([...fixedTexts, { ...printSettings, x: gridMouseX, y: gridMouseY }]);
   };
 
+  /**
+   * Listen for specific keys to trigger module actions.
+   */
   const handleKeyDown = (event: KeyboardEvent) => {
     const action = moduleActions.find(m => m.key === event.key)?.id;
-    if(action) moduleHomeActions(action)
+    if (action) moduleHomeActions(action)
   };
 
   useEffect(() => {
@@ -181,12 +214,14 @@ export default function Home() {
   const handleClick = (action: keyboardModuleEvents) => {
     moduleHomeActions(action)
   }
-  
+
+  // UI state for the actions drawer
   const [actionsOpen, setActionsOpen] = useState(true);
   const [headH, setHeadH] = useState(0);
   const headActionsRef = useRef<HTMLDivElement>(null);
   const legendRef = useRef<HTMLDivElement>(null);
 
+  // Dynamically calculate height for the menu transitions
   useEffect(() => {
     function calculateH() {
       if (headActionsRef.current) {
@@ -209,15 +244,19 @@ export default function Home() {
 
   return <div className={styles.Home}>
 
+    {/* Small preview of the current module on touch devices */}
     {isTouchable && <div className={styles.static_module}>
       <StaticModule s={20} r={printSettings.r} font={printSettings.font} element={toBase(printSettings.nums, 4)} />
-    </div> }
+    </div>}
+
+    {/* Call to action if the canvas is empty */}
     {fixedTexts.length <= 0 && <div className={styles.cta}>{texts.cta}</div>}
 
+    {/* The interactive canvas area */}
     <div
       ref={modulesRef}
       className={styles.modules_wrapper}
-      onMouseDown={handleMouseDown} 
+      onMouseDown={handleMouseDown}
       onMouseUp={handleMouseUp}
       onMouseMove={handleMouseMove}
       onTouchStart={handleMouseDown}
@@ -225,10 +264,14 @@ export default function Home() {
       onTouchMove={handleMouseMove}
       tabIndex={0}
     >
+      {/* Render all fixed modules */}
       {fixedTexts.map((ft, index) => (<Module key={index} x={ft.x} y={ft.y} s={ft.s} r={ft.r} font={ft.font} element={toBase(ft.nums, 4)} />))}
+
+      {/* Render the module following the cursor (non-touch only) */}
       {!isTouchable && <Module stamp x={position.x} y={position.y} s={printSettings.s} r={printSettings.r} font={printSettings.font} element={toBase(printSettings.nums, 4)} />}
     </div>
 
+    {/* UI Controls and Data Legend */}
     <div className={`${styles.actions} ${actionsOpen ? styles.open : ''}`} style={{ maxHeight: actionsOpen ? headH : '70dvh' }}>
       <div ref={headActionsRef} className={styles.head} onClick={handleOpenActions}>
         <div className={styles.container}>
@@ -245,18 +288,24 @@ export default function Home() {
         </div>
         <div className={styles.icon}>{fixedTexts.length > 0 && <Icon size={16} name={actionsOpen ? 'Plus' : 'Minus'} />}</div>
       </div>
+
+      {/* Legend showing numerical data for each stamped module */}
       <div ref={legendRef} className={styles.legend}>
         <div className={styles.row}>
           {texts.legend.map((t, i) => (
             <div key={i} className={styles.data_title}>{t}</div>
           ))}
         </div>
+
+        {/* Current brush data */}
         <div className={`${styles.row} ${styles.current}`}>
           <div className={styles.data}>{printSettings.nums}</div>
           <div className={styles.data}>{rotation(printSettings.r)}</div>
           <div className={styles.data}>{toDecimalsTwo(printSettings.s)}</div>
           <div className={styles.data}>{`${mouseX}, ${mouseY}`}</div>
         </div>
+
+        {/* History of stamped modules */}
         {hasDrawing && fixedTexts.map((ft, i) => (
           <div key={i} className={styles.row}>
             <div className={styles.data}>{ft.nums}</div>
@@ -270,4 +319,5 @@ export default function Home() {
 
   </div>
 }
+
 

@@ -25,20 +25,20 @@ export default function About() {
         rightColumn.push(block);
       }
     });
-  
+
     return { leftColumn, rightColumn };
   };
-  
+
   const { leftColumn, rightColumn } = divideBlocks(about.content);
 
   function renderContent(content: string[] | DetailsI[]) {
     return content.map((c, i) => {
-      
+
       switch (typeof c) {
         case "string":
           return <Paragraph key={i} text={c} />;
         case "object":
-          if(c.singleLine) {            
+          if (c.singleLine) {
             return (
               <div key={i} className={styles.text}>
                 <p>{c.title && <b>{c.title} </b>}{c.text && c.text} {c.link && <a href={c.link.url} target="_blank" rel="noopener noreferrer">  {c.link.name}</a>}</p>
@@ -59,20 +59,12 @@ export default function About() {
       }
     });
   }
-  
+
 
   return (
     <div className={styles.About}>
 
       <div className={styles.content}>
-
-        <div className={styles.contacts}>
-          <a href={`mailto:${contacts.mail}`}>{contacts.mail}</a>
-          <a href={`tel:${contacts.tel}`}>{contacts.tel}</a>
-          <Paragraph text={contacts.address.street} />
-          <Paragraph text={contacts.address.location} />
-          <Paragraph text={contacts.pIva} />
-        </div>
 
         <div className={styles.image}>
           <img src="/profile_photo.jpg" alt="" />
@@ -80,6 +72,13 @@ export default function About() {
 
         <div className={styles.presentation}>
           <Paragraph text={presentation} />
+          <div className={styles.contacts}>
+            <a href={`mailto:${contacts.mail}`}>{contacts.mail}</a>
+            {contacts.tel && <a href={`tel:${contacts.tel}`}>{contacts.tel}</a>}
+            <Paragraph text={contacts.address.street} />
+            <Paragraph text={contacts.address.location} />
+            <Paragraph text={contacts.pIva} />
+          </div>
         </div>
 
         <div className={styles.column}>
@@ -90,7 +89,7 @@ export default function About() {
             </div>
           ))}
         </div>
-        
+
         <div className={styles.column}>
           {rightColumn.map((content, index) => (
             <div key={index} className={styles.block}>

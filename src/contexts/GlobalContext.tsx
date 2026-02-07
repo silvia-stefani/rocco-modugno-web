@@ -3,21 +3,39 @@ import React, { useState, useContext, createContext, ReactNode, useEffect } from
 import { ProjectsCatsIds } from '../interfaces/IProject';
 import useBreakpoints from 'hooks/useBreakpoints';
 
+/**
+ * Type definition for a stamped generative module.
+ */
+type modules = {
+  nums: number;
+  font: string;
+  x: number;
+  y: number;
+  s: number;
+  r: number
+};
 
-type modules = { nums: number, font: string, x: number; y: number; s: number, r: number };
-
+/**
+ * Interface for the application's global filtering and view settings.
+ */
 interface FiltersI {
-  category: ProjectsCatsIds;
+  category: ProjectsCatsIds; // Active project category filter
   listView: {
-    order: "alph-asc" | "alph-desc",
-    isExpanded: boolean;
+    order: "alph-asc" | "alph-desc", // Alphabetical sorting order
+    isExpanded: boolean;            // Whether list items are expanded to show details
   },
   dynamicView: {
-    style: "titles" | "images",
-    velocity: number
+    style: "titles" | "images",     // Visual style of the dynamic/points view
+    velocity: number,               // Velocity of moving elements (if applicable)
+    cohesion: number,
+    alignment: number,
+    separation: number
   }
 }
 
+/**
+ * Initial values for the filters and view settings.
+ */
 const initialFiltersValues: FiltersI = {
   category: "all",
   listView: {
@@ -26,11 +44,17 @@ const initialFiltersValues: FiltersI = {
   },
   dynamicView: {
     style: "images",
-    velocity: 1
+    velocity: 0.8,
+    cohesion: 0.8,
+    alignment: -0.8,
+    separation: 0.9
   }
 }
 
-// Create a context for managing filter settings
+/**
+ * GlobalContext defines the shared state for the entire application.
+ * It tracks project filters, stamped modules (fixedTexts), and the current active view.
+ */
 const GlobalContext = createContext<{
   filters: FiltersI;
   setFilters: React.Dispatch<React.SetStateAction<FiltersI>>;
@@ -41,18 +65,21 @@ const GlobalContext = createContext<{
   setCurrentView: (view: 'points' | 'list') => void;
 }>({
   filters: initialFiltersValues,
-  setFilters: () => {},
+  setFilters: () => { },
   fixedTexts: [],
-  setFixedTexts: () => {},
+  setFixedTexts: () => { },
   currentView: "points",
-  setCurrentView: () => {},
+  setCurrentView: () => { },
   scrollPosition: 0,
 });
 
 interface IGlobalProvider {
-    children: ReactNode
+  children: ReactNode
 }
-// Create a provider component to wrap your application and provide access to the filter context
+
+/**
+ * GlobalProvider component that wraps the application and manages the shared state.
+ */
 export const GlobalProvider: React.FC<IGlobalProvider> = ({ children }) => {
   const [filters, setFilters] = useState<FiltersI>(initialFiltersValues);
   const [fixedTexts, setFixedTexts] = useState<modules[]>([]);
@@ -60,17 +87,21 @@ export const GlobalProvider: React.FC<IGlobalProvider> = ({ children }) => {
   const [scrollPosition, setScrollPosition] = useState<number>(0);
   const { smallDevice } = useBreakpoints();
 
+  // Automatically switch to 'list' view on small devices (mobile)
   useEffect(() => {
-    if(smallDevice) { 
-      setCurrentView("list") 
+    if (smallDevice) {
+      setCurrentView("list")
     } else {
       setCurrentView("points");
     }
   }, [smallDevice]);
 
+  // Track the window scroll position for potential parallax or UI effects
   useEffect(() => {
-    setScrollPosition(window.scrollY);
-  }, [window.scrollY]);
+    const handleScroll = () => setScrollPosition(window.scrollY);
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   return (
     <GlobalContext.Provider value={{ filters, setFilters, fixedTexts, setFixedTexts, currentView, setCurrentView, scrollPosition }}>
@@ -79,7 +110,10 @@ export const GlobalProvider: React.FC<IGlobalProvider> = ({ children }) => {
   );
 };
 
-// Custom hook to access filter context
+/**
+ * Custom hook to easily access the global context in functional components.
+ */
 export const useGlobalContext = () => useContext(GlobalContext);
+
 
 

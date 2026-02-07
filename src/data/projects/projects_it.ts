@@ -1,106 +1,72 @@
 import { IProject } from "../../interfaces/IProject";
 
-export const itProjects: IProject[] = [ 
-    /*
-    { // 60_tavole_illustrate_di_dominique_douat
-        id: "60_tavole_illustrate_di_dominique_douat",
-        cat: ["editorial", "pattern"],
-        date: "2020",
-        place: "Faenza RA",
-        title: "60 Tavole di DD",
-    subtitle: "Quaderno di studio della teoria decorativa elaborata da Dominique Douat nel 1722, sulla base degli studi combinatori di Sebastien Truchet. Analisi del metodo, riproduzione vettoriale delle sue tavole illustrate, elaborazioni di variazioni formali delle composizioni.",
-        images: {
-            cover: "60tidd_gif_1.gif",
-            gallery: [
-                "60tidd_img_3.jpg",
-                "60tidd_img_2.jpg",
-                "60tidd_img_5.jpg",
-                "60tidd_img_9.jpg",
-                "60tidd_img_10.jpg"
+export const itProjects: IProject[] = [
+    {
+        "id": "17_4",
+        "cat": [
+            "poster",
+            "editorial"
+        ],
+        "date": "2016",
+        "place": "Urbino IT",
+        "client": "",
+        "title": "Il 17/4 Vota si",
+        "subtitle": "Poster realizzato per il referendum nazionale sul rinnovo delle concessioni per le estrazioni con gli impianti del Mar Adriatico.",
+        "description": "",
+        "images": {
+            "cover": "cover_cover.png",
+            "coverPoints": "cover_points.svg",
+            "gallery": [
+                "174_img_1.png",
+                "174_img_2.png"
             ]
         },
-        details: [
-            "Fotografie di Andrea Righetto"
-        ]
-    },    
-    */
-    { // ABC_61250_e_altre
-        id: "ABC_61250_e_altre",
-        cat: [ "scripting", "editorial" ],
-        date: "2023",
-        place: "Remoto",
-        title: "ABC 61250 e Altre",
-        subtitle: "Progetto di Aurora Pelaggi e Matteo Mariangioli",
-        description: `"Allora cosa succede se una notizia assolutamente popolare, che altro non è che un insieme di righe, viene inserita all'interno di una macchina combinatoria che permette di generare infinite combinazioni?”.
-        Aurora e Matteo, studenti dell'ISIA di Urbino, mi hanno chiesto un aiuto per ricombinare le righe degli iconici strilloni di diverse testate Marchigiane.`,
-        images: {
-            cover: "ABC-gif-lq.gif",
-            gallery: [
+        "details": [],
+        "link": []
+    },
+    {
+        "id": "ABC_61250_e_altre",
+        "cat": [
+            "coding"
+        ],
+        "date": "2023",
+        "place": "Urbino IT",
+        "client": "Aurora Pelaggi, Matteo Mariangioli",
+        "title": "ABC 61250 e Altre",
+        "subtitle": "Progetto di Aurora Pelaggi e Matteo Mariangioli",
+        "description": "Consulenza e programmazione per la ricombinazione delle righe degli strilloni di diversi giornali marchigiani in un massiccio prodotto editoriale.\n\n\"Allora cosa succede se una notizia assolutamente popolare, che altro non è che un insieme di righe, viene inserita all'interno di una macchina combinatoria che permette di generare infinite combinazioni?”.\n(Dal testo introduttivo del libro)",
+        "images": {
+            "cover": "cover_cover.gif",
+            "coverPoints": "cover_points.svg",
+            "gallery": [
+                "abc_img_1.jpg",
                 "abc_img_2.jpg",
-                "abc_img_3.jpg",
-                "abc_img_1.jpg"
+                "abc_img_3.jpg"
             ]
         },
-        details: [
-            "Citazione estratta dal libro",
+        "details": [
             "Fotografie di Francesco Gaviano"
-        ]
+        ],
+        "link": []
     },
-    /*
-    { // archeologia_tradizione_e_arti_applicate
-        id: "archeologia_tradizione_e_arti_applicate",
-        cat: [ "research", "pattern" ],
-        date: "2020",
-        place: "ISIA di Urbino",
-        title: "Archeologia Tradizionale e Arti Applicate",
-        subtitle: "Tesi triennale discussa presso l’ISIA di Urbino a Marzo 2020.",
-        description: "La decorazione è una delle prime forme di espressione artistica ed è incentrata sull’abbellimento degli oggetti (spesso di uso quotidiano). La regione Basilicata presenta un ricco patrimonio decorativo: dalle decorazioni geometriche e figurative della ceramica greca, fino agli intagli con figure antropomorfe e segni a punta di coltello sugli oggetti di legno della cultura materiale. «Se si leggono i libri di etnologia si vede che gli oggetti d’uso fatti a mano dai popoli primitivi, cioè dai popoli che ancora non conoscono l’agricoltura ma solo la caccia e la pesca, passano sempre attraverso un’impostazione magica, nel senso che la loro funzionalità – e quindi le forme che assumono – risponde prima ad esigenze magiche e poi ad esigenze, come diciamo noi, meccaniche: strettamente meccaniche [...] Se un primitivo si fa un cucchiaio, non . tanto il peso, la materia, la comodità del manico a preoccuparlo, quanto il fatto che la forma e i segni sul cucchiaio abbiano un significato, siano d’aiuto e di commento a quello che il bere – rito più che gesto – può significare nell’idea generale del mondo e della vita.» (Sottsass Ettore, Per qualcuno può essere lo spazio, Adelphi, Milano 2017).Il mio intento è quello di rilevare questo ricco deposito di segni e dopo l’analisi e l’osservazione dell’intero apparato decorativo presente nel museo, riscriverlo con le tecniche del disegno vettoriale e il linguaggio della programmazione digitale, per ipotizzare nuove applicazioni.",
-        images: {
-            cover: "atap_img_2.jpg",
-            gallery: [
-                "atap_img_1.jpg"
-            ]
-        },
-        details: [
-            "Relatore: Marco Ferrari",
-            "Correlatore: Mauro Bubbico",
-            "Fotografia di Andrea Righetto"
-        ]
-    },*/
-    /*
-    { // bandiere_abadir
-        id: "bandiere_abadir",
-        cat: [ "motion" ],
-        date: "2023",
-        place: "Remoto",
-        client: "Mauro Bubbico",
-        title: "Bandiere ABADIR",
-        subtitle: "Animazioni per la serie di talk dell’università di Design Abadir, Sant’Agata li Battiati.",
-        images: {
-            cover: "ba_vid_1.mp4",
-            gallery: [
-                "ba_vid_1.mp4"
-            ]
-        }
-    },
-    */
-
-    
-    { // blauer_schnipsel_book_presentation
-        id: "blauer_schnipsel",
-        cat: [ "editorial", "pattern" ],
-        date: "2022",
-        place: "Bozen-Bolzano BZ",
-        title: "Blauer Schnipsel",
-        client: "Pubblicazione finanziata da Weight Station, edita da Franzlab",
-
-        subtitle: "Co-generating a social fabric",
-        description: `Il progetto Blauer Schnipsel nasce come una serie di laboratori di upcycling grafico-sartoriali documentati con una pubblicazione per raccontare e replicare l'esperimento sociale. Con più di 70 persone abbiamo trasformato lo scarto tessile derivato dalla produzione del Blauer Schurz (grembiule sudtirolese) in 54 tessiti decorati modulari, per una superficie totale di 27m2. Durante i laboratori abbiamo sviluppato una serie di strumenti ed una metodologia descritti nel dettaglio nella pubblicazione. `,
-        
-        images: {
-            cover: "bs_img_1.png",
-            gallery: [
+    {
+        "id": "blauer_schnipsel",
+        "cat": [
+            "editorial",
+            "pattern"
+        ],
+        "date": "2022",
+        "place": "Bozen-Bolzano IT",
+        "client": "WS Call",
+        "title": "Blauer Schnipsel",
+        "subtitle": "Co-generating a social fabric",
+        "description": " Blauer Schnipsel è una serie di laboratori di upcycling grafico-sartoriali, documentati in una pubblicazione per raccontare e replicare questo esperimento sociale. Con oltre 70 partecipanti, abbiamo trasformato lo scarto tessile derivante dalla produzione del Blauer Schurz (il grembiule tradizionale sudtirolese) in 54 tessuti decorativi modulari, per una superficie totale di 27 metri quadrati.\n\nQuesto scarto è diventato materiale grezzo per la costruzione collettiva. Durante i laboratori abbiamo sviluppato degli strumenti e una metodologia concreta, descritti nella pubblicazione \"Blauer Schnipsel. Co-generating a Social Fabric\".\n\nBlauer Schnipsel non è solo bello: è un gesto politico. Elabora il significato simbolico di un tessuto legato all’identità locale e alla discriminazione storica, per trasformarlo in motore di incontro, scambio e creazione condivisa. Il cucito – spesso relegato a pratica marginale o femminile – diventa atto di resistenza che trasforma il rifiuto in arredamento urbano.",
+        "images": {
+            "cover": "cover_cover.png",
+            "coverPoints": "cover_points.svg",
+            "gallery": [
                 "bs_img_1.png",
+                "bs_img_10.png",
                 "bs_img_2.png",
                 "bs_img_3.png",
                 "bs_img_4.png",
@@ -108,345 +74,356 @@ export const itProjects: IProject[] = [
                 "bs_img_6.png",
                 "bs_img_7.png",
                 "bs_img_8.png",
-                "bs_img_9.png",
-                "bs_img_10.png"
+                "bs_img_9.png"
             ]
         },
-        details: [
-            'Progetto e testi di Adele Buffa, Rocco Modugno e Andrea Righetto',
-            'Testi di Aart van Bezooijen, Barbara Stocker, Secil Ugur Yavuz',
-            'Pubblicazione Finanziata da Weigh Station',
-            'Pubblicata con Franzlab, Cento #6',
-            'Laboratori supportati da Officine Vispa e Fablab Bitz'
-
-
-            
+        "details": [
+            "con Adele Buffa, Andrea Righetto",
+            "Un rigraziamento speciale a tutti i partecipanti, Weight Station, Franzlab, Fablab Bitz, Officine Vispa, Daria Akimenko, Secil Ugur Yavuz, Aart van Bezooijen, Barbara Stocker."
+        ],
+        "link": [
+            {
+                "name": "Blauer Schnipsel",
+                "url": "https://www.blauerschnipsel.com/"
+            },
+            {
+                "name": "Check the Book",
+                "url": "https://www.franzlab.com/shop/cento-06-blauer-schnipsel"
+            }
         ]
-    }, 
-
-
-    
-    { // 17/4
-        id: "17_4",
-        cat: [ "poster"],
-        date: "2016",
-        place: "Urbino PU",
-        client: "",
-        title: "Il 17/4 Vota si",
-        subtitle: "Poster realizzato per il referendum nazionale sul rinnovo delle concessioni per le estrazioni con gli impianti del Mar Adriatico.",
-        description: ``,
-        images: {
-            cover: "174_img_1.png",
-            gallery: [
-                "174_img_1.png",
-                "174_img_2.png"
-            ]
-        }
-    }, 
-    
-    { // Machine Co-Creativity
-        id: "machine_co_creativity",
-        cat: [ "editorial"],
-        date: "2023",
-        place: "Libera Università di Bolzano, Italia",
-        client: "",
-        title: "Machine Co-creativity",
-        subtitle: "Il sito Machine Co-Creativity è un promptbook online che raccoglie le esplorazioni degli studenti che hanno sperimentato la generazione di immagine modelli text-to-image, seguendo tre principali assi tematici  ambienti, creature e oggetti ibridi.",
-        description: ``,
-        images: {
-            cover: "mcc_img_01.png",
-            gallery: [
-                "mcc_img_01.png",
-
-            ],            
-        },     
-        details: [
-            'https://sites.google.com/view/machine-co-creativity/',
-            'Facoltà di Design, progetto "WUP"',
-            "Titolare del corso Antonino Benincasa",
-            "Ospite Marco Buiani"
-        ]
-    }, 
-
-    
-    { // love your experiments
-        id: "love_your_experiments",
-        cat: [ "poster" ],
-        date: "2024",
-        place: "Basel CH",
-        client: "",
-        title: "Love your experiments",
-        subtitle: 'Realizzat per la mostra "Prospectives on AI", Basel Academy of Art and Design FHNW',
-        description: 'La rigidità teorica e i vincoli autoimposti del design “convenzionale” non portano da nessuna parte. I modelli testo-immagine sono strumenti, come un pennello di piume o una punta di penna di latta, che possono aiutarci ad espandere i nostri confini, esplorare nuove prospettive. Il punto di partenza del designer è definire un significato appropriato con un segno espressivo per un dato contesto. Giocare, sperimentare, osare e divertirsi non riguardano gli strumenti ma soprattutto il contenuto. Non dovrebbero esserci limiti nella ricerca, “l’arte non ha limiti perché ciò che può essere conosciuto è illimitato”. Non possiamo rimanere statici, facendo solo ciò che già sappiamo. Desideriamo un mondo migliore e ogni strumento può fare la sua parte. Combinando le immagini generate dall’intelligenza artificiale con il tocco manuale, possiamo esprimere emozioni profonde. "Ama i tuoi esperimenti (come faresti con un bambino brutto). La gioia è il motore della crescita" (Bruce Mau 1998).',
-        images: {
-            cover: "lye_img_0.png",
-            gallery: [
-                "lye_img_2.png",
-                "lye_img_1.png",
-                "lye_img_0.png"
+    },
+    {
+        "id": "count_your_chickens",
+        "cat": [
+            "research",
+            "type",
+            "coding"
+        ],
+        "date": "2025",
+        "place": "Sheffield UK",
+        "client": "Alpaca Festival",
+        "title": "Count Your Chickens",
+        "subtitle": "Pattern Generation as a Matter of Counting",
+        "description": "In this paper we handle pattern generation with a combinatorial approach by framing permutations as numeric literals. We highlight the advantages and limits of this notation to generate and index patterns. We show that this notation is robust, accessible, and tightly linked to existing mathematics, rendering the method universally available in programming languages. This approach allows the users to group the enumerated elements into consistent sets, enabling efficient creation, classification and analysis of patterns. We demonstrate the versatility of this approach with the Chicken Counter1, named with a play on the old proverb: “don’t count your chickens before they hatch”. It is a web app for visual, pixel-based-pattern exploration and can be considered as an accessible application of our flexible and extensible method. Our aim is to facilitate the application of a combinatorial approach based on the 18th century works of Sebastien Truchet (1704) and Dominique Doüat (1722) extending it within digital environments, scaling the potential of their method and improving the accessibility for computational exploration and creative practices.",
+        "images": {
+            "cover": "cover_cover.png",
+            "coverPoints": "cover_points.svg",
+            "gallery": [
+                "count-your-chickens_amedeo-bonini.png",
+                "count-your-chickens_silvia-governa.gif"
             ]
         },
-        details: [
-            "Realizzato con Mauro Bubbico"
+        "details": [
+            "Developer: Amedeo Bonini",
+            "Illustrator: Silvia Governa",
+            "Research: Marco Buiani"
+        ],
+        "link": [
+            {
+                "name": "Chicken Counter 1.0",
+                "url": "https://countyourchickens.surge.sh/"
+            }
         ]
-    }, 
-
-    
-
-    
-    { // blake ordito
-        id: "woven_blake",
-        cat: [ "type" ],
-        date: "2022",
-        place: "Milano",
-        client: "",
-        title: "Blake Woven",
-        subtitle: "Font personalizzato per la realizzazione di arazzo in maglia jacquard con tecnica di intreccio piqué, 55x80 cm.",
-        images: {
-            cover: "wb_img_7.png",
-            gallery: [
-                "wb_img_3.png",
-                "wb_img_2.png",
-                "wb_img_4.png",
-                "wb_img_5.png"
+    },
+    {
+        "id": "gino_furbetti",
+        "cat": [
+            "illustration",
+            "research"
+        ],
+        "date": "2024",
+        "place": "Bozen-Bolzano IT",
+        "client": "salto.bz",
+        "title": "Gino Furbetti",
+        "subtitle": "Illustrazioni per salto.bz",
+        "description": "Gino Furbetti è il nome di un modello Dall·e3 LDM personalizzato, progettato per generare una serie di illustrazioni per articoli pubblicati su Salto.bz. La post-produzione, la colorazione e il copywriting sono realizzati con pratiche tradizionali.",
+        "images": {
+            "cover": "cover_cover.jpg",
+            "coverPoints": "cover_points.svg",
+            "gallery": [
+                "salto-bz1.jpg",
+                "salto-bz2.jpg",
+                "salto-bz3.jpg",
+                "salto-bz4.jpg",
+                "salto-bz5.jpg"
             ]
         },
-        details: [
-            "Per Mauro Bubbico"
+        "details": [
+            "2024, Bolzano-Bozen"
+        ],
+        "link": [
+            {
+                "name": "salto.bz",
+                "url": "https://www.salto.bz/it/"
+            }
         ]
-    }, 
-
-    
-/*
-    { // design_classics
-        id: "design_classics",
-        cat: [ "editorial" ],
-        date: "2021-2023",
-        place: "?",
-        title: "Design Classics",
-        subtitle: "Ottimizzazione del file e impostazione dell’indice della pubblicazione interna all’università Design Classics, che raccoglie le illustrazioni prodotte in 6 anni accademici dagli studenti del progetto WUP.",
-        images: {
-            cover: "dc_img_1.jpg",
-            gallery: [
-                "dc_img_1.jpg",
-                "dc_img_2.jpg"
-            ]
-        },
-        details: [
-            "Responsabile di progetto: Antonino Benincasa, Fotografie: Andrea Righetto"
-        ]
-    }, */
-    
-    { // l-ove
-        id: "l-ove",
-        cat: [ "poster" ],
-        date: "2021",
-        place: "Bologna",
-        title: "l-ove",
-        subtitle: "Poster realizzato per l’asta di beneficenza da Sostieni Impegno Sociale.",
-        images: {
-            cover: "lv_img_1.jpg",
-            gallery: [
-                "lv_img_1.jpg"
-            ]
-        },
-        details: [
-            "",
-            ""
-        ]
-    }, 
-    
-    /*
-    { // il_cielo_nella_stalla
-        id: "il_cielo_nella_stalla",
-        cat: [ "pattern", "research" ],
-        date: "2021",
-        place: "Noci (BA)",
-        title: "Il Cielo nella Stalla",
-        subtitle: "Pavimento retroilluminato realizzato con la tecnica del terrazzo alla veneziana a partire da scarti di marmo.",
-        description: `Progetto finanziato da Masseria Cultura, Calcarea`,
-        images: {
-            cover: "icns_img_1.jpg",
-            gallery: [
-                "icns_img_1.jpg",
-                "icns_img_2.jpg",
-                "icns_img_3.jpg",
-                "icns_img_4.jpg",
-                "icns_img_5.jpg",
-                "icns_img_6.jpg",
-                "icns_img_7.jpg",
-                "icns_img_8.jpg",
-                "icns_img_9.jpg",
-                "icns_img_10.jpg"
-            ]
-        },
-        details: [
-            "Collaborazione con Franceso Bianco"
-        ]
-    }, */
-
-    
-    { // voto e vergogna
-        id: "voto_vergogna",
-        cat: [ "poster" ],
-        date: "2023",
-        place: "Pisticci MT",
-        title: "Il voto è segreto",
-        subtitle: 'Illustrazione di apertura del testo "Il volto del Voto" di Miriana Serravalle; "Plume. Pensieri, Letture, Visioni", vol.3',
-        images: {
-            cover: "vv_img_1.png",
-            gallery: [
-                "vv_img_1.png",
-                "vv_img_2.png"
-
-            ]
-        },
-        details: [
-            ''
-        ]
-    }, 
-    /*
-    { // quadrati_magici
-        id: "quadrati_magici",
-        cat: [ "pattern", "research" ],
-        date: "2022",
-        place: "Bolzano",
-        title: "Quadrati Magici",
-        subtitle: "Rara serie di moduli con analoghe proprietà geometriche, ottenuti a partire dall’analisi di 65.536 moduli.",
-        description: `How many drawings can you make with n modules in a k class squared grid? Which kind of drawings can you make? How can you catalogue them?
-        In this work I show the advantages of a combinatory approach to the problem of surface design, defining a new method based on the historical ones of S. Truchet (1704) and D. Douat (1722).How many drawings can you make with n modules in a k class squared grid? Which kind of drawings can you make? How can you catalogue them?
-        In this work I show the advantages of a combinatory approach to the problem of surface design, defining a new method based on the historical ones of S. Truchet (1704) and D. Douat (1722).`,
-        images: {
-            cover: "qm_img_2.gif",
-            gallery: [
-                "qm_img_1.jpg",
-                "qm_img_3.jpg",
-                "qm_img_4.jpg"
-            ]
-        },
-        link: "https://wikipedia.com/",
-        details: [
-            "Fotografia di Andrea Righetto"
-        ]
-    }, */
-    /*
-    { // calendario_motola
-        id: "calendario_motola",
-        cat: [ "pattern", "editorial" ],
-        date: "2019",
-        place: "Montescaglioso",
-        title: "Calendario per la Tipografia Motola",
-        subtitle: "Calendario “barocco” realizzato per la Tipografia Motola, lo scopo era quello di dimostrare all’interno di un artefatto grafico le nuove possibilità espressive date dai nuovi macchinari acquistati dalla tipografia.",
-        images: {
-            cover: "cm_img_10_2.gif",
-            gallery: [
-                "cm_img_1.jpg",
-                "cm_img_4.jpg",
-                "cm_img_11.jpg",
-                "cm_img_5.jpg",
-                "cm_img_6.jpg",
-                "cm_img_6.jpg"
-            ]
-        },
-        details: [
-            "Collaborazione con Mauro Bubbico",
-            "Fotografia di Andrea Righetto"
-        ]
-    }, 
-*/
-
-    { // novecento
-        id: "novecento",
-        cat: [ "poster" ],
-        date: "2023",
-        place: "Teatro Tertulliano, Milano",
-        title: "novecento",
-        subtitle: "Poster per spettacolo teatrale",
-        images: {
-            cover: "novecento_img_1.png",
-            gallery: [
-                "novecento_img_1.png",
-                "novecento_img_2.png"
-            ]
-        },
-        details: [
-            "Novecento, Monologo di Alessandro Baricco",
-            "Interpretazione di Franco Pigoli",
-            "Supporto Tecnico: M. M. Moreschi, M. Beshara, M. Veninati",
-            "Supporto organizzativo: R. Benassi, P. Bosisio",
-            "Consulenza musicale M. Mariani"        ]
-    }, 
-
-    { // leopold mono
-        id: "leopold_mono",
-        cat: [ "type" ],
-        date: "2023",
-        place: "Bozen-Bolzano, Italy",
-        title: "Leopold Mono",
-        subtitle: "Revival font",
-        description: 'Font realizzato a partire dal lettering del poster di Leopold Forstner per la mostra della associazione "Wiener Kunst im House".',
-        images: {
-            cover: "lm_img_02.png",
-            gallery: [
-                "lm_img_02.png",
-                "lm_img_04.png",
-                "lm_img_03.png"
-
-
-            ]
-        },
-        details: [
-            "Poster-specimen di Anita Bianchi.",
-            "Font Relizzato con Hoffmann1.0.0 di Giovanni Abbatepaolo",     
-            "e progettato con Anita Bianchi",
-            "\r",
-            'Responsabile di progetto: Antonino Benincasa"',
-            "Progetto Graphic Design from the Alps",
-            "Facoltà di Design, unibz",
-        ]
-   
-    }, 
-
-
-    { // infinita_disegni
-        id: "infinita_disegni",
-        cat: [ "editorial", "scripting" ],
-        date: "A.A. 2019/2020",
-        place: "ISIA di Faenza RA",
-        title: "Un’infinità di disegni",
-        subtitle: "Progetto di Tesi Magistrale in Design della Comunicazione",
-        description: `Quanti e quali disegni è possibile ottenere con un numero n di mattonelle quadrate tutte uguali? In questo lavoro esploro le potenzialità
-        dell'analisi combinatoria applicata alle tassellature ed al disegno grafico. Il progetto è stato selezionato per essere esposto nella mostra collettiva “Neologia”,
-        prima a Torino (16-26 ottobre 2021 at Toolbox Coworking), e poi a Milano (5-27 marzo 2022 presso Certosa Graphic Village, Milano)`,
-        images: {
-            cover: "id_img_9.jpg",
-            gallery: [
-                //"id_img_14.jpg",
+    },
+    {
+        "id": "infinita_disegni",
+        "cat": [
+            "editorial",
+            "coding"
+        ],
+        "date": "2020",
+        "place": "Faenza IT",
+        "client": "ISIA Faenza",
+        "title": "Un'infinità di disegni",
+        "subtitle": "Tesi magistrale in Design della Comunicazione",
+        "description": "In questo lavoro applico la combinatoria al disegno modulare sfruttando un espediente tipografico. Partendo dal Lavoro di Sebastien Truchet e Dominique Douat definisco un metodo di composizione tipografica in cui contare, scrivere e disegnare sono la stessa cosa.\nIl progetto è stato selezionato per essere esposto nella mostra collettiva “Neologia”, prima a Torino (16-26 ottobre 2021 at Toolbox Coworking), e poi a Milano (5-27 marzo 2022 presso Certosa Graphic Village, Milano)",
+        "images": {
+            "cover": "cover_cover.jpg",
+            "coverPoints": "cover_points.svg",
+            "gallery": [
                 "id_img_1.jpg",
-                "id_img_6.jpg",
-                "id_img_7.jpg",
-                "id_img_8.jpg",
-                "id_img_9.jpg",
                 "id_img_10.jpg",
                 "id_img_11.jpg",
                 "id_img_12.jpg",
                 "id_img_13.jpg",
+                "id_img_6.jpg",
+                "id_img_7.jpg",
+                "id_img_8.jpg",
+                "id_img_9.jpg"
             ]
         },
-        details: [
-            "Relatore: Valentina Rachiele",
-            "Correlatore: Marco Buiani",
-            "Fotografie: Andrea Badiali"
+        "details": [
+            "Relatori: Valentina Rachiele, Marco Buiani",
+            "In Neologia – Nuovi linguaggi del visual design in Italia (collective exhibition), Toolbox Coworking, Turin, Italy, October 16–26, 2021.",
+            "In Neologia – Nuovi linguaggi del visual design in Italia (collective exhibition), Certosa Graphic Village, Milan, Italy, March 5–27, 2022."
         ],
-        link: [
+        "link": [
             {
-                name: 'Esempio 1',
-                url: 'https://instagram.com/'
-            },
-            {
-                name: 'Esempio 2',
-                url: 'https://instagram.com/'
+                "name": "Un'infinità di disegni",
+                "url": "https://www.graphicdays.it/neologia/uninfinita-di-disegni-rocco-lorenzo-modugno/"
             }
         ]
-    }, 
-]
+    },
+    {
+        "id": "l-ove",
+        "cat": [
+            "poster"
+        ],
+        "date": "2021",
+        "place": "Bologna IT",
+        "client": "Sostieni Impegno Sociale",
+        "title": "l'ove",
+        "subtitle": "Poster per l’asta di beneficenza organizzata da Sostieni Impegno Sociale.",
+        "description": "",
+        "images": {
+            "cover": "cover_cover.jpg",
+            "coverPoints": "cover_points.svg",
+            "gallery": [
+                "lv_img_1.jpg"
+            ]
+        },
+        "details": [
+            "",
+            ""
+        ],
+        "link": [
+            {
+                "name": "@sostieni_impegno_sociale",
+                "url": "https://www.instagram.com/p/CN_93zwlRML/?hl=it"
+            }
+        ]
+    },
+    {
+        "id": "leopold_mono",
+        "cat": [
+            "type"
+        ],
+        "date": "2023",
+        "place": "Bozen-Bolzano IT",
+        "client": "unibz, IED Torino",
+        "title": "Leopold Mono",
+        "subtitle": "Revival font",
+        "description": "Font realizzato a partire dal lettering del poster di Leopold Forstner per la mostra della associazione \"Wiener Kunst im House\".",
+        "images": {
+            "cover": "cover_cover.png",
+            "coverPoints": "cover_points.svg",
+            "gallery": [
+                "lm_img_02.png",
+                "lm_img_03.png",
+                "lm_img_04.png"
+            ]
+        },
+        "details": [
+            "Poster-specimen di Anita Bianchi.",
+            "Font Relizzato con Hoffmann1.0.0 di Giovanni Abbatepaolo",
+            "e progettato con Anita Bianchi",
+            "\r",
+            "Responsabile di progetto: Antonino Benincasa\"",
+            "Progetto Graphic Design from the Alps",
+            "Facoltà di Design, unibz"
+        ],
+        "link": []
+    },
+    {
+        "id": "love_your_experiments",
+        "cat": [
+            "poster"
+        ],
+        "date": "2024",
+        "place": "Basel CH",
+        "client": "AGI",
+        "title": "Love your experiments",
+        "subtitle": "Realizzat per la mostra \"Prospectives on AI\", Basel Academy of Art and Design FHNW",
+        "description": "\"Ama i tuoi esperimenti (come faresti con un bambino brutto). La gioia è il motore della crescita\" \n— Bruce Mau, An Incomplete Manifesto for Growth (1998)\n\nLa rigidità teorica e i vincoli autoimposti del design “convenzionale” non portano da nessuna parte. I modelli testo-immagine sono strumenti, come un pennello di piume o una punta di penna di latta, che possono aiutarci ad espandere i nostri confini, esplorare nuove prospettive. Il punto di partenza del designer è definire un significato appropriato con un segno espressivo per un dato contesto. Giocare, sperimentare, osare e divertirsi non riguardano gli strumenti ma soprattutto il contenuto. Non dovrebbero esserci limiti nella ricerca, “l’arte non ha limiti perché ciò che può essere conosciuto è illimitato”. Non possiamo rimanere statici, facendo solo ciò che già sappiamo. Desideriamo un mondo migliore e ogni strumento può fare la sua parte. Combinando le immagini generate dall’intelligenza artificiale con il tocco manuale, possiamo esprimere emozioni profonde. ",
+        "images": {
+            "cover": "cover_cover.png",
+            "coverPoints": "cover_points.svg",
+            "gallery": [
+                "lye_img_0.png",
+                "lye_img_1.png",
+                "lye_img_2.png"
+            ]
+        },
+        "details": [
+            "con Mauro Bubbico"
+        ],
+        "link": []
+    },
+    {
+        "id": "machine_co_creativity",
+        "cat": [
+            "research",
+            "editorial"
+        ],
+        "date": "2022-23",
+        "place": "Bozen-Bolzano IT",
+        "client": "unibz",
+        "title": "Machine co-creativity",
+        "subtitle": "Gen AI in Graphic Design Education",
+        "description": "In this workshop with 55 students of the first semester of Design, held at unibz at the beginning of December 2022, we explored the emerging field of text-to-image generation through the creation of a collective promptbook. At that moment, these tools were still relatively new but rapidly evolving: DALL·E 2 was publicly accessible via a web interface, Midjourney was in its early public beta (v4 would be released only a few weeks later), and Stable Diffusion 1.x (notably v1.4/1.5) had been released only months before, enabling widespread experimentation through open models.\n\n\n\n\nStudents were challenged to use prompting as a design method to generate hybrid objects, hybrid creatures, speculative environments, and storytelling images. One of the main challenges was managing and curating a large dataset: over 4,000 images were produced, tagged with author name, model used, and prompt, and then structured into both a website and a printed book, addressing questions of scale, data flow, and narrative organization in AI-generated visual archives.",
+        "images": {
+            "cover": "cover_cover.jpg",
+            "coverPoints": "cover_points.svg",
+            "gallery": [
+                "machine-co-creativity_1.jpg",
+                "machine-co-creativity_2.jpg",
+                "machine-co-creativity_3.jpg",
+                "machine-co-creativity_4.jpg",
+                "machine-co-creativity_Page_5.jpg",
+                "mcc_img_01.png"
+            ]
+        },
+        "details": [
+            "Project Leader: Antonino Benincasa",
+            "Lecturer: Marco Buiani",
+            "Project Assistent: Amedeo Bonini"
+        ],
+        "link": [
+            {
+                "name": "Machine co-creativity",
+                "url": "https://sites.google.com/view/machine-co-creativity/"
+            }
+        ]
+    },
+    {
+        "id": "novecento",
+        "cat": [
+            "poster"
+        ],
+        "date": "2023",
+        "place": "Milano IT",
+        "client": "Teatro Tertulliano",
+        "title": "novecento",
+        "subtitle": "Poster per spettacolo teatrale",
+        "description": "Novecento, Monologo di Alessandro Baricco\nInterpretazione di Franco Pigoli\n\nSupporto Tecnico: M. M. Moreschi, M. Beshara, M. Veninati\nSupporto organizzativo: R. Benassi, P. Bosisio\nConsulenza musicale M. Mariani",
+        "images": {
+            "cover": "cover_cover.png",
+            "coverPoints": "cover_points.svg",
+            "gallery": [
+                "novecento_img_1.png"
+            ]
+        },
+        "details": [],
+        "link": []
+    },
+    {
+        "id": "voto_vergogna",
+        "cat": [
+            "illustration"
+        ],
+        "date": "2023",
+        "place": "Pisticci IT",
+        "client": "",
+        "title": "Il voto è segreto",
+        "subtitle": "Illustrazione di apertura del testo \"Il volto del Voto\" di Miriana Serravalle; \"Plume. Pensieri, Letture, Visioni\", vol.3",
+        "description": "",
+        "images": {
+            "cover": "cover_cover.png",
+            "coverPoints": "cover_points.svg",
+            "gallery": [
+                "vv_img_1.png",
+                "vv_img_2.png"
+            ]
+        },
+        "details": [
+            ""
+        ],
+        "link": []
+    },
+    {
+        "id": "whatever_dev",
+        "cat": [
+            "coding",
+            "research"
+        ],
+        "date": "2025-ongoing",
+        "place": "Bozen-Bolzano IT",
+        "client": "unibz",
+        "title": "Whatever Development",
+        "subtitle": "Debugging Algorithmic Autorithy",
+        "description": "Whatever Development è un progetto di ricerca sull’uso dei Large Language Models per facilitare l’apprendimento della programmazione. Attraverso workshop, strumenti open-source e un approccio pedagogico critico, promuove un’educazione inclusiva e riflessiva per designer, artisti e comunità.",
+        "images": {
+            "cover": "cover_cover.jpg",
+            "coverPoints": "cover_points.svg",
+            "gallery": [
+                "gog_wd26-01.jpg",
+                "gog_wd26-02.jpg",
+                "gog_wd26-03.jpeg",
+                "gog_wd26-04.jpeg",
+                "gog_wd26-05.jpeg",
+                "gog_wd26-06.jpg",
+                "wud25_01.jpg",
+                "wud25_02.jpg"
+            ]
+        },
+        "details": [
+            "with Andrea Maffei",
+            "Developer: Michele Maffei"
+        ],
+        "link": [
+            {
+                "name": "Sito Web del Progetto",
+                "url": "https://whatever-dev-ws.github.io/"
+            }
+        ]
+    },
+    {
+        "id": "woven_blake",
+        "cat": [
+            "type"
+        ],
+        "date": "2022",
+        "place": "Milano",
+        "client": "",
+        "title": "Blake Woven",
+        "subtitle": "Font personalizzato per la realizzazione di arazzo in maglia jacquard con tecnica di intreccio piqué, 55x80 cm.",
+        "description": "",
+        "images": {
+            "cover": "cover_cover.png",
+            "coverPoints": "cover_points.svg",
+            "gallery": [
+                "wb_img_2.png",
+                "wb_img_3.png",
+                "wb_img_4.png",
+                "wb_img_5.png"
+            ]
+        },
+        "details": [
+            "Per Mauro Bubbico"
+        ],
+        "link": []
+    }
+];

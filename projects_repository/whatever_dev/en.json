@@ -1,0 +1,15 @@
+{
+    "title": "Whatever Development",
+    "subtitle": "Debugging Algorithmic Autorithy",
+    "description": "Whatever Development is a research project exploring how Large Language Models can support programming literacy. Through workshops, open-source tools, and a critical pedagogical approach, it promotes inclusive, reflective learning for designers, artists, and communities.",
+    "details": [
+        "with Andrea Maffei",
+        "Developer: Michele Maffei"
+    ],
+    "link": [
+        {
+            "name": "Project Website",
+            "url": "https://whatever-dev-ws.github.io/"
+        }
+    ]
+}

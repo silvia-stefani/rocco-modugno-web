@@ -13,8 +13,10 @@
     padding: 8px;
     gap: 8px;
     text-decoration: none;
+
     &:hover {
         cursor: pointer;
+
         .title {
             color: var(--bg);
             background-color: var(--primary);
@@ -24,18 +26,26 @@
     &.unable {
         pointer-events: none;
         opacity: 0.2;
+
         .dot {
             background-color: transparent;
             border: 1px solid var(--text);
         }
     }
 
+
     .selectedProject {
         position: fixed;
-        z-index: 1;
+        z-index: 1000;
+        pointer-events: none;
+
         .title {
             color: var(--bg);
             background-color: var(--text);
+            padding: 4px 8px;
+            white-space: nowrap;
+            font-weight: 600;
+            text-transform: uppercase;
         }
     }
 
@@ -54,7 +64,33 @@
     .image {
         width: 200px;
         height: 100%;
+
+        img {
+            display: block;
+        }
     }
 
-}
+    .svg_container {
+        width: 60px; // Default size for patterns, can be adjusted
+        height: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
 
+        .svg_mask {
+            width: 100%;
+            height: 100%;
+            background-color: var(--text);
+            mask-size: contain;
+            mask-repeat: no-repeat;
+            mask-position: center;
+            transition: background-color 200ms ease-in-out;
+        }
+    }
+
+    &:hover {
+        .svg_mask {
+            background-color: var(--primary);
+        }
+    }
+}

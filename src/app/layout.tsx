@@ -4,6 +4,10 @@ import '../assets/sass/global.scss'
 import { Metadata } from "next/types";
 import App from "./app";
 
+/**
+ * Metadata configuration for the entire website.
+ * Includes SEO tags, Open Graph data for social sharing, and viewport settings.
+ */
 export const metadata: Metadata = {
   title: "Rocco Modugno | Creative Graphic Designer",
   description: "Discover Rocco Modugno’s portfolio, showcasing expertise in editorial design, visual communication, creative coding, and design consulting.",
@@ -50,12 +54,17 @@ export const metadata: Metadata = {
   },
 }
 
+/**
+ * RootLayout component that wraps every page.
+ * It provides the basic HTML structure and sets up global styles.
+ */
 export default function RootLayout({
   children,
 }: {
   children: React.ReactNode
 }) {
 
+  // Credits in the browser console
   console.log(`
   Website Development by Silvia Stefani: https://silviastefani.com
   · Web Design: Rocco Modugno + Silvia Stefani
@@ -68,6 +77,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
+        {/* The App component provides global context and wrappers */}
         <App>{children}</App> 
       </body>
     </html>

@@ -1,0 +1,16 @@
+{
+    "title": "Machine co-creativity",
+    "subtitle": "Gen AI in Graphic Design Education",
+    "description": "In this workshop with 55 students of the first semester of Design, held at unibz at the beginning of December 2022, we explored the emerging field of text-to-image generation through the creation of a collective promptbook. At that moment, these tools were still relatively new but rapidly evolving: DALL·E 2 was publicly accessible via a web interface, Midjourney was in its early public beta (v4 would be released only a few weeks later), and Stable Diffusion 1.x (notably v1.4/1.5) had been released only months before, enabling widespread experimentation through open models.\n\n\n\n\nStudents were challenged to use prompting as a design method to generate hybrid objects, hybrid creatures, speculative environments, and storytelling images. One of the main challenges was managing and curating a large dataset: over 4,000 images were produced, tagged with author name, model used, and prompt, and then structured into both a website and a printed book, addressing questions of scale, data flow, and narrative organization in AI-generated visual archives.",
+    "details": [
+        "Project Leader: Antonino Benincasa",
+        "Lecturer: Marco Buiani",
+        "Project Assistent: Amedeo Bonini"
+    ],
+    "link": [
+        {
+            "name": "Machine co-creativity",
+            "url": "https://sites.google.com/view/machine-co-creativity/"
+        }
+    ]
+}

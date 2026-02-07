@@ -1,0 +1,15 @@
+{
+    "title": "Progetto Esempio",
+    "subtitle": "Un test per il nuovo sistema",
+    "description": "Questa è una descrizione lunga in italiano per testare il sistema di sincronizzazione automatica.",
+    "details": [
+        "Collaborazione con AI",
+        "Test di sistema"
+    ],
+    "link": [
+        {
+            "name": "Sito Web",
+            "url": "https://example.com"
+        }
+    ]
+}

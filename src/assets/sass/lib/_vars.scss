@@ -2,8 +2,8 @@ $nodeSize: 40px;
 
 // Variables per cambiare misure del design dei progetti in vista "stripe" o "list". ProjectStripe.module.scss
 // Grid di elementi
-$projectsStripeGrid: 1fr 1fr 150px 100px 100px; // Normal
-$projectsStripeGridI: 2fr 1fr 150px 100px 100px; // Immagine extended
+$projectsStripeGrid: 3fr 2fr 1fr 120px; // Image(3), Info(2), Details+City(1), Meta
+$projectsStripeGridI: 4fr 1.5fr 1fr 120px; // Image expanded
 //Immagini
 $initialH: 10vw;
 $finalH: 20vw;

@@ -1,0 +1,16 @@
+{
+    "title": "Count Your Chickens",
+    "subtitle": "Pattern Generation as a Matter of Counting",
+    "description": "In this paper we handle pattern generation with a combinatorial approach by framing permutations as numeric literals. We highlight the advantages and limits of this notation to generate and index patterns. We show that this notation is robust, accessible, and tightly linked to existing mathematics, rendering the method universally available in programming languages. This approach allows the users to group the enumerated elements into consistent sets, enabling efficient creation, classification and analysis of patterns. We demonstrate the versatility of this approach with the Chicken Counter1, named with a play on the old proverb: “don’t count your chickens before they hatch”. It is a web app for visual, pixel-based-pattern exploration and can be considered as an accessible application of our flexible and extensible method. Our aim is to facilitate the application of a combinatorial approach based on the 18th century works of Sebastien Truchet (1704) and Dominique Doüat (1722) extending it within digital environments, scaling the potential of their method and improving the accessibility for computational exploration and creative practices.",
+    "details": [
+        "Developer: Amedeo Bonini",
+        "Illustrator: Silvia Governa",
+        "Research: Marco Buiani"
+    ],
+    "link": [
+        {
+            "name": "Chicken Counter 1.0",
+            "url": "https://countyourchickens.surge.sh/"
+        }
+    ]
+}
