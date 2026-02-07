@@ -48,6 +48,7 @@
         overflow: hidden;
         width: 100%;
         height: calc($finalH - ($p * 2));
+        min-height: calc(200px - 32px);
         transition: all $t ease-in-out;
 
         img,
