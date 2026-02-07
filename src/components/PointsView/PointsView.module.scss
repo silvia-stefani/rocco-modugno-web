@@ -34,21 +34,6 @@
     }
 
 
-    .selectedProject {
-        position: fixed;
-        z-index: 1000;
-        pointer-events: none;
-
-        .title {
-            color: var(--bg);
-            background-color: var(--text);
-            padding: 4px 8px;
-            white-space: nowrap;
-            font-weight: 600;
-            text-transform: uppercase;
-        }
-    }
-
     .title {
         //white-space: nowrap;
         font-size: 14px;
@@ -92,5 +77,21 @@
         .svg_mask {
             background-color: var(--primary);
         }
+    }
+}
+
+.selectedProject {
+    position: fixed;
+    z-index: 1000;
+    pointer-events: none;
+
+    .title {
+        position: absolute;
+        color: var(--bg);
+        background-color: var(--text);
+        padding: 4px 8px;
+        white-space: nowrap;
+        font-weight: 600;
+        text-transform: uppercase;
     }
 }
