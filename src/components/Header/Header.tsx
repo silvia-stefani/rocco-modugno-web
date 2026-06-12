@@ -51,7 +51,11 @@ const Header: React.FC<IHeader> = () => {
       <ul className={styles.menu}>
         {menu.map((item) => {
           const isCurrent = currentPage === `/${item.id}` ? styles.current : "";
-          return <li key={item.id} className={`${styles.item} ${isCurrent}`}><Link href={`/${item.id}`}>{item.name}</Link></li>
+          const link = item.id === "articles" ? "https://gifted-roundworm-865.notion.site/Articoli-pubblicati-fc967737aa2d4921be04eeddb5a2d054" : `/${item.id}`;
+          const target = item.id === "articles" ? "_blank" : "_self";
+          return <li key={item.id} className={`${styles.item} ${isCurrent}`}><Link href={link} target={target}>
+            {item.name}
+          </Link></li>
         })}
       </ul>
     </nav>, document.body)
@@ -86,8 +90,12 @@ const Header: React.FC<IHeader> = () => {
           <nav className={styles.navbar}>
             <ul className={styles.menu}>
               {menu.map((item) => {
-                const isCurrent = currentPage === item.id ? styles.current : "";
-                return <li key={item.id} className={`${styles.item} ${isCurrent}`}><Link href={`/${item.id}`}>{item.name}</Link></li>
+                const isCurrent = currentPage === `/${item.id}` ? styles.current : "";
+                const link = item.id === "articles" ? "https://gifted-roundworm-865.notion.site/Articoli-pubblicati-fc967737aa2d4921be04eeddb5a2d054" : `/${item.id}`;
+                const target = item.id === "articles" ? "_blank" : "_self";
+                return <li key={item.id} className={`${styles.item} ${isCurrent}`}><Link href={link} target={target}>
+                  {item.name}
+                </Link></li>
               })}
             </ul>
           </nav>
