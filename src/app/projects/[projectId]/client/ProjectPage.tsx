@@ -41,7 +41,7 @@ const ProjectPage = ({ projectId }: { projectId: string } ) => {
 
           {project.link && 
           <ul className={styles.links}>
-            {project.link.map((link, i) => (<li><Link key={i} href={link.url} target='_blank'>{link.name}</Link></li>))}
+            {project.link.map((link, i) => (<li key={i}><Link key={i} href={link.url} target='_blank'>{link.name}</Link></li>))}
           </ul>}
 
           <div className={styles.back}>

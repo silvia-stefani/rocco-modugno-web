@@ -24,6 +24,8 @@ interface ContentData {
     link: LinkItem[];
 }
 
+type FileData = Partial<MetaData> | Partial<ContentData>;
+
 export default function ProjectCompiler() {
     const [meta, setMeta] = useState<MetaData>({
         id: '',
@@ -61,7 +63,7 @@ export default function ProjectCompiler() {
         setMeta(prev => ({ ...prev, [key]: value }));
     };
 
-    const handleContentChange = (lang: 'it' | 'en', key: keyof ContentData, value: any) => {
+    const handleContentChange = (lang: 'it' | 'en', key: keyof ContentData, value: string | string[] | LinkItem[]) => {
         if (lang === 'it') {
             setIt(prev => ({ ...prev, [key]: value }));
         } else {
@@ -123,7 +125,7 @@ export default function ProjectCompiler() {
         URL.revokeObjectURL(url);
     };
 
-    const processFileData = (json: any, fileName: string) => {
+    const processFileData = (json: FileData, fileName: string) => {
         try {
             // Identify the type of JSON by keys
             if ('id' in json && 'cat' in json) {

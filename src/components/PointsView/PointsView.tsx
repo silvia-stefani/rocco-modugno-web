@@ -59,9 +59,9 @@ const PointsView = ({ projects }: { projects: IProject[] }) => {
         return { ...p, vx: p.vx * 0.9, vy: p.vy * 0.9 };
       }
 
-      let steeringAlignment = { x: 0, y: 0 };
-      let steeringCohesion = { x: 0, y: 0 };
-      let steeringSeparation = { x: 0, y: 0 };
+      const steeringAlignment = { x: 0, y: 0 };
+      const steeringCohesion = { x: 0, y: 0 };
+      const steeringSeparation = { x: 0, y: 0 };
       let totalNeighbors = 0;
 
       pointsRef.current.forEach((other, j) => {

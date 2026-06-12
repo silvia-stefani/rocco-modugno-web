@@ -34,7 +34,6 @@ export default function Projects() {
 
   // Derived state for sorting and styling
   const alphabeticDescendent = filters.listView.order === "alph-desc";
-  const isCurrentStyleImages = filters.dynamicView.style === "images";
 
   // Process projects: Apply sorting and category filtering
   const projects = orderByAlphabet(projectsObject, "date", alphabeticDescendent);
@@ -99,19 +98,6 @@ export default function Projects() {
     }))
   }
 
-  /**
-   * Points View Only: Toggles between 'images' and 'titles' visualization style.
-   */
-  function handleToggleStyle() {
-    const valueChanged = isCurrentStyleImages ? "titles" : "images";
-    setFilters((prevState) => ({
-      ...prevState,
-      dynamicView: {
-        ...prevState.dynamicView,
-        style: valueChanged
-      }
-    }))
-  }
   /**
    * Updates any numeric filter in the dynamicView.
    */
